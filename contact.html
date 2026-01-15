@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Leaf2Root</title>
+    <meta name="description" content="Get in touch with the Leaf2Root team for questions about our mental health tools, bulk orders, or partnership inquiries.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Leaf2Root Logo Colors */
+            --leaf-green: #7CB342;
+            --teal: #26A69A;
+            --root-brown: #795548;
+            --trunk-olive: #5D4037;
+
+            /* Primary uses the teal from logo */
+            --primary: #26A69A;
+            --primary-light: #4DB6AC;
+            --primary-dark: #00897B;
+
+            /* Secondary uses the green from logo */
+            --secondary: #7CB342;
+            --secondary-light: #9CCC65;
+
+            /* Accent uses warm brown from logo */
+            --accent: #795548;
+            --accent-light: #8D6E63;
+
+            --text-dark: #3E2723;
+            --text-medium: #5D4037;
+            --text-light: #795548;
+            --bg-cream: #FFFDF7;
+            --bg-sage: #F1F8E9;
+            --white: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo .leaf { color: var(--leaf-green); }
+        .logo .two { color: var(--teal); }
+        .logo .root { color: var(--root-brown); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 140px 24px 60px;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-sage) 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 24px 100px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--white);
+        }
+
+        .contact-form-wrapper h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-wrapper > p {
+            font-size: 16px;
+            color: var(--text-medium);
+            margin-bottom: 32px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            appearance: none;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234A4A4A' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E") no-repeat right 16px center;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            width: fit-content;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Info Sidebar */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-card {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-card h3 svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .contact-card p {
+            font-size: 15px;
+            color: var(--text-medium);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .quick-links h3 {
+            color: var(--white);
+        }
+
+        .quick-links h3 svg {
+            color: var(--accent);
+        }
+
+        .quick-link-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quick-link-item:last-child {
+            border-bottom: none;
+        }
+
+        .quick-link-item a {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .quick-link-item span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 24px;
+            background: var(--bg-sage);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .faq-header p {
+            font-size: 17px;
+            color: var(--text-medium);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px 28px;
+        }
+
+        .faq-question {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .faq-question::before {
+            content: "Q";
+            background: var(--primary);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            padding-left: 36px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 24px 24px;
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand h3 .leaf { color: var(--leaf-green); }
+        .footer-brand h3 .two { color: var(--teal); }
+        .footer-brand h3 .root { color: #A1887F; }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-sidebar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .contact-sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></a>
+            <ul class="nav-links">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="shop.html" class="nav-cta">Browse Products</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Get In Touch</h1>
+        <p>Have a question about our products, interested in bulk orders, or want to partner with us? We'd love to hear from you.</p>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you within 1-2 business days.</p>
+
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiryType">What can we help you with? *</label>
+                        <select id="inquiryType" name="inquiryType" required>
+                            <option value="">Select an option...</option>
+                            <option value="product">Product Question</option>
+                            <option value="order">Order Support</option>
+                            <option value="bulk">Bulk / Wholesale Orders</option>
+                            <option value="clinician">Clinician Resources</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="feedback">Feedback / Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization">Organization (Optional)</label>
+                        <input type="text" id="organization" name="organization" placeholder="Practice name, school, agency, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Sidebar -->
+            <aside class="contact-sidebar">
+                <div class="contact-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        Email Us
+                    </h3>
+                    <p>For general inquiries:</p>
+                    <a href="mailto:hello@leaf2root.org">hello@leaf2root.org</a>
+                    <p style="margin-top: 16px;">For order support:</p>
+                    <a href="mailto:orders@leaf2root.org">orders@leaf2root.org</a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Our Location
+                    </h3>
+                    <p>Leaf2Root is operated by Family Solutions Counseling, based in Utah.</p>
+                    <p style="margin-top: 12px;">
+                        <strong>Family Solutions Counseling</strong><br>
+                        115 Golf Course Rd, Suite E<br>
+                        Logan, Utah 84321
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Response Time
+                    </h3>
+                    <p>We typically respond to inquiries within 1-2 business days.</p>
+                    <p style="margin-top: 12px;">Business hours:<br>Monday - Friday<br>9:00 AM - 5:00 PM MST</p>
+                </div>
+
+                <div class="contact-card quick-links">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                        Quick Links
+                    </h3>
+                    <div class="quick-link-item">
+                        <a href="/resources/faq">FAQ</a>
+                        <span>Common questions answered</span>
+                    </div>
+                    <div class="quick-link-item">
+                        <a href="resources.html">Free Resources</a>
+                        <span>Download free worksheets</span>
+                    </div>
+                    <div class="quick-link-item">
+                        <a href="https://familysolutionsutah.org" target="_blank">Family Solutions</a>
+                        <span>Our parent company</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our products and services.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer bulk or wholesale pricing?</div>
+                    <div class="faq-answer">Yes! We offer discounted pricing for practices, schools, and organizations ordering 10+ units of any product. Contact us with details about your needs and we'll provide a custom quote. Bulk licensing for digital products is also available.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I use your resources with my clients?</div>
+                    <div class="faq-answer">Absolutely. All our products are designed for therapeutic use. Single purchases include a personal or single-practitioner license. For multi-clinician practices, please inquire about our practice-wide licensing options.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What's your return policy?</div>
+                    <div class="faq-answer">Physical products can be returned within 30 days of purchase if unused and in original condition. Digital downloads are non-refundable, but if you're unsatisfied, contact us and we'll work to make it right.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you ship internationally?</div>
+                    <div class="faq-answer">Currently, we only ship physical products within the United States. However, all our digital downloads are available worldwide immediately upon purchase.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I access digital downloads after purchase?</div>
+                    <div class="faq-answer">After your purchase is complete, you'll receive an email with a download link. Downloads are available immediately and the link remains active for 30 days. If you have trouble accessing your files, contact us at orders@leaf2root.org.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are your resources evidence-based?</div>
+                    <div class="faq-answer">Yes. Every Leaf2Root product is developed by licensed clinicians and grounded in proven therapeutic approaches including CBT, DBT, EMDR, and somatic therapies. We test all resources in actual clinical settings before offering them for sale.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></h3>
+                    <p>Professional mental health tools and resources designed to support growth, grounding, and healing.</p>
+                    <p style="margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.5);">A division of <a href="https://familysolutionsutah.org" style="color: #D4A574;">Family Solutions Counseling</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="/shop?type=workbooks">Workbooks</a></li>
+                        <li><a href="/shop?type=cards">Card Decks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Free Resources</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/resources/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

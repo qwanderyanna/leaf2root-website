@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf2Root | Mental Health Tools & Resources</title>
+    <meta name="description" content="Professional mental health tools, workbooks, and card decks for clinicians and individuals. Evidence-based resources from Family Solutions Counseling.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Leaf2Root Logo Colors */
+            --leaf-green: #7CB342;
+            --teal: #26A69A;
+            --root-brown: #795548;
+            --trunk-olive: #5D4037;
+
+            /* Primary uses the teal from logo */
+            --primary: #26A69A;
+            --primary-light: #4DB6AC;
+            --primary-dark: #00897B;
+
+            /* Secondary uses the green from logo */
+            --secondary: #7CB342;
+            --secondary-light: #9CCC65;
+
+            /* Accent uses warm brown from logo */
+            --accent: #795548;
+            --accent-light: #8D6E63;
+
+            --text-dark: #3E2723;
+            --text-medium: #5D4037;
+            --text-light: #795548;
+            --bg-cream: #FFFDF7;
+            --bg-sage: #F1F8E9;
+            --white: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo .leaf {
+            color: var(--leaf-green);
+        }
+
+        .logo .two {
+            color: var(--teal);
+        }
+
+        .logo .root {
+            color: var(--root-brown);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 24px 80px;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-sage) 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-medium);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 16px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+        }
+
+        .hero-logo {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+        }
+
+        .hero-logo-container {
+            background: transparent;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-badges {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-badges p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-medium);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .badge svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        /* Audience Section */
+        .audience {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-medium);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .audience-card {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            padding: 48px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .audience-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .audience-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        .audience-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .audience-card p {
+            color: var(--text-medium);
+            margin-bottom: 24px;
+        }
+
+        .audience-card ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .audience-card li {
+            padding: 8px 0;
+            color: var(--text-medium);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .audience-card li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .card-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-link:hover {
+            gap: 12px;
+        }
+
+        /* Featured Products */
+        .products {
+            padding: 100px 24px;
+            background: var(--bg-sage);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 240px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 24px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .product-content p {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-bottom: 16px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .product-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .btn-small {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn-small:hover {
+            background: var(--primary-light);
+        }
+
+        /* Why Leaf2Root */
+        .why {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--bg-sage);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .why-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary);
+        }
+
+        .why-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            padding: 100px 24px;
+            background: var(--primary);
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .testimonial-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 32px;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 24px;
+            background: var(--bg-cream);
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-medium);
+            margin-bottom: 32px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .newsletter-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--primary-light);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 24px 24px;
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand h3 .leaf {
+            color: var(--leaf-green);
+        }
+
+        .footer-brand h3 .two {
+            color: var(--teal);
+        }
+
+        .footer-brand h3 .root {
+            color: #A1887F;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .parent-company {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .parent-company a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            color: rgba(255,255,255,0.7);
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo"><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></a>
+            <ul class="nav-links">
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <a href="/shop" class="nav-cta">Browse Products</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Tools for <span>Growth</span>, Grounding & Healing</h1>
+                <p>Evidence-based mental health resources designed by clinicians, created for everyone. From therapeutic workbooks to grounding card decks, find the tools you need to support your journey.</p>
+                <div class="hero-buttons">
+                    <a href="/shop" class="btn-primary">Shop All Products</a>
+                    <a href="/resources" class="btn-secondary">Free Resources</a>
+                </div>
+                <div class="trust-badges">
+                    <p>Trusted by professionals</p>
+                    <div class="badge-row">
+                        <div class="badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            Evidence-Based
+                        </div>
+                        <div class="badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                            Clinician Created
+                        </div>
+                        <div class="badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            Inclusive & Affirming
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-logo-container">
+                    <!-- Replace 'leaf2root-logo.png' with your actual logo file -->
+                    <img src="../assets/leaf2root-logo.png" alt="Leaf2Root - Mental Health Tools by Family Solutions Counseling" class="hero-logo">
+                    <!-- Fallback placeholder if image doesn't load -->
+                    <noscript>
+                        <div class="hero-image-placeholder">
+                            [Upload your Leaf2Root tree logo here]
+                        </div>
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="audience">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">Who We Serve</p>
+                <h2>Resources for Every Stage of the Journey</h2>
+                <p>Whether you're a mental health professional seeking clinical tools or someone on your personal healing path, we have resources designed for you.</p>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                    </div>
+                    <h3>For Clinicians</h3>
+                    <p>Enhance your therapeutic practice with professional-grade tools developed by experienced mental health practitioners.</p>
+                    <ul>
+                        <li>Session-ready worksheets and activities</li>
+                        <li>Evidence-based intervention cards</li>
+                        <li>Client homework materials</li>
+                        <li>Bulk licensing available</li>
+                    </ul>
+                    <a href="/shop?audience=clinician" class="card-link">Shop Clinician Tools →</a>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </div>
+                    <h3>For Individuals & Families</h3>
+                    <p>Accessible self-help resources to support your mental health journey, whether in therapy or on your own.</p>
+                    <ul>
+                        <li>Self-guided workbooks for personal growth</li>
+                        <li>Grounding and coping skill tools</li>
+                        <li>Family activity resources</li>
+                        <li>Clear, jargon-free instructions</li>
+                    </ul>
+                    <a href="/shop?audience=individual" class="card-link">Shop Self-Help Tools →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">Featured Products</p>
+                <h2>Our Most Popular Resources</h2>
+                <p>Discover our best-selling tools trusted by therapists and individuals alike.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="position: relative;">
+                        <span class="product-badge">New</span>
+                        [Grounding Card Deck Image]
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Card Deck</p>
+                        <h3>54-Card Grounding Techniques Deck</h3>
+                        <p>Evidence-based grounding exercises for anxiety, dissociation, and emotional regulation.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$24.99</span>
+                            <a href="/shop/grounding-deck" class="btn-small">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        [CBT Workbook Image]
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>Cognitive Restructuring Workbook</h3>
+                        <p>A step-by-step guide to identifying and reframing unhelpful thought patterns.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$18.99 <span>Digital</span></span>
+                            <a href="/shop/cbt-workbook" class="btn-small">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        [DBT Skills Image]
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Bundle</p>
+                        <h3>DBT Skills Starter Kit</h3>
+                        <p>Complete set of distress tolerance, emotion regulation, and mindfulness tools.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$39.99</span>
+                            <a href="/shop/dbt-kit" class="btn-small">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="/shop" class="btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Leaf2Root -->
+    <section class="why">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">Why Leaf2Root</p>
+                <h2>What Makes Our Resources Different</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                    </div>
+                    <h3>Evidence-Based</h3>
+                    <p>Every resource is grounded in proven therapeutic modalities including CBT, DBT, EMDR, and somatic approaches.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <h3>Clinician Created</h3>
+                    <p>Developed by licensed therapists with years of hands-on experience treating real clients.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3>Accessible Pricing</h3>
+                    <p>Quality mental health tools shouldn't break the bank. We keep our prices fair and offer digital options.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </div>
+                    <h3>Inclusive Design</h3>
+                    <p>All resources are created with diversity, accessibility, and affirming language at the forefront.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+        <div class="testimonial-content">
+            <p class="testimonial-quote">"The grounding card deck has become an essential tool in my practice. My clients love having something tangible to take home, and the variety of techniques means there's something for everyone."</p>
+            <p class="testimonial-author">Dr. Sarah M., LCSW</p>
+            <p class="testimonial-role">Licensed Clinical Social Worker</p>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Stay Connected</h2>
+            <p>Get updates on new resources, free downloads, and mental health tips delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></h3>
+                    <p>Professional mental health tools and resources designed to support growth, grounding, and healing.</p>
+                    <p class="parent-company">A division of <a href="https://familysolutionsutah.org" target="_blank">Family Solutions Counseling</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="/shop">All Products</a></li>
+                        <li><a href="/shop?type=workbooks">Workbooks</a></li>
+                        <li><a href="/shop?type=cards">Card Decks</a></li>
+                        <li><a href="/shop?type=digital">Digital Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/resources">Free Resources</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/resources/clinicians">For Clinicians</a></li>
+                        <li><a href="/resources/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
