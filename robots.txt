@@ -1,0 +1,12 @@
+# Robots.txt for Leaf2Root
+# https://qwanderyanna.github.io/leaf2root-website/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://qwanderyanna.github.io/leaf2root-website/sitemap.xml
+
+# Disallow old/duplicate pages folder
+Disallow: /pages/
+Disallow: /docs/
