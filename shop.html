@@ -291,6 +291,36 @@
         .badge-new { background: var(--accent); color: var(--white); }
         .badge-digital { background: var(--primary); color: var(--white); }
         .badge-bestseller { background: var(--text-dark); color: var(--white); }
+        .badge-coming-soon { background: #9575CD; color: var(--white); }
+
+        .product-card.coming-soon {
+            opacity: 0.85;
+        }
+
+        .product-card.coming-soon .product-image {
+            position: relative;
+        }
+
+        .product-card.coming-soon .btn-add {
+            background: #9575CD;
+            pointer-events: none;
+        }
+
+        .product-logo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-sage) 0%, var(--bg-cream) 100%);
+        }
+
+        .product-logo-placeholder img {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
+            opacity: 0.7;
+        }
 
         .product-content {
             padding: 20px;
@@ -709,7 +739,7 @@
 
             <!-- Toolbar -->
             <div class="shop-toolbar">
-                <span class="results-count">Showing 27 products</span>
+                <span class="results-count">Showing 15 products</span>
                 <div class="sort-dropdown">
                     <label for="sort">Sort by:</label>
                     <select id="sort">
@@ -717,35 +747,229 @@
                         <option value="newest">Newest</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
-                        <option value="bestselling">Best Selling</option>
                     </select>
                 </div>
             </div>
 
             <!-- Products Grid -->
             <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
+
+                <!-- ============ WORKBOOKS ============ -->
+
+                <!-- KAP Celestial Workbook -->
+                <div class="product-card coming-soon">
                     <div class="product-image">
                         <div class="product-badges">
-                            <span class="badge badge-new">New</span>
-                            <span class="badge badge-bestseller">Bestseller</span>
+                            <span class="badge badge-coming-soon">Coming Soon</span>
                         </div>
-                        [Grounding Deck Image]
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
                     </div>
                     <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>54-Card Grounding Techniques Deck</h3>
-                        <p>Evidence-based grounding exercises covering sensory, cognitive, and somatic techniques for anxiety and dissociation.</p>
+                        <p class="product-category">Workbook</p>
+                        <h3>KAP Celestial Integration Workbook</h3>
+                        <p>A guided workbook for Ketamine-Assisted Psychotherapy integration with celestial/space themes. Includes pre-session preparation, journey journaling, and integration exercises.</p>
                         <div class="product-meta">
                             <span class="product-audience">Clinicians & Individuals</span>
                         </div>
                         <div class="product-footer">
                             <div class="product-price">
-                                $24.99
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KAP Ocean Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>KAP Ocean Integration Workbook</h3>
+                        <p>A guided workbook for Ketamine-Assisted Psychotherapy integration with calming ocean/water themes. Includes pre-session preparation, journey journaling, and integration exercises.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DBT Skills Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>DBT Skills Workbook</h3>
+                        <p>Comprehensive Dialectical Behavior Therapy skills workbook covering distress tolerance, emotion regulation, interpersonal effectiveness, and mindfulness.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CBT Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>CBT Cognitive Restructuring Workbook</h3>
+                        <p>A step-by-step guide to identifying cognitive distortions, challenging unhelpful thoughts, and developing healthier thinking patterns.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMDR Resource Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>EMDR Resource Development Workbook</h3>
+                        <p>Workbook for EMDR preparation and resource development including safe place, container, and calm state exercises.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IFS Parts Work Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>IFS Parts Work Workbook</h3>
+                        <p>Internal Family Systems workbook for identifying, mapping, and working with inner parts. Includes parts mapping exercises and Self-led healing practices.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anxiety Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>Understanding Your Anxiety Workbook</h3>
+                        <p>Self-guided workbook for understanding anxiety triggers, physical symptoms, and developing personalized coping strategies.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ CARD DECKS ============ -->
+
+                <!-- Grounding Card Deck -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Card Deck</p>
+                        <h3>54-Card Grounding Techniques Deck</h3>
+                        <p>Evidence-based grounding exercises covering 5-4-3-2-1 variations, breathing techniques, body-based grounding, cognitive exercises, and movement activities.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
                                 <span class="format">Physical</span>
                             </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
+                            <a href="#" class="btn-add">Coming Soon</a>
                         </div>
                         <a href="product-resources/grounding-deck.html" class="resource-link">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
@@ -754,196 +978,198 @@
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="product-card">
+                <!-- Coping Skills Card Deck -->
+                <div class="product-card coming-soon">
                     <div class="product-image">
                         <div class="product-badges">
-                            <span class="badge badge-digital">Digital</span>
+                            <span class="badge badge-coming-soon">Coming Soon</span>
                         </div>
-                        [CBT Workbook Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Cognitive Restructuring Workbook</h3>
-                        <p>A comprehensive guide to identifying cognitive distortions and developing healthier thought patterns.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
                         </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $18.99
-                                <span class="format">PDF Download</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        [DBT Kit Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Bundle</p>
-                        <h3>DBT Skills Starter Kit</h3>
-                        <p>Complete set including distress tolerance cards, emotion regulation worksheets, and mindfulness exercises.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $39.99
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-digital">Digital</span>
-                        </div>
-                        [Anxiety Workbook Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Understanding Your Anxiety</h3>
-                        <p>Self-guided workbook for understanding anxiety triggers, symptoms, and developing personalized coping strategies.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $14.99
-                                <span class="format">PDF Download</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        [Emotion Cards Image]
                     </div>
                     <div class="product-content">
                         <p class="product-category">Card Deck</p>
-                        <h3>Emotion Identification Cards</h3>
-                        <p>60 cards featuring nuanced emotions with definitions, body sensations, and reflection prompts.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Families</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $22.99
-                                <span class="format">Physical</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-new">New</span>
-                        </div>
-                        [Trauma Workbook Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Trauma Recovery Companion</h3>
-                        <p>Gentle, paced workbook for processing trauma with stabilization exercises and self-compassion practices.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $24.99
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-digital">Digital</span>
-                        </div>
-                        [Clinician Worksheets Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Worksheet Pack</p>
-                        <h3>Clinician Assessment Bundle</h3>
-                        <p>50+ printable assessment tools, intake forms, and session worksheets for therapeutic practice.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                $49.99
-                                <span class="format">PDF Download</span>
-                            </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        [Mindfulness Cards Image]
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>Mindfulness Moment Cards</h3>
-                        <p>40 brief mindfulness exercises perfect for session transitions, homework, or daily practice.</p>
+                        <h3>Coping Skills Card Deck</h3>
+                        <p>Comprehensive deck of healthy coping strategies for stress, anxiety, depression, and emotional overwhelm. Categorized by situation and energy level.</p>
                         <div class="product-meta">
                             <span class="product-audience">Clinicians & Individuals</span>
                         </div>
                         <div class="product-footer">
                             <div class="product-price">
-                                $19.99
+                                TBD
                                 <span class="format">Physical</span>
                             </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
+                            <a href="#" class="btn-add">Coming Soon</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product 9 -->
-                <div class="product-card">
+                <!-- Emotion Identification Cards -->
+                <div class="product-card coming-soon">
                     <div class="product-image">
                         <div class="product-badges">
-                            <span class="badge badge-bestseller">Bestseller</span>
+                            <span class="badge badge-coming-soon">Coming Soon</span>
                         </div>
-                        [Family Therapy Image]
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Card Deck</p>
+                        <h3>Emotion Identification Cards</h3>
+                        <p>60+ cards featuring nuanced emotions with definitions, body sensations, related feelings, and reflection prompts for emotional literacy.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Families</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Affirmation Cards -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Card Deck</p>
+                        <h3>Daily Affirmation Cards</h3>
+                        <p>Beautifully designed affirmation cards for daily encouragement, self-compassion, and positive mindset building.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mindfulness Cards -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Card Deck</p>
+                        <h3>Mindfulness Moment Cards</h3>
+                        <p>Brief mindfulness exercises perfect for session transitions, homework assignments, or building a daily mindfulness practice.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians & Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ OTHER RESOURCES ============ -->
+
+                <!-- Clinician Worksheet Bundle -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                            <span class="badge badge-digital">Digital</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Digital Bundle</p>
+                        <h3>Clinician Worksheet Bundle</h3>
+                        <p>50+ printable worksheets for therapeutic practice including intake forms, assessments, session worksheets, and homework assignments.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Clinicians</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">PDF Download</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Therapy Resources -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
                     </div>
                     <div class="product-content">
                         <p class="product-category">Workbook</p>
                         <h3>Family Communication Workbook</h3>
-                        <p>Interactive exercises for families to improve communication, set boundaries, and strengthen connections.</p>
+                        <p>Interactive exercises for families to improve communication, understand each other's perspectives, set healthy boundaries, and strengthen connections.</p>
                         <div class="product-meta">
                             <span class="product-audience">Families</span>
                         </div>
                         <div class="product-footer">
                             <div class="product-price">
-                                $21.99
-                                <span class="format">Physical</span>
+                                TBD
+                                <span class="format">Physical + Digital</span>
                             </div>
-                            <a href="#" class="btn-add" target="_blank">Shop Now</a>
+                            <a href="#" class="btn-add">Coming Soon</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Trauma Recovery Workbook -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">
+                        <div class="product-badges">
+                            <span class="badge badge-coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-logo-placeholder">
+                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-category">Workbook</p>
+                        <h3>Trauma Recovery Companion</h3>
+                        <p>A gentle, paced workbook for trauma processing with stabilization exercises, window of tolerance work, and self-compassion practices.</p>
+                        <div class="product-meta">
+                            <span class="product-audience">Individuals</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                TBD
+                                <span class="format">Physical + Digital</span>
+                            </div>
+                            <a href="#" class="btn-add">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Category Highlight: Workbooks -->
