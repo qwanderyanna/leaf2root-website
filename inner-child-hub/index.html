@@ -3,6 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf2Root Master Operations Hub</title>
+    <style>
+        :root { --primary: #4a7c59; --primary-light: #6db97a; --secondary: #8b5a2b; --bg: #faf9f7; --card-bg: #fff; --text: #333; --text-light: #666; --border: #e0e0e0; --success: #28a745; --hippie-primary: #7b4b94; --hippie-light: #9b6bb4; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .main-header { background: linear-gradient(135deg, #2d4a3e, #4a7c59); color: white; padding: 30px 20px; text-align: center; border-radius: 0 0 20px 20px; margin-bottom: 20px; }
+        .main-header h1 { font-size: 2.2em; margin-bottom: 5px; }
+        .main-header .subtitle { opacity: 0.9; font-size: 1.1em; }
+        .internal-notice { background: #fff3cd; border: 1px solid #ffc107; padding: 10px 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; font-size: 0.9em; }
+        .brand-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .brand-tab { padding: 15px 25px; border-radius: 12px; cursor: pointer; font-weight: bold; transition: all 0.3s; border: 2px solid transparent; flex: 1; text-align: center; min-width: 200px; }
+        .brand-tab.leaf2root { background: var(--primary); color: white; }
+        .brand-tab.leaf2root:hover, .brand-tab.leaf2root.active { background: var(--primary-light); }
+        .brand-tab.hippies { background: var(--hippie-primary); color: white; }
+        .brand-tab.hippies:hover, .brand-tab.hippies.active { background: var(--hippie-light); }
+        .brand-section { display: none; }
+        .brand-section.active { display: block; }
+        .section { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .section h2 { color: var(--primary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+        .section.hippies-section h2 { color: var(--hippie-primary); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .product-card { background: linear-gradient(135deg, #f8f9fa, #fff); border-radius: 12px; padding: 20px; border: 1px solid var(--border); }
+        .product-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .product-card.hippies h3 { color: var(--hippie-primary); }
+        .price-tag { background: var(--primary); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin: 10px 5px 10px 0; }
+        .price-tag.hippies { background: var(--hippie-primary); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .nav-card { background: var(--card-bg); border-radius: 12px; padding: 20px; border-left: 4px solid var(--primary); cursor: pointer; transition: transform 0.2s; }
+        .nav-card.hippies { border-left-color: var(--hippie-primary); }
+        .nav-card:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.12); }
+        .nav-card h3 { color: var(--primary); margin-bottom: 8px; }
+        .nav-card.hippies h3 { color: var(--hippie-primary); }
+        .nav-card p { color: var(--text-light); font-size: 0.9em; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .checklist li:last-child { border-bottom: none; }
+        .status-badge { padding: 4px 12px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+        .status-active { background: #d4edda; color: #155724; }
+        .status-setup { background: #fff3cd; color: #856404; }
+        .status-pending { background: #f8d7da; color: #721c24; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .link-item { background: #f8f9fa; padding: 15px; border-radius: 8px; }
+        .link-item a { color: var(--primary); text-decoration: none; font-weight: bold; }
+        .link-item.hippies a { color: var(--hippie-primary); }
+        .profit-box { background: linear-gradient(135deg, var(--success), #20c997); color: white; padding: 15px; border-radius: 12px; text-align: center; margin: 10px 0; }
+        .profit-box .amount { font-size: 1.8em; font-weight: bold; }
+        footer { text-align: center; padding: 20px; color: var(--text-light); font-size: 0.9em; }
+        .coming-soon { background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 2px dashed var(--border); padding: 40px; text-align: center; border-radius: 12px; }
+        .coming-soon h3 { color: var(--text-light); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1>🌱 Leaf2Root Master Operations Hub</h1>
+        <p class="subtitle">Internal Use Only • FSC</p>
+    </header>
+    <div class="container">
+        <div class="internal-notice">⚠️ <strong>Internal Operations Page</strong> - Not for public distribution</div>
+        <div class="brand-tabs">
+            <div class="brand-tab leaf2root active" onclick="showBrand('leaf2root')">🌿 Leaf2Root<br><small>leaf2root.org</small></div>
+            <div class="brand-tab hippies" onclick="showBrand('hippies')">🔮 The Classy Hippies<br><small>Shopify Store</small></div>
+        </div>
+        <div id="leaf2root-section" class="brand-section active">
+            <div class="section"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSC Master Operations Hub</title>
     <style>
         :root { --primary: #4a7c59; --primary-light: #6db97a; --secondary: #8b5a2b; --bg: #faf9f7; --card-bg: #fff; --text: #333; --text-light: #666; --border: #e0e0e0; --success: #28a745; --hippie-primary: #7b4b94; --hippie-light: #9b6bb4; }
