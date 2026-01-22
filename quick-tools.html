@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quick Tools | Leaf2Root</title>
+      <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+      <meta property="og:title" content="Quick Tools - Leaf2Root">
+      <meta property="og:description" content="Immediate-use audio and video tools for therapists and clients.">
+      <style>
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                :root { --primary: #26A69A; --primary-dark: #00897B; --secondary: #7CB342; --accent: #795548; --text: #333; --text-light: #666; --bg: #FAFAFA; --white: #FFF; }
+                body { font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+                .navbar { background: var(--white); padding: 1rem 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+                .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+                .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--primary); font-weight: 700; font-size: 1.5rem; }
+                .logo img { height: 40px; }
+                .nav-links { display: flex; gap: 2rem; list-style: none; }
+                .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+                .nav-links a:hover { color: var(--primary); }
+                .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+                .hamburger span { width: 25px; height: 3px; background: var(--text); }
+                .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white); padding: 4rem 2rem; text-align: center; }
+                .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+                .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+                .main-content { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+                .section-header { text-align: center; margin-bottom: 2rem; }
+                .section-header h2 { color: var(--primary-dark); font-size: 2rem; margin-bottom: 0.5rem; }
+                .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+                .tool-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+                .tool-card:hover { transform: translateY(-5px); }
+                .tool-header { padding: 2rem; text-align: center; }
+                .tool-header.audio { background: linear-gradient(135deg, #7CB342, #26A69A); }
+                .tool-header.video { background: linear-gradient(135deg, #26A69A, #00897B); }
+                .tool-header.guide { background: linear-gradient(135deg, #795548, #5D4037); }
+                .tool-icon { font-size: 3rem; }
+                .tool-type { display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; }
+                .tool-content { padding: 1.5rem; }
+                .tool-content h3 { margin-bottom: 0.5rem; }
+                .tool-content p { color: var(--text-light); margin-bottom: 1rem; }
+                .tool-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #eee; }
+                .btn-play { background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 25px; text-decoration: none; }
+                .btn-play:hover { background: var(--primary-dark); }
+                .coming-soon { background: #f5f5f5; border: 2px dashed var(--primary); border-radius: 16px; padding: 3rem; text-align: center; margin-top: 2rem; }
+                .coming-soon h3 { color: var(--primary-dark); margin-bottom: 1rem; }
+                .footer { background: var(--text); color: var(--white); padding: 3rem 2rem; margin-top: 4rem; }
+                .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+                .footer h4 { color: var(--primary); margin-bottom: 1rem; }
+                .footer a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+                .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #444; }
+                @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .hero h1 { font-size: 1.8rem; } }
+            </style>
+  </head>
+  <body>
+        <nav class="navbar"><div class="nav-container">
+                  <a href="index.html" class="logo"><img src="assets/Logo.png" alt="Leaf2Root">Leaf2Root</a>a>
+                  <ul class="nav-links" id="navLinks">
+                                <li><a href="index.html">Home</a>a></li>
+                              <li><a href="about.html">About</a>a></li>
+                              <li><a href="shop.html">Shop</a>a></li>
+                              <li><a href="resources.html">Resources</a>a></li>
+                              <li><a href="quick-tools.html" style="color:var(--primary)">Quick Tools</a>a></li>
+                              <li><a href="contact.html">Contact</a>a></li>
+                  </ul>ul>
+                <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>div>
+        </div>div></nav>nav>
+  
+      <section class="hero">
+              <h1>Quick Tools for Immediate Use</h1>
+              <p>Audio and video resources for therapists and clients. Use in session, between appointments, or whenever you need support.</p>
+      </section>section>
+  
+      <main class="main-content">
+              <div class="section-header"><h2>Audio Exercises</h2><p>Guided audio for grounding, breathing, and mindfulness</p></div>div>
+              <div class="tools-grid">
+                          <div class="tool-card"><div class="tool-header audio"><div class="tool-icon">🎧</div>div><span class="tool-type">Audio</span></div>div>
+                                      <div class="tool-content"><h3>5-Minute Grounding Exercise</h3><p>Quick 5-4-3-2-1 senses technique for anxiety or overwhelm.</p>
+                                                  <div class="tool-meta"><span>5 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+                          
+                          <div class="tool-card"><div class="tool-header audio"><div class="tool-icon">🌬️</div>div><span class="tool-type">Audio</span></div>div>
+                                      <div class="tool-content"><h3>Box Breathing Tutorial</h3><p>4-4-4-4 breathing technique to calm your nervous system.</p>
+                                                  <div class="tool-meta"><span>3 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+                          
+                          <div class="tool-card"><div class="tool-header audio"><div class="tool-icon">🧘</div>div><span class="tool-type">Audio</span></div>div>
+                                      <div class="tool-content"><h3>Body Scan Meditation</h3><p>Gentle body scan to release tension and increase awareness.</p>
+                                                  <div class="tool-meta"><span>10 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+              </div>div>
+      
+              <div class="section-header"><h2>Video Tutorials</h2><p>Visual guides for coping skills and techniques</p></div>div>
+              <div class="tools-grid">
+                          <div class="tool-card"><div class="tool-header video"><div class="tool-icon">🎬</div>div><span class="tool-type">Video</span></div>div>
+                                      <div class="tool-content"><h3>Window of Tolerance</h3><p>Understand your nervous system and when you're outside your window.</p>
+                                                  <div class="tool-meta"><span>7 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+                          
+                          <div class="tool-card"><div class="tool-header video"><div class="tool-icon">💚</div>div><span class="tool-type">Video</span></div>div>
+                                      <div class="tool-content"><h3>Self-Compassion Break</h3><p>A guided self-compassion exercise for difficult moments.</p>
+                                                  <div class="tool-meta"><span>5 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+                          
+                          <div class="tool-card"><div class="tool-header video"><div class="tool-icon">🌊</div>div><span class="tool-type">Video</span></div>div>
+                                      <div class="tool-content"><h3>Riding Emotional Waves</h3><p>DBT skill for observing emotions without reacting impulsively.</p>
+                                                  <div class="tool-meta"><span>6 min</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+              </div>div>
+      
+              <div class="section-header"><h2>Quick Guides</h2><p>Printable resources for in-the-moment support</p></div>div>
+              <div class="tools-grid">
+                          <div class="tool-card"><div class="tool-header guide"><div class="tool-icon">📋</div>div><span class="tool-type">PDF</span></div>div>
+                                      <div class="tool-content"><h3>Coping Skills Menu</h3><p>20+ coping skills organized by category for quick reference.</p>
+                                                  <div class="tool-meta"><span>PDF</span><a href="#" class="btn-play">Coming Soon</a>a></div>div></div>div></div>div>
+                          
+                          <div class="tool-card"><div class="tool-header guide"><div class="tool-icon">🆘</div>div><span class="tool-type">PDF</span></div>div>
+                                      <div class="tool-content"><h3>Crisis Safety Plan</h3><p>Fillable template with warning signs and coping strategies.</p>
+                                        <!DOCTYPE html>
+                                      <html lang="en">
+                                      <head>
+                                          <meta charset="UTF-8">
+                                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                          <title>Quick Tools | Leaf2Root</title>
+                                          <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+                                          <meta property="og:title" content="Quick Tools - Leaf2Root">
+                                          <meta property="og:description" content="Immediate-use audio and video tools for therapists and clients.">
+                                          <style>
+                                                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                                                  :root { --primary: #26A69A; --primary-dark: #00897B; --secondary: #7CB342; --accent: #795548; --text: #333; --text-light: #666; --bg: #FAFAFA; --white: #FFF; }
+                                                  body { font-family: 'S</p></p></h1></span></span></li></li>
+  </body>
+      </style></title>
+  </head>
