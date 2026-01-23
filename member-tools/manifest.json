@@ -1,0 +1,16 @@
+{
+    "name": "Leaf2Root Member Tools",
+    "short_name": "Member Tools",
+    "description": "Therapeutic web apps for personal growth and session support",
+    "start_url": "/member-tools/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#26A69A",
+    "icons": [
+          {
+                  "src": "/assets/favicon.svg",
+                  "sizes": "any",
+                  "type": "image/svg+xml"
+          }
+    ]
+}
