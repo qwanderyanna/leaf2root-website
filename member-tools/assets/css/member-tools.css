@@ -1,0 +1,99 @@
+/* Leaf2Root Member Tools CSS */
+:root {
+    --primary: #26A69A;
+    --primary-dark: #00897B;
+    --secondary: #7CB342;
+    --accent: #FFB74D;
+    --text: #333;
+    --text-light: #666;
+    --background: #FFF;
+    --background-alt: #F5F5F5;
+    --border: #E0E0E0;
+    --error: #E53935;
+    --success: #66BB6A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: var(--background); line-height: 1.6; }
+.site-header { background: var(--background); padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.logo img { height: 40px; }
+.logo-text { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 3rem 2rem; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+.subscription-banner { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; padding: 1.5rem 2rem; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; }
+.subscription-banner .price { font-size: 1.5rem; font-weight: 700; }
+.btn-subscribe { background: white; color: var(--primary-dark); padding: 0.75rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+.btn-subscribe:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.search-filter-section { background: var(--background-alt); padding: 2rem; }
+.search-filter-container { max-width: 1200px; margin: 0 auto; }
+.search-box { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.search-box input { flex: 1; padding: 1rem; border: 2px solid var(--border); border-radius: 25px; font-size: 1rem; }
+.search-box input:focus { outline: none; border-color: var(--primary); }
+.search-box button { background: var(--primary); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; cursor: pointer; font-weight: 600; }
+
+.filter-section { margin-bottom: 1rem; }
+.filter-section h3 { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.75rem; text-transform: uppercase; }
+.filter-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-tag { background: white; border: 2px solid var(--border); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s; }
+.filter-tag:hover { border-color: var(--primary); color: var(--primary); }
+.filter-tag.active { background: var(--primary); border-color: var(--primary); color: white; }
+.apps-grid { max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.app-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; position: relative; }
+.app-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+.app-card-image { height: 160px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.app-card-content { padding: 1.25rem; }
+.app-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.app-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 1rem; }
+
+.app-card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.app-tag { background: var(--background-alt); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem; color: var(--text-light); }
+.app-tag.modality { background: #E3F2FD; color: #1976D2; }
+.app-tag.issue { background: #FFF3E0; color: #E65100; }
+.app-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
+.btn-launch { background: var(--primary); color: white; padding: 0.5rem 1.25rem; border-radius: 20px; text-decoration: none; font-weight: 500; }
+.btn-launch:hover { background: var(--primary-dark); }
+.locked-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+.app-card.locked:hover .locked-overlay { opacity: 1; }
+.locked-overlay .lock-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.locked-overlay p { color: var(--text); font-weight: 600; margin-bottom: 0.5rem; }
+.disclaimer-banner { background: #FFF8E1; border: 1px solid #FFE082; border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; }
+.disclaimer-banner .icon { font-size: 1.5rem; }
+.disclaimer-banner p { font-size: 0.9rem; color: #5D4037; }
+.disclaimer-banner strong { color: #E65100; }
+
+.session-notice { background: #E3F2FD; border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.session-notice p { font-size: 0.9rem; color: #1565C0; }
+.install-prompt { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+.install-prompt h3 { color: var(--primary-dark); margin-bottom: 0.75rem; }
+.install-steps { display: none; }
+.install-steps.active { display: block; }
+.install-steps ol { padding-left: 1.5rem; margin-top: 1rem; }
+.install-steps li { margin-bottom: 0.75rem; }
+.device-toggle { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.device-toggle button { background: white; border: 2px solid var(--border); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; }
+.device-toggle button.active { background: var(--primary); border-color: var(--primary); color: white; }
+.app-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+.app-content { background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); padding: 2rem; min-height: 400px; }
+.site-footer { background: var(--text); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+.site-footer a { color: var(--secondary); }
+
+.paywall-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.paywall-content { text-align: center; max-width: 500px; padding: 3rem; }
+.paywall-content .lock-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+.paywall-content h2 { font-size: 2rem; margin-bottom: 1rem; }
+.paywall-content p { color: var(--text-light); margin-bottom: 2rem; }
+.paywall-content .price-display { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+.btn-unlock { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem 3rem; border-radius: 30px; font-size: 1.2rem; font-weight: 600; text-decoration: none; display: inline-block; }
+.btn-unlock:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(38,166,154,0.4); }
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1001; }
+.modal-overlay.active { display: flex; }
+.modal-content { background: white; border-radius: 12px; padding: 2rem; max-width: 500px; width: 90%; }
+.report-issue-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 100; }
+.btn-report { background: var(--background); border: 2px solid var(--border); padding: 0.75rem 1.25rem; border-radius: 25px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
+@media (max-width: 768px) { .header-content { flex-direction: column; gap: 1rem; } .nav-links { gap: 1rem; } .hero h1 { font-size: 1.75rem; } .apps-grid { grid-template-columns: 1fr; padding: 1rem; } .search-box { flex-direction: column; } }
