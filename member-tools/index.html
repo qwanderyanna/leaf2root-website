@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Tools | Leaf2Root</title>
+    <link rel="stylesheet" href="assets/css/member-tools.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#26A69A">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="/" class="logo"><span>Leaf2Root</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/quick-tools.html">Quick Tools</a></li>
+                    <li><a href="/member-tools/" class="active">Member Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>Member Tools</h1>
+        <p>Therapeutic web apps for personal growth and session support.</p>
+    </section>
+    <div class="subscription-banner">
+        <p>Get unlimited access</p>
+        <span class="price">$4.99/month</span>
+        <a href="#subscribe" class="btn-subscribe">Subscribe Now</a>
+    </div>
+    <section class="search-filter-section">
+        <div class="search-filter-container">
+            <input type="text" id="app-search" placeholder="Search apps...">
+            <div class="filter-tags">
+                <button class="filter-tag" data-filter-type="modality" data-filter-value="CBT">CBT</button>
+                <button class="filter-tag" data-filter-type="modality" data-filter-value="DBT">DBT</button>
+                <button class="filter-tag" data-filter-type="modality" data-filter-value="IFS">IFS</button>
+                <button class="filter-tag" data-filter-type="issue" data-filter-value="Anxiety">Anxiety</button>
+                <button class="filter-tag" data-filter-type="issue" data-filter-value="Trauma">Trauma</button>
+            </div>
+        </div>
+    </section>
+    <main class="apps-grid">
+        <article class="app-card locked">
+            <div class="app-card-image">📝</div>
+            <div class="app-card-content">
+                <h3>CBT Thought Record</h3>
+                <p>Identify and challenge unhelpful thinking patterns.</p>
+                <div class="app-card-tags">
+                    <span class="app-tag modality">CBT</span>
+                    <span class="app-tag issue">Anxiety</span>
+                </div>
+                <div class="app-card-footer">
+                    <span>~10 min</span>
+                    <a href="apps/thought-record.html" class="btn-launch">Launch</a>
+                </div>
+            </div>
+            <div class="locked-overlay">
+                <span class="lock-icon">🔒</span>
+                <p>Subscription Required</p>
+                <a href="#subscribe" class="btn-subscribe">Subscribe</a>
+            </div>
+        </article>
+    </main>
+    <section style="max-width:900px;margin:2rem auto;padding:0 2rem;">
+        <div class="disclaimer-banner">
+            <span class="icon">⚠️</span>
+            <div>
+                <p><strong>Important:</strong> These tools are for self-exploration, not a substitute for professional advice. Not for crisis intervention.</p>
+            </div>
+        </div>
+        <div class="session-notice">
+            <span class="icon">🔒</span>
+            <p><strong>Privacy First:</strong> No data saved after session ends.</p>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <p>© 2025 Leaf2Root</p>
+    </footer>
+    <script src="assets/js/member-tools.js"></script>
+</body>
+</html>
