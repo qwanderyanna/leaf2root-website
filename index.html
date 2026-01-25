@@ -766,6 +766,44 @@
             color: var(--white);
         }
 
+
+                /* Dropdown styles for Product Hub */
+                .nav-links .dropdown {
+                                position: relative;
+                }
+                .nav-links .dropdown-toggle {
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                }
+                .nav-links .dropdown-menu {
+                                display: none;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                background: var(--white);
+                                border: 1px solid var(--border);
+                                border-radius: 8px;
+                                padding: 8px 0;
+                                min-width: 250px;
+                                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                                z-index: 1001;
+                }
+                .nav-links .dropdown:hover .dropdown-menu {
+                                display: block;
+                }
+                .nav-links .dropdown-menu a {
+                                display: block;
+                                padding: 10px 20px;
+                                color: var(--text-medium);
+                                text-decoration: none;
+                                font-size: 14px;
+                }
+                .nav-links .dropdown-menu a:hover {
+                                background: var(--bg-sage);
+                                color: var(--primary);
+                }
         .footer-bottom {
             padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -874,6 +912,21 @@
             <a href="index.html" class="logo"><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></a>
             <ul class="nav-links">
                 <li><a href="shop.html">Shop</a></li>
+                                <li class="dropdown">
+                                                        <span class="dropdown-toggle">Product Hub</span>span>
+                                                        <div class="dropdown-menu">
+                                                            <a href="inner-child-hub/">Inner Child Card Deck</a>a>
+                                                            <a href="inner-child-hub/">Inner Child Workbook</a>a>
+                                                            <a href="inner-child-hub/">Boundaries Without Guilt</a>a>
+                                                            <a href="inner-child-hub/">Raising Your Adults</a>a>
+                                                            <a href="inner-child-hub/">Sociopolitical Stress Resilience</a>a>
+                                                                                    <a href="inner-child-hub/">Inner Child Card Deck</a>a>
+                                                                                    <a href="inner-child-hub/">Inner Child Workbook</a>a>
+                                                                                    <a href="inner-child-hub/">Boundaries Without Guilt</a>a>
+                                                                                    <a href="inner-child-hub/">Raising Your Adults</a>a>
+                                                                                    <a href="inner-child-hub/">Sociopolitical Stress Resilience</a>a>
+                                                        </div>
+                                </li>
                 <li><a href="resources.html">Resources</a></li>
                                         <li><a href="quick-tools.html">Quick Tools</a></li>
                 <li><a href="about.html">About</a></li>
