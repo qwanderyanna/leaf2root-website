@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Choose Your Subscription | Leaf2Root</title>
+      <meta name="description" content="Find the right Leaf2Root subscription for your needs - personal tools or professional clinical resources.">
+      <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+      <style>
+                :root {
+                              --leaf-green: #7CB342;
+                              --teal: #26A69A;
+                              --root-brown: #795548;
+                              --primary: #26A69A;
+                              --primary-light: #4DB6AC;
+                              --text-dark: #3E2723;
+                              --text-medium: #5D4037;
+                              --text-light: #795548;
+                              --bg-cream: #FFFDF7;
+                              --bg-sage: #F1F8E9;
+                              --white: #FFFFFF;
+                              --border: #E0E0E0;
+                }
+
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+
+                body {
+                              font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                              font-size: 16px;
+                              line-height: 1.6;
+                              color: var(--text-dark);
+                              background: var(--white);
+                }
+
+                .nav {
+                              position: fixed;
+                              top: 0;
+                              left: 0;
+                              right: 0;
+                              background: var(--white);
+                              border-bottom: 1px solid var(--border);
+                              z-index: 1000;
+                              padding: 0 24px;
+                }
+
+                .nav-container {
+                              max-width: 1200px;
+                              margin: 0 auto;
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              height: 72px;
+                }
+
+                .logo {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 24px;
+                              font-weight: 600;
+                              text-decoration: none;
+                }
+
+                .logo .leaf { color: var(--leaf-green); }
+                .logo .two { color: var(--teal); }
+                .logo .root { color: var(--root-brown); }
+
+                .nav-links {
+                              display: flex;
+                              gap: 32px;
+                              list-style: none;
+                }
+
+                .nav-links a {
+                              color: var(--text-medium);
+                              text-decoration: none;
+                              font-weight: 500;
+                              font-size: 15px;
+                              transition: color 0.2s;
+                }
+
+                .nav-links a:hover { color: var(--primary); }
+
+                .nav-cta {
+                              background: var(--primary);
+                              color: var(--white);
+                              padding: 10px 24px;
+                              border-radius: 6px;
+                              text-decoration: none;
+                              font-weight: 500;
+                              font-size: 15px;
+                              transition: background 0.2s;
+                }
+
+                .nav-cta:hover {
+                              background: var(--primary-light);
+                }
+
+                .mobile-menu-btn {
+                              display: none;
+                              background: none;
+                              border: none;
+                              cursor: pointer;
+                              padding: 8px;
+                }
+
+                .mobile-menu-btn svg {
+                              width: 24px;
+                              height: 24px;
+                              color: var(--text-dark);
+                }
+
+                .mobile-menu {
+                              display: none;
+                              position: fixed;
+                              top: 72px;
+                              left: 0;
+                              right: 0;
+                              background: var(--white);
+                              border-bottom: 1px solid var(--border);
+                              padding: 16px 24px;
+                              flex-direction: column;
+                              gap: 16px;
+                              z-index: 999;
+                }
+
+                .mobile-menu.active {
+                              display: flex;
+                }
+
+                .mobile-menu a {
+                              color: var(--text-medium);
+                              text-decoration: none;
+                              font-weight: 500;
+                              font-size: 15px;
+                              padding: 8px 0;
+                }
+
+                .page-header {
+                              padding: 120px 24px 60px;
+                              background: linear-gradient(135deg, var(--bg-sage) 0%, var(--bg-cream) 100%);
+                              text-align: center;
+                }
+
+                .page-header h1 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 48px;
+                              font-weight: 600;
+                              color: var(--text-dark);
+                              margin-bottom: 16px;
+                }
+
+                .page-header p {
+                              font-size: 18px;
+                              color: var(--text-medium);
+                              max-width: 700px;
+                              margin: 0 auto;
+                }
+
+                .content {
+                              max-width: 1100px;
+                              margin: 0 auto;
+                              padding: 80px 24px 100px;
+                }
+
+                .choice-section {
+                              margin-bottom: 80px;
+                }
+
+                .choice-cards {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 40px;
+                              margin-bottom: 60px;
+                }
+
+                .choice-card {
+                              background: var(--white);
+                              border: 2px solid var(--border);
+                              border-radius: 16px;
+                              padding: 48px;
+                              text-align: center;
+                              transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+                              cursor: pointer;
+                              text-decoration: none;
+                              color: inherit;
+                              display: block;
+                }
+
+                .choice-card:hover {
+                              transform: translateY(-8px);
+                              box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+                              border-color: var(--primary);
+                }
+
+                .choice-card.professional:hover {
+                              border-color: var(--leaf-green);
+                }
+
+                .choice-icon {
+                              font-size: 64px;
+                              margin-bottom: 24px;
+                }
+
+                .choice-title {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 32px;
+                              font-weight: 600;
+                              color: var(--text-dark);
+                              margin-bottom: 16px;
+                }
+
+                .choice-description {
+                              color: var(--text-medium);
+                              font-size: 16px;
+                              margin-bottom: 24px;
+                              line-height: 1.7;
+                }
+
+                .choice-label {
+                              background: var(--bg-sage);
+                              color: var(--leaf-green);
+                              padding: 8px 20px;
+                              border-radius: 20px;
+                              font-size: 14px;
+                              font-weight: 600;
+                              display: inline-block;
+                              margin-bottom: 20px;
+                }
+
+                .choice-label.professional {
+                              background: #FFF3E0;
+                              color: var(--root-brown);
+                }
+
+                .choice-features {
+                              list-style: none;
+                              text-align: left;
+                              margin-top: 32px;
+                              padding-top: 32px;
+                              border-top: 1px solid var(--border);
+                }
+
+                .choice-features li {
+                              color: var(--text-medium);
+                              padding: 8px 0;
+                              font-size: 15px;
+                }
+
+                .choice-features li:before {
+                              content: "→ ";
+                              color: var(--primary);
+                              font-weight: 600;
+                              margin-right: 8px;
+                }
+
+                .choice-card.professional .choice-features li:before {
+                              color: var(--leaf-green);
+                }
+
+                .info-section {
+                              background: var(--bg-cream);
+                              padding: 48px;
+                              border-radius: 16px;
+                              margin-top: 60px;
+                }
+
+                .info-section h2 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 32px;
+                              color: var(--text-dark);
+                              margin-bottom: 24px;
+                              text-align: center;
+                }
+
+                .info-grid {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 40px;
+                              margin-top: 40px;
+                }
+
+                .info-block h3 {
+                              font-size: 20px;
+                              font-weight: 600;
+                              color: var(--text-dark);
+                              margin-bottom: 12px;
+                }
+
+                .info-block p {
+                              color: var(--text-medium);
+                              line-height: 1.7;
+                }
+
+                .faq-section {
+                              margin-top: 80px;
+                }
+
+                .faq-section h2 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 36px;
+                              color: var(--text-dark);
+                              margin-bottom: 40px;
+                              text-align: center;
+                }
+
+                .faq-item {
+                              background: var(--white);
+                              border: 1px solid var(--border);
+                              border-radius: 12px;
+                              padding: 32px;
+                              margin-bottom: 24px;
+                }
+
+                .faq-item h3 {
+                              font-size: 18px;
+                              font-weight: 600;
+                              color: var(--text-dark);
+                              margin-bottom: 12px;
+                }
+
+                .faq-item p {
+                              color: var(--text-medium);
+                              line-height: 1.7;
+                }
+
+                .footer {
+                              padding: 60px 24px 24px;
+                              background: var(--text-dark);
+                              color: var(--white);
+                }
+
+                .footer-container {
+                              max-width: 1200px;
+                              margin: 0 auto;
+                }
+
+                .footer-grid {
+                              display: grid;
+                              grid-template-columns: 2fr 1fr 1fr 1fr;
+                              gap: 60px;
+                              margin-bottom: 48px;
+                }
+
+                .footer-brand h3 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 28px;
+                              margin-bottom: 16px;
+                }
+
+                .footer-brand h3 .leaf { color: var(--leaf-green); }
+                .footer-brand h3 .two { color: var(--teal); }
+                .footer-brand h3 .root { color: #A1887F; }
+
+                .footer-brand p {
+                              color: rgba(255,255,255,0.7);
+                              font-size: 14px;
+                              margin-bottom: 24px;
+                }
+
+                .footer-column h4 {
+                              font-size: 14px;
+                              font-weight: 600;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                              margin-bottom: 20px;
+                }
+
+                .footer-column ul { list-style: none; }
+                .footer-column li { margin-bottom: 12px; }
+                .footer-column a {
+                              color: rgba(255,255,255,0.7);
+                              text-decoration: none;
+                              font-size: 14px;
+                              transition: color 0.2s;
+                }
+
+                .footer-column a:hover {
+                              color: var(--white);
+                }
+
+                .footer-bottom {
+                              padding-top: 24px;
+                              border-top: 1px solid rgba(255,255,255,0.1);
+                              text-align: center;
+                }
+
+                .footer-bottom p {
+                              font-size: 13px;
+                              color: rgba(255,255,255,0.5);
+                }
+
+                @media (max-width: 968px) {
+                              .footer-grid {
+                                                grid-template-columns: 1fr 1fr;
+                                                gap: 40px;
+                              }
+                              .choice-cards {
+                                                grid-template-columns: 1fr;
+                              }
+                              .info-grid {
+                                                grid-template-columns: 1fr;
+                                                gap: 32px;
+                              }
+                }
+
+                @media (max-width: 768px) {
+                              .nav-links { display: none; }
+                              .nav-cta { display: none; }
+                              .mobile-menu-btn { display: block; }
+                              .page-header h1 { font-size: 36px; }
+                              .page-header p { font-size: 16px; }
+                              .footer-grid {
+                                                grid-template-columns: 1fr;
+                                                gap: 32px;
+                              }
+                              .choice-card {
+                                                padding: 32px;
+                              }
+                              .choice-title {
+                                                font-size: 28px;
+                              }
+                }
+            </style>
+  </head>
+  <body>
+        <nav class="nav">
+                  <div class="nav-container">
+                                <a href="index.html" class="logo"><span class="leaf">Leaf</span>span><span class="two">2</span>span><span class="root">Root</span>span></a>a>
+                                <ul class="nav-links">
+                                                  <li><a href="shop.html">Shop</a>a></li>
+                                                <li><a href="resources.html">Resources</a>a></li>
+                                                <li><a href="quick-tools.html">Quick Tools</a>a></li>
+                                                <li><a href="about.html">About</a>a></li>
+                                                <li><a href="contact.html">Contact</a>a></li>
+                                </ul>ul>
+                              <a href="apps/" class="nav-cta">Access Apps</a>a>
+                              <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                                              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>svg>
+                              </button>button>
+                  </div>div>
+        </nav>nav>
+  
+      <div class="mobile-menu" id="mobileMenu">
+              <a href="shop.html">Shop</a>a>
+              <a href="resources.html">Resources</a>a>
+              <a href="quick-tools.html">Quick Tools</a>a>
+              <a href="about.html">About</a>a>
+              <a href="contact.html">Contact</a>a>
+              <a href="apps/">Access Apps</a>a>
+      </div>div>
+  
+      <header class="page-header">
+              <h1>Choose Your Path</h1>
+              <p>Find the subscription that matches how you'll use these tools.</p>
+      </header>header>
+  
+      <main class="content">
+              <section class="choice-section">
+                          <div class="choice-cards">
+                                          <a href="pricing-client.html" class="choice-card">
+                                                              <div class="choice-label">Personal Use</div>div>
+                                                              <div class="choice-icon">🌱</div>div>
+                                                              <div class="choice-title">For You</div>div>
+                                                              <div class="choice-description">
+                                                                                      Tools to support your own emotional well-being, personal growth, and self-discovery journey.
+                                                              </div>div>
+                                          
+                                                              <ul class="choice-features">
+                                                                                      <li>Personal grounding and coping tools</li>
+                                                                                      <li>Self-reflection and journaling</li>
+                                                                                      <li>Guided growth practices</li>
+                                                                                      <li>Privacy-first personal use</li>
+                                                              </ul>ul>
+                                          </a>a>
+                          
+                                          <a href="pricing-professional.html" class="choice-card professional">
+                                                              <div class="choice-label professional">Clinical Use</div>div>
+                                                              <div class="choice-icon">🩺</div>div>
+                                                              <div class="choice-title">For Professionals</div>div>
+                                                              <div class="choice-description">
+                                                                                      Clinical tools for licensed mental health professionals to enhance practice and support client outcomes.
+                                                              </div>div>
+                                          
+                                                              <ul class="choice-features">
+                                                                                      <li>Full professional tool library</li>
+                                                                                      <li>Client access code generation</li>
+                                                                                      <li>In-session and between-session use</li>
+                                                                                      <li>Clinical integration features</li>
+                                                              </ul>ul>
+                                          </a>a>
+                          </div>div>
+              </section>section>
+      
+              <section class="info-section">
+                          <h2>Understanding the Difference</h2>
+              
+                          <div class="info-grid">
+                                          <div class="info-block">
+                                                              <h3>Personal Subscriptions</h3>
+                                                              <p>Designed for individuals using tools for themselves. You have full autonomy over your personal journey. Tools focus on self-support, emotional grounding, and personal growth. No clinical features, analytics, or professional permissions.</p>
+                                          </div>div>
+                          
+                                          <div class="info-block">
+                                                              <h3>Professional Subscriptions</h3>
+                                                              <p>Designed for licensed mental health professionals using tools in clinical practice. Includes both professional-facing and client-facing tools, plus the infrastructure to support therapeutic relationships through client access codes.</p>
+                                          </div>div>
+                          
+                                          <div class="info-block">
+                                                              <h3>Why Separate Paths?</h3>
+                                                              <p>Clear role boundaries protect both practitioners and clients. Personal users maintain complete privacy and autonomy. Profess<i!oDnOaClT YuPsEe rhst mhla>v
+                                                              e< hctlmiln ilcaanlg =c"oennt"r>o
+                                                              l<sh eaandd> 
+                                                              e t h i c<amle taac ccehsasr smeatn=a"gUeTmFe-n8t".> 
+                                                              T h e   s<empeatraa tniaomne =e"nvsiuerwepso rpts"y cchoonltoegnitc=a"lw isdatfhe=tdye vfiocre -ewviedrtyho,n ei.n<i/tpi>a
+                                                              l - s c a l e = 1 . 0 " > 
+                                                                    < /<dtiivt>l
+                                                                    e
+                                                                    > C h o o s e   Y o u r   S u b s<cdriivp tciloans s|= "Lienaffo2-Rbolootc<k/"t>i
+                                                                    t l e > 
+                                                                             < m e t a   n a m e = "<dhe3s>cCrainp tIi oHna"v ec oBnottehn?t<=/"hF3i>n
+                                                                             d   t h e   r i g h t   L e a f 2 R o o t< ps>uYbessc.r iIpft iyoonu 'froer  ay omuern tnaele dhse a-l tphe rpsroonfaels stiooonlasl  owrh op raolfseos swiaonntasl  pcelrisnoincaall  arcecseosusr cfeosr. "y>o
+                                                                             u r   o w<nl ignrko wrtehl,= "yiocuo nc"a nt ympaei=n"tiamiang eb/ostvhg +ax mplr"o fhersesfi=o"naasls estusb/sfcarviipctoino.ns v(gf"o>r
+                                                                               c l i n<ilcianlk  whorrekf)= "ahntdt pas :p/e/rfsoonntasl. gsouobgslceraippitsi.ocno m(/fcosrs 2y?ofuarmsiellyf=)I.n tTehre:yw gshetr@v3e0 0d;i4f0f0e;r5e0n0t; 6p0u0r;p7o0s0e&sf aamnidl ym=aPilnatyafiani rc+lDeiasrp lbaoyu:nwdgahrti@e5s0.0<;/6p0>0
+                                                                                        & d i s p l a y = s w a p "   r e<l/=d"isvt>y
+                                                                               l e s h e e t " > 
+                                                                                     < /<dsitvy>l
+                                                                                     e > 
+                                                                                                 < / s:ercotoito n{>
+                                                                                     
+                                                                                      
+                                                                                                      < s e-c-tlieoanf -cglraesesn=:" f#a7qC-Bs3e4c2t;i
+                                                                                                      o n " > 
+                                                                                                                      - - t e a<lh:2 >#C2o6mAm6o9nA ;Q
+                                                                                                                      u e s t i o n s < / h 2 >-
+                                                                                                                      -
+                                                                                                                      r o o t - b r o w n :   #<7d9i5v5 4c8l;a
+                                                                                                                                                 s s = " f a q - i t e m "->-
+                                                                                                                      p r i m a r y :   # 2 6 A 6 9 A ;<
+                                                                                                                                                         h 3 > I ' m   w o r k i n-g- pwriitmha ray -tlhiegrhatp:i s#t4 DwBh6oA Cu;s
+                                                                                                                      e s   L e a f 2 R o o t .- -Wtheixcth- dsaurbks:c r#i3pEt2i7o2n3 ;d
+                                                                                                                      o   I   n e e d ? < / h 3->-
+                                                                                                                      t e x t - m e d i u m :   # 5 D 4<0p3>7I;f
+                                                                                                                        y o u r   t h e r a p i-s-tt eixst -al iLgehatf:2 R#o7o9t5 5p4r8o;f
+                                                                                                                      e s s i o n a l   s u b s-c-rbigb-ecrr,e atmh:e y#'FlFlF DpFr7o;v
+                                                                                                                      i d e   y o u   w i t h  -a- bcgl-iseangte :a c#cFe1sFs8 Ec9o;d
+                                                                                                                      e   t h a t   g i v e s  -y-owuh iatcec:e s#sF FtFoF FtFh;e
+                                                                                                                        t o o l s   w i t h o u-t- bnoereddeirn:g  #yEo0uEr0 Eo0w;n
+                                                                                                                        s u b s c r i p}t
+                                                                                                                      i
+                                                                                                                      o n .   I f   y o*u  {w amnatr gaidnd:i t0i;o npaald dpienrgs:o n0a;l  baocxc-essisz ibnegy:o nbdo rwdheart- byooxu;r  }t
+                                                                                                                      h
+                                                                                                                      e r a p i s t   pbroodvyi d{e
+                                                                                                                      s ,   y o u   c a n   g efto nat -pfearmsiolnya:l  'sIunbtsecrr'i,p t-iaopnp.l<e/-ps>y
+                                                                                                                      s t e m ,   B l i n k M a<c/Sdyisvt>e
+                                                                                                                      m
+                                                                                                                      F o n t ,   s a n s - s e<rdiifv; 
+                                                                                                                                                 c l a s s = " f a q - i tfeomn"t>-
+                                                                                                                      s i z e :   1 6 p x ; 
+                                                                                                                                < h 3 > I ' m  lai nmee-nhteailg hhte:a l1t.h6 ;p
+                                                                                                                                r o f e s s i o n a l .  cCoalno rI:  jvuasrt( -g-ette xtth-ed acrlki)e;n
+                                                                                                                                t   s u b s c r i p t i obna?c<k/ghr3o>u
+                                                                                                                                n d :   v a r ( - - w h i t e ) ;<
+                                                                                                                                                                   p > C l i e n t  }s
+                                                                                                                                u
+                                                                                                                                b s c r i p t i o.nnsa va r{e
+                                                                                                                                  f o r   p e r s o n a lp oussiet ioonnl:y  fainxde dd;o
+                                                                                                                                n ' t   i n c l u d e   ptroopf:e s0s;i
+                                                                                                                                o n a l   t o o l s ,   clleifetn:t  0a;c
+                                                                                                                                c e s s   c o d e s ,   orri gchlti:n i0c;a
+                                                                                                                                l   i n t e g r a t i o nb afcekagtruoruensd.:  Ivfa ry(o-u-'wrhei tues)i;n
+                                                                                                                                g   t o o l s   w i t h  bcolrideenrt-sb oitnt oam :t h1eprxa pseoultiidc  vcaorn(t-e-xbto,r dyeoru)';l
+                                                                                                                                l   n e e d   a   p r o fze-sisnidoenxa:l  1s0u0b0s;c
+                                                                                                                                r i p t i o n   t o   m apiandtdaiinng :p r0o p2e4rp xe;t
+                                                                                                                                h i c a l   b o u}n
+                                                                                                                                d
+                                                                                                                                a r i e s   a n d. naacvc-ecsosn ttahien efru l{l
+                                                                                                                                  p r o f e s s i o n a lm atxo-owlikditth.:< /1p2>0
+                                                                                                                                0 p x ; 
+                                                                                                                                                < / d i vm>a
+                                                                                                                                                r
+                                                                                                                                                g i n :   0   a u t o ; 
+                                                                                                                                                < d i v   c l a s s = " fdaiqs-piltaeym:" >f
+                                                                                                                                                l e x ; 
+                                                                                                                                                                        <jhu3s>tWihfyy -ccaonn'tte nIt :s esep apcrei-cbeest wfeoern ;b
+                                                                                                                                                                        o t h   o p t i o n s   oanl itghne- istaemmes :p acgeen?t<e/rh;3
+                                                                                                                                                                        > 
+                                                                                                                                                                                              h e i g h t<:p >7W2ep xi;n
+                                                                                                                                                                                              t e n t i o n ally separate personal and professional pricing to respect role boundaries and prevent comparisons that don't reflect the different value and infrastructure each provides. Personal and professional subscriptions serve fundamentally different purposes, and side-by-side pricing can create unhelpful comparisons.</p>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                              
+                                                                                                                                                                                                          <div class="faq-item">
+                                                                                                                                                                                                              <h3>Still not sure which subscription is right for you?</h3>
+                                                                                                                                                                                                              <p><a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contact us</a>a> and we'll help you figure out the best fit for your needs.</p>
+                                                                                                                                                                                                                      </div>div>
+                                                                                                                                                                                                      </section>
+                                                                                                                                                                                                  </main>
+                                                                                                                                                                                              
+                                                                                                                                                                                                  <footer class="footer">
+                                                                                                                                                                                                          <div class="footer-container">
+                                                                                                                                                                                                                      <div class="footer-grid">
+                                                                                                                                                                                                                                      <div class="footer-brand">
+                                                                                                                                                                                                                                                          <h3><span class="leaf">Leaf</span>span><span class="two">2</span>span><span class="root">Root</span>span></h3>
+                                                                                                                                                                                                                                                          <p>Professional mental health tools and resources designed to support growth, grounding, and healing.</p>
+                                                                                                                                                                                                                                                      </div>div>
+                                                                                                                                                                                                                                      <div class="footer-column">
+                                                                                                                                                                                                                                                          <h4>Shop</h4>
+                                                                                                                                                                                                                                                          <ul>
+                                                                                                                                                                                                                                                                                    <li><a href="shop.html">All Products</a>a></li>
+                                                                                                                                                                                                                                                                                  <li><a href="shop.html">Workbooks</a>a></li>
+                                                                                                                                                                                                                                                                                  <li><a href="shop.html">Card Decks</a>a></li>
+                                                                                                                                                                                                                                                                              </ul>
+                                                                                                                                                                                                                                                      </div>div>
+                                                                                                                                                                                                                      </li></li>                <div class="footer-column">
+                                                                                                                                                                                                                                            <h4>Resources</h4>
+                                                                                                                                                                                                                                            <ul>
+                                                                                                                                                                                                                                                                      <li><a href="resources.html">Free Resources</a>a></li>
+                                                                                                                                                                                                                                                                    <li><a href="about.html">About Us</a>a></li>
+                                                                                                                                                                                                                                                                    <li><a href="contact.html">Contact</a>a></li>
+                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                      </div>div>
+                                                                                                                                                                                                                                      <div class="footer-column">
+                                                                                                                                                                                                                                                          <h4>Legal</h4>
+                                                                                                                                                                                                                                                          <ul>
+                                                                                                                                                                                                                                                                                  <li><a href="privacy.html">Privacy Policy</a>a></li>
+                                                                                                                                                                                                                                                                                  <li><a href="terms.html">Terms of Service</a>a></li>
+                                                                                                                                                                                                                                                                              </ul>
+                                                                                                                                                                                                                                                      </div>div>
+                                                                                                                                                                                                                                  </div>div>
+                                                                                                                                                                                                                      <div class="footer-bottom">
+                                                                                                                                                                                                                                      <p>&copy; 2025 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
+                                                                                                                                                                                                                                  </div>div>
+                                                                                                                                                                                                                  </div>div>
+                                                                                                                                                                                                      </footer>footer>
+                                                                                                                                                                                              
+                                                                                                                                                                                                  <script>
+                                                                                                                                                                                                            function toggleMobileMenu() {
+                                                                                                                                                                                                                          const menu = document.getElementById('mobileMenu');
+                                                                                                                                                                                                                          menu.classList.toggle('active');
+                                                                                                                                                                                                                      }
+                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                </body>
+                                                                                                                                                                                                </html>
+                                                                                                                                                                                                  </script></p></li></li>
+                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                          </ul></p></p></:p></jhu3s></d></p></lh:2></dsitvy></ps></dtiivt></p></p></li></li></p></h1></li></li>
+  </body>
+      </style></title>
+  </head>
