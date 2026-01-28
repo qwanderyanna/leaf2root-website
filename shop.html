@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html>Page_DownPage_DownPage_Down
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Mental Health Tools | Leaf2Root</title>
-    <meta name="description" content="Browse our collection of evidence-based mental health workbooks, grounding card decks, and therapeutic resources for clinicians and individuals.">
+    <title>Shop Therapeutic Resources | Leaf2Root</title>
+    <meta name="description" content="Browse our collection of therapeutic workbooks, card decks, and professional development resources. More coming soon.">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qwanderyanna.github.io/leaf2root-website/shop.html">
-    <meta property="og:title" content="Shop Mental Health Tools | Leaf2Root">
-    <meta property="og:description" content="Browse our collection of evidence-based mental health workbooks, grounding card decks, and therapeutic resources.">
+    <meta property="og:title" content="Shop Therapeutic Resources | Leaf2Root">
+    <meta property="og:description" content="Browse our collection of therapeutic resources for mental health professionals.">
     <meta property="og:image" content="https://qwanderyanna.github.io/leaf2root-website/assets/Logo for Leaf2Root transparent.png">
     <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
             background: var(--bg-cream);
         }
 
-        /* Navigation - same as homepage */
+        /* Navigation */
         .nav {
             position: fixed;
             top: 0;
@@ -109,6 +109,54 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-dark);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
         }
 
         /* Page Header */
@@ -133,365 +181,114 @@
             margin: 0 auto;
         }
 
-        /* Shop Layout */
-        .shop-container {
+        /* Categories Section */
+        .categories-section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 24px 100px;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 48px;
+            padding: 80px 24px;
         }
 
-        /* Sidebar Filters */
-        .shop-sidebar {
-            position: sticky;
-            top: 112px;
-            height: fit-content;
-        }
-
-        .filter-section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .filter-section h3 {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        .filter-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .filter-option input {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--primary);
-        }
-
-        .filter-option label {
-            font-size: 14px;
-            color: var(--text-medium);
-            cursor: pointer;
-        }
-
-        .filter-option span {
-            margin-left: auto;
-            font-size: 12px;
-            color: var(--text-light);
-            background: var(--bg-sage);
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
-
-        .price-range {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .price-input {
-            width: 80px;
-            padding: 8px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        /* Products Grid */
-        .shop-main {
-            min-width: 0;
-        }
-
-        .shop-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        .results-count {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .sort-dropdown {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sort-dropdown label {
-            font-size: 14px;
-            color: var(--text-medium);
-        }
-
-        .sort-dropdown select {
-            padding: 8px 12px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 14px;
-            background: var(--white);
-            cursor: pointer;
-        }
-
-        .products-grid {
+        .categories-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            gap: 32px;
         }
 
-        .product-card {
+        .category-card {
             background: var(--white);
             border-radius: 12px;
-            overflow: hidden;
+            padding: 48px 32px;
+            text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
         }
 
-        .product-card:hover {
+        .category-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .product-image {
-            height: 220px;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--accent);
             color: var(--white);
-            position: relative;
-        }
-
-        .product-badges {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            display: flex;
-            gap: 8px;
-        }
-
-        .badge {
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .badge-new { background: var(--accent); color: var(--white); }
-        .badge-digital { background: var(--primary); color: var(--white); }
-        .badge-bestseller { background: var(--text-dark); color: var(--white); }
-        .badge-coming-soon { background: #9575CD; color: var(--white); }
-
-        .product-card.coming-soon {
-            opacity: 0.85;
-        }
-
-        .product-card.coming-soon .product-image {
-            position: relative;
-        }
-
-        .product-card.coming-soon .btn-add {
-            background: #9575CD;
-            pointer-events: none;
-        }
-
-        .product-logo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--bg-sage) 0%, var(--bg-cream) 100%);
-        }
-
-        .product-logo-placeholder img {
-            max-width: 70%;
-            max-height: 70%;
-            object-fit: contain;
-            opacity: 0.7;
-        }
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .product-category {
-            font-size: 11px;
-            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 6px;
+            margin-bottom: 16px;
         }
 
-        .product-content h3 {
-            font-size: 17px;
+        .category-card h3 {
+            font-size: 24px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .product-content p {
-            font-size: 13px;
-            color: var(--text-medium);
-            margin-bottom: 16px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .product-meta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
             margin-bottom: 12px;
         }
 
-        .product-audience {
-            font-size: 11px;
-            color: var(--text-light);
-            background: var(--bg-sage);
-            padding: 4px 8px;
-            border-radius: 4px;
+        .category-card p {
+            color: var(--text-medium);
+            font-size: 14px;
         }
 
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .product-price .format {
-            font-size: 12px;
-            font-weight: 400;
-            color: var(--text-light);
-            display: block;
-        }
-
-        .btn-add {
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-add:hover {
-            background: var(--primary-light);
-        }
-
-        /* Resource Access Link */
-        .resource-link {
-            display: block;
+        /* Newsletter CTA */
+        .cta-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px;
             text-align: center;
-            padding: 10px;
-            margin-top: 12px;
-            font-size: 12px;
-            color: var(--text-light);
-            text-decoration: none;
-            border-top: 1px dashed var(--border);
-            transition: color 0.2s;
         }
 
-        .resource-link:hover {
-            color: var(--primary);
-        }
-
-        .resource-link svg {
-            width: 14px;
-            height: 14px;
-            vertical-align: middle;
-            margin-right: 4px;
-        }
-
-        /* Category Highlights */
-        .category-highlight {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .category-highlight.reverse {
-            direction: rtl;
-        }
-
-        .category-highlight.reverse > * {
-            direction: ltr;
-        }
-
-        .category-content h2 {
+        .cta-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 16px;
         }
 
-        .category-content p {
+        .cta-section p {
+            font-size: 18px;
             color: var(--text-medium);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
-        .category-image {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            border-radius: 12px;
-            height: 300px;
+        .newsletter-form {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .btn-category {
-            display: inline-block;
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .newsletter-form button {
             background: var(--primary);
             color: var(--white);
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--primary-light);
         }
 
         /* Footer */
@@ -548,21 +345,34 @@
         }
 
         .footer-column ul { list-style: none; }
-
         .footer-column li { margin-bottom: 12px; }
 
         .footer-column a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
             font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-team-link {
+            font-size: 11px;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-team-link:hover {
+            color: rgba(255,255,255,0.5);
         }
 
         .footer-bottom {
             padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
 
         .footer-bottom p {
@@ -572,23 +382,12 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .shop-container {
+            .categories-grid {
                 grid-template-columns: 1fr;
             }
 
-            .shop-sidebar {
-                position: static;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 16px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .category-highlight {
-                grid-template-columns: 1fr;
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -597,60 +396,13 @@
             .nav-cta { display: none; }
             .mobile-menu-btn { display: block; }
 
-            .shop-sidebar {
-                grid-template-columns: 1fr;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
+            .newsletter-form {
+                flex-direction: column;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-menu-btn svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text-dark);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            color: var(--text-medium);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
         }
     </style>
 </head>
@@ -662,10 +414,11 @@
             <ul class="nav-links">
                 <li><a href="shop.html" class="active">Shop</a></li>
                 <li><a href="resources.html">Resources</a></li>
+                <li><a href="quick-tools.html">Quick Tools</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="shop.html" class="nav-cta">Browse Products</a>
+            <a href="apps/" class="nav-cta">Access Apps</a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
@@ -675,576 +428,48 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="shop.html">Shop</a>
         <a href="resources.html">Resources</a>
+        <a href="quick-tools.html">Quick Tools</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="apps/">Access Apps</a>
     </div>
 
     <!-- Page Header -->
     <header class="page-header">
-        <h1>Shop Mental Health Tools</h1>
-        <p>Evidence-based resources designed by clinicians to support therapeutic work and personal growth.</p>
+        <h1>Shop Therapeutic Resources</h1>
+        <p>We're developing workbooks, card decks, and professional development materials to complement our tools. Sign up to be notified when they launch.</p>
     </header>
 
-    <!-- Shop Content -->
-    <div class="shop-container">
-        <!-- Sidebar Filters -->
-        <aside class="shop-sidebar">
-            <div class="filter-section">
-                <h3>Product Type</h3>
-                <div class="filter-options">
-                    <div class="filter-option">
-                        <input type="checkbox" id="type-workbooks" checked>
-                        <label for="type-workbooks">Workbooks</label>
-                        <span>8</span>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="type-cards" checked>
-                        <label for="type-cards">Card Decks</label>
-                        <span>4</span>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="type-bundles" checked>
-                        <label for="type-bundles">Bundles</label>
-                        <span>3</span>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="type-worksheets" checked>
-                        <label for="type-worksheets">Worksheets</label>
-                        <span>12</span>
-                    </div>
-                </div>
+    <!-- Coming Soon Categories -->
+    <section class="categories-section">
+        <div class="categories-grid">
+            <div class="category-card">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <h3>ADHD & Trauma Support</h3>
+                <p>Specialized workbooks and tools for ADHD management and trauma healing</p>
             </div>
-
-            <div class="filter-section">
-                <h3>Audience</h3>
-                <div class="filter-options">
-                    <div class="filter-option">
-                        <input type="checkbox" id="aud-clinician" checked>
-                        <label for="aud-clinician">For Clinicians</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="aud-individual" checked>
-                        <label for="aud-individual">For Individuals</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="aud-family" checked>
-                        <label for="aud-family">For Families</label>
-                    </div>
-                </div>
+            <div class="category-card">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <h3>Parenting & Family Resources</h3>
+                <p>Guides and activities for conscious parenting and family connection</p>
             </div>
-
-            <div class="filter-section">
-                <h3>Format</h3>
-                <div class="filter-options">
-                    <div class="filter-option">
-                        <input type="checkbox" id="format-digital" checked>
-                        <label for="format-digital">Digital Download</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="format-physical" checked>
-                        <label for="format-physical">Physical Product</label>
-                    </div>
-                </div>
+            <div class="category-card">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <h3>Professional Development</h3>
+                <p>Continuing education and clinical skill-building materials for therapists</p>
             </div>
+        </div>
+    </section>
 
-            <div class="filter-section">
-                <h3>Topic</h3>
-                <div class="filter-options">
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-anxiety">
-                        <label for="topic-anxiety">Anxiety</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-depression">
-                        <label for="topic-depression">Depression</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-trauma">
-                        <label for="topic-trauma">Trauma & PTSD</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-grounding">
-                        <label for="topic-grounding">Grounding</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-dbt">
-                        <label for="topic-dbt">DBT Skills</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="topic-cbt">
-                        <label for="topic-cbt">CBT</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3>Price Range</h3>
-                <div class="price-range">
-                    <input type="number" class="price-input" placeholder="$0" min="0">
-                    <span>to</span>
-                    <input type="number" class="price-input" placeholder="$100" max="200">
-                </div>
-            </div>
-        </aside>
-
-        <!-- Products -->
-        <main class="shop-main">
-            <!-- Category Highlight: Card Decks -->
-            <div class="category-highlight">
-                <div class="category-content">
-                    <h2>Grounding & Coping Card Decks</h2>
-                    <p>Portable, tactile tools for in-session use or client homework. Each deck features evidence-based techniques with clear instructions and beautiful, calming designs.</p>
-                    <a href="/shop?type=cards" class="btn-category">Browse Card Decks</a>
-                </div>
-                <div class="category-image">
-                    [Featured Card Deck Image]
-                </div>
-            </div>
-
-            <!-- Toolbar -->
-            <div class="shop-toolbar">
-                <span class="results-count">Showing 15 products</span>
-                <div class="sort-dropdown">
-                    <label for="sort">Sort by:</label>
-                    <select id="sort">
-                        <option value="featured">Featured</option>
-                        <option value="newest">Newest</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-grid">
-
-                <!-- ============ WORKBOOKS ============ -->
-
-                <!-- KAP Celestial Workbook -->
-                <a href="products/kap-celestial.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>KAP Celestial Integration Workbook</h3>
-                        <p>A guided workbook for Ketamine-Assisted Psychotherapy integration with celestial/space themes. Includes pre-session preparation, journey journaling, and integration exercises.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- KAP Ocean Workbook -->
-                <a href="products/kap-ocean.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>KAP Ocean Integration Workbook</h3>
-                        <p>A guided workbook for Ketamine-Assisted Psychotherapy integration with calming ocean/water themes. Includes pre-session preparation, journey journaling, and integration exercises.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- DBT Skills Workbook -->
-                <a href="products/dbt-workbook.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>DBT Skills Workbook</h3>
-                        <p>Comprehensive Dialectical Behavior Therapy skills workbook covering distress tolerance, emotion regulation, interpersonal effectiveness, and mindfulness.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- CBT Workbook -->
-                <a href="products/cbt-workbook.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>CBT Cognitive Restructuring Workbook</h3>
-                        <p>A step-by-step guide to identifying cognitive distortions, challenging unhelpful thoughts, and developing healthier thinking patterns.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EMDR Resource Workbook -->
-                <a href="products/emdr-workbook.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>EMDR Resource Development Workbook</h3>
-                        <p>Workbook for EMDR preparation and resource development including safe place, container, and calm state exercises.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- IFS Parts Work Workbook -->
-                <a href="products/ifs-workbook.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>IFS Parts Work Workbook</h3>
-                        <p>Internal Family Systems workbook for identifying, mapping, and working with inner parts. Includes parts mapping exercises and Self-led healing practices.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Anxiety Workbook -->
-                <a href="products/anxiety-workbook.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Understanding Your Anxiety Workbook</h3>
-                        <p>Self-guided workbook for understanding anxiety triggers, physical symptoms, and developing personalized coping strategies.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ============ CARD DECKS ============ -->
-
-                <!-- Grounding Card Deck -->
-                <a href="products/grounding-deck.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>54-Card Grounding Techniques Deck</h3>
-                        <p>Evidence-based grounding exercises covering 5-4-3-2-1 variations, breathing techniques, body-based grounding, cognitive exercises, and movement activities.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Coping Skills Card Deck -->
-                <a href="products/coping-skills-deck.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>Coping Skills Card Deck</h3>
-                        <p>Comprehensive deck of healthy coping strategies for stress, anxiety, depression, and emotional overwhelm. Categorized by situation and energy level.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Emotion Identification Cards -->
-                <a href="products/emotion-cards.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>Emotion Identification Cards</h3>
-                        <p>60+ cards featuring nuanced emotions with definitions, body sensations, related feelings, and reflection prompts for emotional literacy.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Families</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Affirmation Cards -->
-                <a href="products/affirmation-cards.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>Daily Affirmation Cards</h3>
-                        <p>Beautifully designed affirmation cards for daily encouragement, self-compassion, and positive mindset building.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Mindfulness Cards -->
-                <a href="products/mindfulness-cards.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Card Deck</p>
-                        <h3>Mindfulness Moment Cards</h3>
-                        <p>Brief mindfulness exercises perfect for session transitions, homework assignments, or building a daily mindfulness practice.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians & Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ============ OTHER RESOURCES ============ -->
-
-                <!-- Clinician Worksheet Bundle -->
-                <a href="products/clinician-bundle.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                            <span class="badge badge-digital">Digital</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Digital Bundle</p>
-                        <h3>Clinician Worksheet Bundle</h3>
-                        <p>50+ printable worksheets for therapeutic practice including intake forms, assessments, session worksheets, and homework assignments.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Clinicians</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">PDF Download</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Family Therapy Resources -->
-                <a href="products/family-communication.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Family Communication Workbook</h3>
-                        <p>Interactive exercises for families to improve communication, understand each other's perspectives, set healthy boundaries, and strengthen connections.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Families</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Trauma Recovery Workbook -->
-                <a href="products/trauma-recovery.html" class="product-card coming-soon">
-                    <div class="product-image">
-                        <div class="product-badges">
-                            <span class="badge badge-coming-soon">Coming Soon</span>
-                        </div>
-                        <div class="product-logo-placeholder">
-                            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <p class="product-category">Workbook</p>
-                        <h3>Trauma Recovery Companion</h3>
-                        <p>A gentle, paced workbook for trauma processing with stabilization exercises, window of tolerance work, and self-compassion practices.</p>
-                        <div class="product-meta">
-                            <span class="product-audience">Individuals</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                TBD
-                                <span class="format">Physical + Digital</span>
-                            </div>
-                            <span class="btn-add">Coming Soon</span>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-
-            <!-- Category Highlight: Workbooks -->
-            <div class="category-highlight reverse" style="margin-top: 48px;">
-                <div class="category-content">
-                    <h2>Therapeutic Workbooks</h2>
-                    <p>Comprehensive, structured workbooks for self-guided healing or as supplements to therapy. Available in both digital and printed formats.</p>
-                    <a href="/shop?type=workbooks" class="btn-category">Browse Workbooks</a>
-                </div>
-                <div class="category-image">
-                    [Workbook Collection Image]
-                </div>
-            </div>
-        </main>
-    </div>
+    <!-- Newsletter CTA -->
+    <section class="cta-section">
+        <h2>Get Notified When We Launch</h2>
+        <p>Be the first to know when our therapeutic resources become available.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1256,31 +481,33 @@
                     <p class="parent-company">A division of <a href="https://familysolutionsutah.org" target="_blank">Family Solutions Counseling</a></p>
                 </div>
                 <div class="footer-column">
-                    <h4>Shop</h4>
+                    <h4>Explore</h4>
                     <ul>
-                        <li><a href="shop.html">All Products</a></li>
-                        <li><a href="shop.html">Workbooks</a></li>
-                        <li><a href="shop.html">Card Decks</a></li>
+                        <li><a href="apps/">Premium Apps</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="resources.html">Free Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Resources</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="resources.html">Free Resources</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Legal</h4>
+                    <h4>Connect</h4>
                     <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                        <li style="margin-top: 20px;"><a href="product-hub-login.html" class="footer-team-link">Leaf2Root Team · Product Hub</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
+                <p>&copy; 2026 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
             </div>
         </div>
     </footer>
