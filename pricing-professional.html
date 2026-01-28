@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Subscription | Leaf2Root</title>
+    <meta name="description" content="Professional tools for licensed mental health professionals to enhance clinical practice and support client outcomes.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --leaf-green: #7CB342;
+            --teal: #26A69A;
+            --root-brown: #795548;
+            --primary: #26A69A;
+            --primary-light: #4DB6AC;
+            --text-dark: #3E2723;
+            --text-medium: #5D4037;
+            --text-light: #795548;
+            --bg-cream: #FFFDF7;
+            --bg-sage: #F1F8E9;
+            --white: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Navigation styles (same as client page) */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo .leaf { color: var(--leaf-green); }
+        .logo .two { color: var(--teal); }
+        .logo .root { color: var(--root-brown); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-dark);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 0;
+        }
+
+        .page-header {
+            padding: 120px 24px 40px;
+            background: linear-gradient(135deg, #E8F5E9 0%, var(--bg-cream) 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 24px;
+        }
+
+        .role-indicator {
+            display: inline-block;
+            background: rgba(255,255,255,0.9);
+            color: var(--root-brown);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 16px;
+            font-weight: 600;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.recommended {
+            border-color: var(--leaf-green);
+            background: linear-gradient(135deg, rgba(124,179,66,0.05) 0%, var(--white) 100%);
+        }
+
+        .plan-badge {
+            background: var(--leaf-green);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .plan-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .plan-description {
+            color: var(--text-medium);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .client-count {
+            background: var(--bg-sage);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .price-section {
+            margin-bottom: 32px;
+        }
+
+        .current-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--leaf-green);
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-top: 8px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-medium);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--leaf-green);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--leaf-green);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #8BC34A;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: var(--white);
+            color: var(--leaf-green);
+            border: 2px solid var(--leaf-green);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--bg-sage);
+        }
+
+        .ethics-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, var(--bg-cream) 100%);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--root-brown);
+            margin: 40px 0;
+        }
+
+        .ethics-box h4 {
+            color: var(--text-dark);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .ethics-box p {
+            color: var(--text-medium);
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .info-box {
+            background: var(--bg-sage);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+
+        .info-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .info-box p {
+            color: var(--text-medium);
+            margin-bottom: 12px;
+        }
+
+        .info-box ul {
+            margin: 16px 0 16px 24px;
+            color: var(--text-medium);
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        .coming-soon-card {
+            background: var(--bg-cream);
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .coming-soon-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .coming-soon-card p {
+            color: var(--text-medium);
+            margin-bottom: 24px;
+        }
+
+        .coming-soon-badge {
+            background: var(--root-brown);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .footer {
+            padding: 60px 24px 24px;
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand h3 .leaf { color: var(--leaf-green); }
+        .footer-brand h3 .two { color: var(--teal); }
+        .footer-brand h3 .root { color: #A1887F; }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @media (max-width: 968px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .page-header h1 { font-size: 32px; }
+            .page-header p { font-size: 16px; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></a>
+            <ul class="nav-links">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quick-tools.html">Quick Tools</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="apps/" class="nav-cta">Access Apps</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="shop.html">Shop</a>
+        <a href="resources.html">Resources</a>
+        <a href="quick-tools.html">Quick Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="apps/">Access Apps</a>
+    </div>
+
+    <header class="page-header">
+        <div class="role-indicator">🩺 Professional Subscription</div>
+        <h1>Clinical Tools for Practitioners</h1>
+        <p>Professional-grade resources for licensed mental health professionals to enhance clinical practice and support client outcomes.</p>
+    </header>
+
+    <main class="content">
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <div class="plan-name">Professional Starter</div>
+                <div class="plan-description">Essential clinical tools for solo practitioners building their practice.</div>
+
+                <div class="client-count">
+                    👥 Up to 5 active clients
+                </div>
+
+                <div class="price-section">
+                    <div class="current-price">$39<span style="font-size: 18px; font-weight: normal; color: var(--text-medium);">/month</span></div>
+                    <div class="price-label">Billed monthly • No contract required</div>
+                </div>
+
+                <ul class="features-list">
+                    <li><span class="check-icon">✓</span> Full access to ALL professional tools</li>
+                    <li><span class="check-icon">✓</span> Complete client-facing tool library</li>
+                    <li><span class="check-icon">✓</span> In-session and between-session use</li>
+                    <li><span class="check-icon">✓</span> Generate client access codes</li>
+                    <li><span class="check-icon">✓</span> Client slot management dashboard</li>
+                    <li><span class="check-icon">✓</span> HIPAA-compliant infrastructure</li>
+                    <li><span class="check-icon">✓</span> Professional resources library</li>
+                </ul>
+
+                <button class="cta-button secondary">Get Started</button>
+            </div>
+
+            <div class="pricing-card recommended">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-name">Professional Core</div>
+                <div class="plan-description">Comprehensive toolkit for established practitioners with active caseloads.</div>
+
+                <div class="client-count">
+                    👥 Up to 25 active clients
+                </div>
+
+                <div class="price-section">
+                    <div class="current-price">$69<span style="font-size: 18px; font-weight: normal; color: var(--text-medium);">/month</span></div>
+                    <div class="price-label">Billed monthly • No contract required</div>
+                </div>
+
+                <ul class="features-list">
+                    <li><span class="check-icon">✓</span> Everything in Professional Starter</li>
+                    <li><span class="check-icon">✓</span> Expanded client capacity (25 slots)</li>
+                    <li><span class="check-icon">✓</span> Priority access to new clinical tools</li>
+                    <li><span class="check-icon">✓</span> Enhanced professional dashboard</li>
+                    <li><span class="check-icon">✓</span> Dedicated clinical support</li>
+                    <li><span class="check-icon">✓</span> Continuing education resources</li>
+                </ul>
+
+                <button class="cta-button">Start Professional Core</button>
+            </div>
+        </div>
+
+        <div class="coming-soon-card">
+            <h3>Group & Practice Plans</h3>
+            <p>Custom solutions for group practices, clinics, and institutions with multiple practitioners.</p>
+            <div class="coming-soon-badge">Coming Soon</div>
+            <p style="margin-top: 24px; font-size: 14px;">Interested? <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contact us</a> to join the waitlist.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Understanding Professional Subscriptions</h3>
+
+            <p><strong>What does "active client" mean?</strong></p>
+            <p>An active client is someone with a currently valid access code you've generated. Codes expire every 3 months and must be regenerated to reflect active therapeutic relationships. This approach honors the natural rhythm of clinical work without invasive monitoring.</p>
+
+            <p style="margin-top: 20px;"><strong>What's included in the subscription?</strong></p>
+            <p>Your professional subscription includes access to ALL tools (both professional-facing and client-facing), the ability to generate client access codes, and clinical integration features. You're not just paying for professional tools—you're also paying for the infrastructure that supports your clients' access.</p>
+
+            <p style="margin-top: 20px;"><strong>How do client access codes work?</strong></p>
+            <ul>
+                <li>You generate unique codes through your professional dashboard</li>
+                <li>Codes grant your clients access to client-level tools (not professional tools)</li>
+                <li>Codes expire every 3 months to reflect active therapeutic relationships</li>
+                <li>You maintain control over access by regenerating codes as needed</li>
+                <li>Clients cannot see your professional analytics or clinical controls</li>
+            </ul>
+
+            <p style="margin-top: 20px;"><strong>What if I exceed my client limit?</strong></p>
+            <p>If you reach your client capacity, we'll display a calm explanation and offer options to regenerate codes or consider upgrading. We won't lock your account or make accusations—limits exist as sustainable capacity boundaries, not punitive measures.</p>
+        </div>
+
+        <div class="ethics-box">
+            <h4>🌿 Extend Your Founding Pricing (Optional)</h4>
+            <p>If these tools enhance your clinical practice, you may optionally share about your experience on professional channels to extend founding pricing for 6 additional months.</p>
+            <p><strong>Important ethical note:</strong> This is not a referral incentive program. Sharing should reflect genuine professional value, not function as client recruitment. Your sharing should focus on your experience as a practitioner, not promise client outcomes.</p>
+            <p>This extension is completely optional and based on authentic professional testimony.</p>
+        </div>
+
+        <div class="ethics-box">
+            <h4>Professional Responsibility & Ethical Use</h4>
+            <p>As a licensed mental health professional, you understand that these tools are designed to complement clinical treatment, not replace it. Professional subscriptions grant you stewardship over client access within your therapeutic relationships.</p>
+            <p>Your subscription includes tools for both in-session use and between-session support. We trust your clinical judgment in how and when to integrate these resources into treatment.</p>
+            <p>We do not monitor individual client activity or usage patterns. Your clients' privacy and autonomy remain protected.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Frequently Asked Questions</h3>
+
+            <p><strong>Why do professional plans cost more than client plans?</strong></p>
+            <p>Professional subscriptions include not just professional tools, but also the infrastructure for client access, code generation systems, and capacity for multiple users. Each additional client increases our operational, security, and maintenance costs. Professional pricing reflects both the clinical value and the technical reality of supporting therapeutic relationships.</p>
+
+            <p style="margin-top: 20px;"><strong>Can my clients subscribe directly instead?</strong></p>
+            <p>Client subscriptions are for individuals using tools for personal growth outside of clinical treatment. They don't include professional permissions, analytics, or clinical integration features. If you're working with clients in a therapeutic context, professional subscriptions ensure proper role boundaries and ethical access control.</p>
+
+            <p style="margin-top: 20px;"><strong>Do you monitor how I use tools with clients?</strong></p>
+            <p>No. We trust your clinical judgment. You'll see your active client slot count, but we don't track individual client activity, usage patterns, or identify specific clients. Privacy and clinical autonomy are core to our design.</p>
+
+            <p style="margin-top: 20px;"><strong>Can I cancel anytime?</strong></p>
+            <p>Yes. Cancel anytime through your account settings. Your active client codes will remain valid through their current 3-month period.</p>
+
+            <p style="margin-top: 20px;"><strong>Questions about professional use?</strong></p>
+            <p><a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contact our clinical support team</a> for guidance on integrating these tools into your practice.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></h3>
+                    <p>Professional mental health tools and resources designed to support growth, grounding, and healing.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html">Workbooks</a></li>
+                        <li><a href="shop.html">Card Decks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Free Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
