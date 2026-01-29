@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAP Companion | Leaf2Root</title>
+    <meta name="description" content="Kundalini Activation Process support tools for session tracking and integration.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        if (!sessionStorage.getItem('leaf2root_authenticated')) {
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+            --gradient-lavender: linear-gradient(135deg, #DDD6E8, #C5B9D5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; }
+
+        nav {
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img { height: 40px; }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links .button {
+            padding: 0.5rem 1.25rem;
+            background: var(--lavender);
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            background: var(--gradient-lavender);
+            text-align: center;
+        }
+
+        .app-icon-large {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .content p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature h3 { font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--lavender); }
+        .feature p { font-size: 1rem; margin-bottom: 0; }
+
+        .cta-section {
+            background: var(--warm-cream);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-lavender);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: var(--warm-beige);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo img { height: 60px; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo-container">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text">Leaf2Root</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">All Apps</a></li>
+                <li><a href="../login.html" class="button">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="app-icon-large">🌊</div>
+        <h1>KAP Companion</h1>
+        <p>Kundalini Activation Process support tools for session tracking and integration</p>
+    </section>
+
+    <section class="content">
+        <h2>About KAP Companion</h2>
+        <p>KAP Companion supports practitioners and clients engaging with Kundalini Activation Process work, providing tools to track sessions, document experiences, and integrate powerful energy activations into daily life.</p>
+
+        <p>This specialized tool honors the profound nature of KAP while offering practical support for grounding, processing, and deepening your practice.</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Session Tracking</h3>
+                <p>Document KAP sessions with notes on experiences, sensations, and insights.</p>
+            </div>
+            <div class="feature">
+                <h3>Integration Support</h3>
+                <p>Guided practices for processing and integrating activation experiences.</p>
+            </div>
+            <div class="feature">
+                <h3>Progress Journal</h3>
+                <p>Track your journey over time and observe patterns in your practice.</p>
+            </div>
+            <div class="feature">
+                <h3>Grounding Resources</h3>
+                <p>Tools and techniques for staying anchored through powerful experiences.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Explore KAP Companion?</h2>
+            <p>This app is currently in development. Check back soon for updates!</p>
+            <a href="index.html" class="cta-button">View All Apps</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Apps</a>
+            </div>
+            <p class="footer-text">By Family Solutions Counseling</p>
+        </div>
+    </footer>
+</body>
+</html>

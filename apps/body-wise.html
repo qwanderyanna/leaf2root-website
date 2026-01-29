@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Apps | Leaf2Root</title>
-    <meta name="description" content="Explore our collection of premium therapeutic tools designed by clinicians for mental health professionals.">
+    <title>Body Wise | Leaf2Root</title>
+    <meta name="description" content="Mindful somatic practices for body awareness and regulation.">
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
     <!-- Google Fonts -->
@@ -42,8 +42,6 @@
 
             /* Gradients */
             --gradient-sage: linear-gradient(135deg, #C8D5B9, #A8BF9E);
-            --gradient-rose: linear-gradient(135deg, #E8C4C4, #D4A5A5);
-            --gradient-lavender: linear-gradient(135deg, #DDD6E8, #C5B9D5);
         }
 
         * {
@@ -130,7 +128,7 @@
             color: var(--sage-green);
         }
 
-        .nav-links .sign-in {
+        .nav-links .button {
             padding: 0.5rem 1.25rem;
             background: var(--soft-sage);
             color: white;
@@ -138,7 +136,7 @@
             transition: all 0.3s;
         }
 
-        .nav-links .sign-in:hover {
+        .nav-links .button:hover {
             background: var(--sage-green);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
@@ -147,8 +145,21 @@
         /* Hero Section */
         .hero {
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, #FAF6EE 0%, #C8D5B9 100%);
+            background: var(--gradient-sage);
             text-align: center;
+        }
+
+        .app-icon-large {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .hero h1 {
@@ -164,108 +175,79 @@
             margin: 0 auto;
         }
 
-        /* Apps Grid */
-        .apps-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+        /* Content Section */
+        .content {
+            max-width: 900px;
             margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .app-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .app-card.sage::before {
-            background: var(--gradient-sage);
-        }
-
-        .app-card.rose::before {
-            background: var(--gradient-rose);
-        }
-
-        .app-card.lavender::before {
-            background: var(--gradient-lavender);
-        }
-
-        .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .app-card:hover::before {
-            opacity: 1;
-        }
-
-        .app-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+        .content h2 {
             font-size: 2rem;
-        }
-
-        .app-card.sage .app-icon {
-            background: var(--gradient-sage);
-        }
-
-        .app-card.rose .app-icon {
-            background: var(--gradient-rose);
-        }
-
-        .app-card.lavender .app-icon {
-            background: var(--gradient-lavender);
-        }
-
-        .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
             color: var(--text-primary);
         }
 
-        .app-card p {
+        .content p {
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            line-height: 1.7;
             margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
-        .app-card .learn-more {
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
             color: var(--sage-green);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
         }
 
-        .app-card .learn-more:hover {
-            gap: 0.75rem;
+        .feature p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            background: var(--warm-cream);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-sage);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 191, 158, 0.4);
         }
 
         /* Footer */
@@ -324,9 +306,8 @@
                 font-size: 2.2rem;
             }
 
-            .apps-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .content h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -341,85 +322,49 @@
             </a>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="#links">Links</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="../login.html" class="sign-in">Log In</a></li>
+                <li><a href="index.html">All Apps</a></li>
+                <li><a href="../login.html" class="button">Log In</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Premium Therapeutic Apps</h1>
-        <p>Thoughtfully designed tools to support your clinical practice and professional growth.</p>
+        <div class="app-icon-large">🌿</div>
+        <h1>Body Wise</h1>
+        <p>Mindful somatic practices for body awareness and regulation</p>
     </section>
 
-    <!-- Apps Grid -->
-    <section class="apps-section">
-        <div class="apps-grid">
-            <!-- Body Wise -->
-            <div class="app-card sage">
-                <div class="app-icon">🌿</div>
-                <h3>Body Wise</h3>
-                <p>Mindful somatic practices for body awareness and regulation. Gentle exercises designed for trauma-informed care.</p>
-                <a href="body-wise.html" class="learn-more">Learn More →</a>
-            </div>
+    <!-- Content Section -->
+    <section class="content">
+        <h2>About Body Wise</h2>
+        <p>Body Wise is a comprehensive somatic therapy toolkit designed to help clinicians and clients develop greater body awareness, emotional regulation, and trauma-informed healing practices.</p>
 
-            <!-- Ether & Earth -->
-            <div class="app-card lavender">
-                <div class="app-icon">🌸</div>
-                <h3>Ether & Earth</h3>
-                <p>Grounding techniques and spiritual wellness practices. Connect mind, body, and spirit through evidence-based exercises.</p>
-                <a href="ether-earth.html" class="learn-more">Learn More →</a>
-            </div>
+        <p>This evidence-based tool integrates principles from Somatic Experiencing, Sensorimotor Psychotherapy, and mindfulness-based interventions to support gentle, compassionate reconnection with the body.</p>
 
-            <!-- ZenSync -->
-            <div class="app-card rose">
-                <div class="app-icon">🧘</div>
-                <h3>ZenSync</h3>
-                <p>Mindfulness and meditation guidance for daily practice. Build sustainable habits for mental clarity and emotional balance.</p>
-                <a href="zensync.html" class="learn-more">Learn More →</a>
+        <div class="features">
+            <div class="feature">
+                <h3>Grounding Exercises</h3>
+                <p>Guided practices to help clients feel safe and present in their bodies.</p>
             </div>
+            <div class="feature">
+                <h3>Body Scan Meditations</h3>
+                <p>Progressive awareness exercises for noticing sensations without judgment.</p>
+            </div>
+            <div class="feature">
+                <h3>Trauma-Informed</h3>
+                <p>All practices designed with safety and client empowerment at the forefront.</p>
+            </div>
+            <div class="feature">
+                <h3>Progress Tracking</h3>
+                <p>Track client engagement and response to somatic interventions over time.</p>
+            </div>
+        </div>
 
-            <!-- Just This -->
-            <div class="app-card sage">
-                <div class="app-icon">☀️</div>
-                <h3>Just This</h3>
-                <p>Present-moment awareness exercises. Cultivate acceptance and reduce overwhelm through gentle mindfulness practices.</p>
-                <a href="just-this.html" class="learn-more">Learn More →</a>
-            </div>
-
-            <!-- KAP Companion -->
-            <div class="app-card lavender">
-                <div class="app-icon">🌊</div>
-                <h3>KAP Companion</h3>
-                <p>Kundalini Activation Process support tools. Track sessions, integrate experiences, and deepen your practice.</p>
-                <a href="kap-companion.html" class="learn-more">Learn More →</a>
-            </div>
-
-            <!-- ERP Session Builder -->
-            <div class="app-card rose">
-                <div class="app-icon">🎯</div>
-                <h3>ERP Session Builder</h3>
-                <p>Exposure and Response Prevention planning tools. Create structured, evidence-based treatment plans for OCD therapy.</p>
-                <a href="erp-session-builder.html" class="learn-more">Learn More →</a>
-            </div>
-
-            <!-- NeuroFlow -->
-            <div class="app-card sage">
-                <div class="app-icon">🧠</div>
-                <h3>NeuroFlow</h3>
-                <p>Neurodivergent-affirming resources and strategies. Support ADHD, autism, and other neurological differences with compassion.</p>
-                <a href="neuroflow.html" class="learn-more">Learn More →</a>
-            </div>
-
-            <!-- Flash UI -->
-            <div class="app-card lavender">
-                <div class="app-icon">✨</div>
-                <h3>Flash UI</h3>
-                <p>Quick intervention tools for in-session use. Access grounding techniques, breathing exercises, and coping skills instantly.</p>
-                <a href="flash-ui.html" class="learn-more">Learn More →</a>
-            </div>
+        <div class="cta-section">
+            <h2>Ready to Explore Body Wise?</h2>
+            <p>This app is currently in development. Check back soon for updates!</p>
+            <a href="index.html" class="cta-button">View All Apps</a>
         </div>
     </section>
 
@@ -431,7 +376,7 @@
             </div>
             <div class="footer-links">
                 <a href="../index.html">Home</a>
-                <a href="#links">Links</a>
+                <a href="index.html">Apps</a>
                 <a href="#contact">Contact</a>
             </div>
             <p class="footer-text">By Family Solutions Counseling</p>
