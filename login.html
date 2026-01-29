@@ -349,6 +349,7 @@
             if (email === DEMO_CREDENTIALS.email && password === DEMO_CREDENTIALS.password) {
                 // Successful login
                 alert('Login successful! Redirecting to apps...');
+                                sessionStorage.setItem('leaf2root_authenticated', 'true');
                 window.location.href = 'apps/';
             } else {
                 // Failed login
@@ -369,3 +370,4 @@
 </body>
 </html>
 
+351
