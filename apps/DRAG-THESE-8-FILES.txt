@@ -1,0 +1,32 @@
+╔═══════════════════════════════════════════════════════════╗
+║         UPLOAD THESE 8 FILES TO GITHUB                    ║
+╚═══════════════════════════════════════════════════════════╝
+
+📁 FILES IN YOUR LEAF2ROOT FOLDER (select these 8):
+
+1. body-wise.html
+2. erp-session-builder.html
+3. flash-ui.html
+4. index.html
+5. just-this.html
+6. kap-companion.html
+7. neuroflow.html
+8. zensync.html
+
+🔗 UPLOAD LINK:
+https://github.com/qwanderyanna/leaf2root-website/upload/main/apps
+
+📋 STEPS:
+1. Open the link above in your browser
+2. Find these 8 files in your Leaf2Root folder
+3. Select all 8 files (Command + Click each one)
+4. Drag them onto the GitHub page
+5. Commit message: "Add beta badges and messaging"
+6. Click "Commit changes"
+
+⏱️ Takes 30 seconds total!
+
+✅ WHAT THIS DOES:
+- Adds "BETA" badges to all app cards
+- Updates all app pages with beta messaging
+- Makes your website look professional and ready for early adopters
