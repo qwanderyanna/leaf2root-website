@@ -7,6 +7,16 @@
     <meta name="description" content="Explore our collection of premium therapeutic tools designed by clinicians for mental health professionals.">
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
+        <!-- Authentication Check -->
+        <script>
+                    // Check if user is authenticated
+                    if (!sessionStorage.getItem('leaf2root_authenticated')) {
+                                    // Redirect to login page if not authenticated
+                                    window.location.href = '../login.html';
+                    }
+                        </script>
+        </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
