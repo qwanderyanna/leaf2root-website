@@ -1,56 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaf2Root | Premium Therapeutic Tools</title>
-    <meta name="description" content="Premium therapeutic tools for engaged and innovative mental health therapists, coaches, and wellness professionals. Body Wise, Ether & Earth, ZenSync, and more innovative clinical apps for evidence-based care.">
+    <title>Leaf2Root | A Calmer Path to Wellness</title>
+    <meta name="description" content="Discover a considered approach to mental health and personal growth. Premium therapeutic tools designed by clinicians for mental health professionals.">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://qwanderyanna.github.io/leaf2root-website/">
-    <meta property="og:title" content="Leaf2Root | Premium Therapeutic Tools">
-    <meta property="og:description" content="Premium therapeutic tools for engaged and innovative mental health therapists, coaches, and wellness professionals. Subscribe for unlimited access to innovative clinical apps.">
-    <meta property="og:image" content="https://qwanderyanna.github.io/leaf2root-website/assets/Logo for Leaf2Root transparent.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Leaf2Root | Premium Therapeutic Tools">
-    <meta name="twitter:description" content="Premium therapeutic tools for engaged and innovative mental health therapists, coaches, and wellness professionals.">
-    <meta name="twitter:image" content="https://qwanderyanna.github.io/leaf2root-website/assets/Logo for Leaf2Root transparent.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Leaf2Root Logo Colors */
-            --leaf-green: #7CB342;
-            --teal: #26A69A;
-            --root-brown: #795548;
-            --trunk-olive: #5D4037;
+            /* New Soft Color Palette */
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
 
-            /* Primary uses the teal from logo */
-            --primary: #26A69A;
-            --primary-light: #4DB6AC;
-            --primary-dark: #00897B;
+            /* Text Colors */
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
 
-            /* Secondary uses the green from logo */
-            --secondary: #7CB342;
-            --secondary-light: #9CCC65;
-
-            /* Accent uses warm brown from logo */
-            --accent: #795548;
-            --accent-light: #8D6E63;
-
-            --text-dark: #3E2723;
-            --text-medium: #5D4037;
-            --text-light: #795548;
-
-            --bg-cream: #FFFDF7;
-            --bg-sage: #F1F8E9;
-            --white: #FFFFFF;
-            --border: #E0E0E0;
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, #FAF6EE 0%, #C8D5B9 50%, #E8C4C4 100%);
+            --gradient-soft: linear-gradient(to bottom, rgba(250, 246, 238, 0.8), rgba(200, 213, 185, 0.3));
         }
 
         * {
@@ -60,555 +43,227 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
             line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--white);
+            font-weight: 400;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
         }
 
         /* Navigation */
-        .nav {
-            position: fixed;
+        nav {
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            padding: 0 24px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 72px;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 600;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
         }
 
-        .logo .leaf {
-            color: var(--leaf-green);
+        .logo-img {
+            height: 40px;
+            width: auto;
         }
 
-        .logo .two {
-            color: var(--teal);
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
         }
 
-        .logo .root {
-            color: var(--root-brown);
+        .logo-text .green {
+            color: var(--sage-green);
+        }
+
+        .logo-text .two {
+            color: var(--soft-sage);
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-medium);
             text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             font-weight: 500;
-            font-size: 15px;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--sage-green);
         }
 
-        .nav-cta {
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: background 0.2s;
+        .nav-links .sign-in {
+            padding: 0.5rem 1.25rem;
+            background: var(--soft-sage);
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s;
         }
 
-        .nav-cta:hover {
-            background: var(--primary-light);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-menu-btn svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text-dark);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            color: var(--text-medium);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-menu a:hover {
-            color: var(--primary);
+        .nav-links .sign-in:hover {
+            background: var(--sage-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            padding: 140px 24px 80px;
-            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-sage) 100%);
+            padding: 5rem 2rem;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            font-weight: 600;
-            line-height: 1.15;
-            color: var(--text-dark);
-            margin-bottom: 24px;
-        }
-
-        .hero-content h1 span {
-            color: var(--primary);
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: var(--text-medium);
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            padding: 14px 32px;
-            border-radius: 8px;
-            border: 2px solid var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .hero-visual {
+            text-align: center;
             position: relative;
+            z-index: 2;
         }
 
-        .hero-image-placeholder {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            border-radius: 16px;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 18px;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
-        .hero-logo {
-            max-width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
         }
 
-        .hero-logo-container {
-            background: transparent;
-            border-radius: 16px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trust-badges {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .trust-badges p {
-            font-size: 13px;
-            color: var(--text-light);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .badge-row {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-medium);
-            font-size: 14px;
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--sage-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
             font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(168, 191, 158, 0.2);
         }
 
-        .badge svg {
-            width: 20px;
-            height: 20px;
-            color: var(--primary);
+        .cta-button:hover {
+            background: var(--soft-sage);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 191, 158, 0.3);
         }
 
-        /* Apps Showcase Section */
-        .apps-showcase {
-            padding: 100px 24px;
-            background: var(--white);
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
         }
 
-        .section-container {
+        .features-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-medium);
-        }
-
-        .apps-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
-        .app-card {
-            background: var(--bg-cream);
-            border-radius: 12px;
-            padding: 32px 24px;
+        .feature-card {
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 2rem;
         }
 
-        .app-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .app-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--primary);
-            border-radius: 12px;
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 32px;
         }
 
-        .app-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
+        .feature-icon svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--sage-green);
+            stroke-width: 1.5;
         }
 
-        .app-card p {
-            font-size: 13px;
-            color: var(--text-medium);
-            line-height: 1.5;
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
-        /* Coming Soon Categories */
-        .coming-soon {
-            padding: 100px 24px;
-            background: var(--bg-sage);
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+        /* Philosophy Section */
+        .philosophy {
+            padding: 5rem 2rem;
+            background: var(--gradient-soft);
         }
 
-        .category-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 48px 32px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--white);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
-
-        .category-card h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-
-        .category-card p {
-            color: var(--text-medium);
-            font-size: 14px;
-        }
-
-        /* Why Leaf2Root */
-        .why {
-            padding: 100px 24px;
-            background: var(--white);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .why-item {
-            text-align: center;
-        }
-
-        .why-icon {
-            width: 72px;
-            height: 72px;
-            background: var(--bg-sage);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .why-icon svg {
-            width: 32px;
-            height: 32px;
-            color: var(--primary);
-        }
-
-        .why-item h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .why-item p {
-            font-size: 14px;
-            color: var(--text-medium);
-        }
-
-        /* Testimonial */
-        .testimonial {
-            padding: 100px 24px;
-            background: var(--primary);
-        }
-
-        .testimonial-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .testimonial-quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 500;
-            line-height: 1.4;
-            margin-bottom: 32px;
-        }
-
-        .testimonial-author {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .testimonial-role {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 100px 24px;
-            background: var(--bg-cream);
-        }
-
-        .cta-container {
-            max-width: 800px;
+        .philosophy-container {
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 16px;
+        .philosophy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
         }
 
-        .cta p {
-            font-size: 18px;
-            color: var(--text-medium);
-            margin-bottom: 32px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 12px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 14px 20px;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: inherit;
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .newsletter-form button {
-            background: var(--primary);
-            color: var(--white);
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .newsletter-form button:hover {
-            background: var(--primary-light);
+        .philosophy p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
-        .footer {
-            padding: 60px 24px 24px;
-            background: var(--text-dark);
-            color: var(--white);
+        footer {
+            background: var(--warm-beige);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
         }
 
         .footer-container {
@@ -616,467 +271,151 @@
             margin: 0 auto;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 48px;
+        .footer-logo {
+            margin-bottom: 1.5rem;
         }
 
-        .footer-brand h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 16px;
+        .footer-logo img {
+            height: 60px;
+            width: auto;
         }
 
-        .footer-brand h3 .leaf {
-            color: var(--leaf-green);
-        }
-
-        .footer-brand h3 .two {
-            color: var(--teal);
-        }
-
-        .footer-brand h3 .root {
-            color: #A1887F;
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        .parent-company {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .parent-company a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .footer-column h4 {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .footer-column a:hover {
-            color: var(--white);
-        }
-
-        .footer-team-link {
-            font-size: 11px;
-            color: rgba(255,255,255,0.3);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-team-link:hover {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .footer-bottom {
-            padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .footer-links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
-        .footer-bottom p {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-links a {
-            color: rgba(255,255,255,0.7);
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
 
-        .social-links a:hover {
-            color: var(--white);
+        .footer-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visual {
-                display: block;
-                margin-top: 40px;
-            }
-
-            .hero-logo {
-                max-height: 300px;
-            }
-
-            .apps-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                gap: 1rem;
+                font-size: 0.85rem;
             }
 
-            .nav-cta {
-                display: none;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .hero p {
+                font-size: 1rem;
             }
 
-            .hero-content h1 {
-                font-size: 36px;
-            }
-
-            .section-header h2 {
-                font-size: 32px;
-            }
-
-            .apps-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
+                gap: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></a>
+            <a href="index.html" class="logo-container">
+                <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+            </a>
             <ul class="nav-links">
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="quick-tools.html">Quick Tools</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="sign-in">Log In</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="apps/" class="nav-cta">Access Apps</a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="shop.html">Shop</a>
-        <a href="resources.html">Resources</a>
-        <a href="quick-tools.html">Quick Tools</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="apps/">Access Apps</a>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
-                <h1><span>Premium</span> Therapeutic Tools</h1>
-                <p>Subscribe for unlimited access to Body Wise, Ether & Earth, ZenSync, and more powerful tools designed by clinicians for engaged and innovative mental health therapists, coaches, and wellness professionals.</p>
-                <div class="hero-buttons">
-                    <a href="apps/" class="btn-primary">Access Premium Apps</a>
-                    <a href="resources.html" class="btn-secondary">Free Resources</a>
-                </div>
-                <div class="trust-badges">
-                    <p>Trusted by professionals</p>
-                    <div class="badge-row">
-                        <div class="badge">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            Evidence-Based
-                        </div>
-                        <div class="badge">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                            Clinician Created
-                        </div>
-                        <div class="badge">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                            Inclusive & Affirming
-                        </div>
+            <h1>A Calmer Path<br>to Wellness.</h1>
+            <p>Discover a considered approach to mental health and personal growth.</p>
+            <a href="apps/" class="cta-button">Explore Resources</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Botanical leaf illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 20 Q30 40, 25 70 M50 20 Q50 45, 48 70 M50 20 Q70 40, 75 70" stroke="currentColor" fill="none"/>
+                        </svg>
                     </div>
+                    <h3>Mindful Practices</h3>
+                    <p>Evidence-based tools designed with care for sustainable mental health support.</p>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-logo-container">
-                    <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root - Mental Health Tools by Family Solutions Counseling" class="hero-logo">
-                    <noscript>
-                        <div class="hero-image-placeholder">
-                            [Upload your Leaf2Root tree logo here]
-                        </div>
-                    </noscript>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Root illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 30 Q30 50, 20 80 M50 30 Q50 55, 50 80 M50 30 Q70 50, 80 80" stroke="currentColor" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Therapeutic Tools</h3>
+                    <p>Premium resources created by clinicians for engaged mental health professionals.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Seed/growth illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="25" stroke="currentColor" fill="none"/>
+                            <path d="M50 25 L50 75 M35 40 Q50 35, 65 40" stroke="currentColor" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Join a thoughtful community committed to inclusive and affirming care.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Apps Showcase Section -->
-    <section class="apps-showcase">
-        <div class="section-container">
-            <div class="section-header">
-                <p class="section-label">Premium Tools</p>
-                <h2>Innovative Apps for Engaged Mental Health Professionals</h2>
-                <p>Each tool is designed to enhance your clinical practice with evidence-based approaches and intuitive interfaces.</p>
-            </div>
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">🧠</div>
-                    <h3>Body Wise</h3>
-                    <p>Interactive emotion & sensation mapping for somatic awareness</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">🎴</div>
-                    <h3>Ether & Earth</h3>
-                    <p>Custom therapeutic card deck builder</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">🎵</div>
-                    <h3>ZenSync</h3>
-                    <p>Bilateral stimulation sessions for EMDR and processing</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">🧘</div>
-                    <h3>Just This</h3>
-                    <p>Mindfulness & grounding exercises for present-moment awareness</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">💊</div>
-                    <h3>KAP Companion</h3>
-                    <p>Ketamine-assisted psychotherapy session support and integration</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">📊</div>
-                    <h3>ERP Session Builder</h3>
-                    <p>Exposure hierarchy creation and tracking for OCD treatment</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">⚡</div>
-                    <h3>NeuroFlow</h3>
-                    <p>Neurotransmitter education and symptom correlation tool</p>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">✨</div>
-                    <h3>Flash UI</h3>
-                    <p>FLASH technique protocol guide for trauma processing</p>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <a href="apps/" class="btn-primary">Access All 8 Apps</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coming Soon Categories -->
-    <section class="coming-soon">
-        <div class="section-container">
-            <div class="section-header">
-                <p class="section-label">Additional Resources</p>
-                <h2>More Tools Coming Soon</h2>
-                <p>We're developing workbooks, card decks, and other therapeutic resources to complement our tools.</p>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <span class="coming-soon-badge">Coming Soon</span>
-                    <h3>ADHD & Trauma Support</h3>
-                    <p>Specialized workbooks and tools for ADHD management and trauma healing</p>
-                </div>
-                <div class="category-card">
-                    <span class="coming-soon-badge">Coming Soon</span>
-                    <h3>Parenting & Family Resources</h3>
-                    <p>Guides and activities for conscious parenting and family connection</p>
-                </div>
-                <div class="category-card">
-                    <span class="coming-soon-badge">Coming Soon</span>
-                    <h3>Professional Development</h3>
-                    <p>Continuing education and clinical skill-building materials for therapists</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Leaf2Root -->
-    <section class="why">
-        <div class="section-container">
-            <div class="section-header">
-                <p class="section-label">Why Leaf2Root</p>
-                <h2>What Makes Our Tools Different</h2>
-            </div>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="why-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-                    </div>
-                    <h3>Evidence-Based</h3>
-                    <p>Every resource is grounded in proven therapeutic modalities including CBT, DBT, EMDR, and somatic approaches.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                    </div>
-                    <h3>Clinician Created</h3>
-                    <p>Developed by licensed therapists with years of hands-on experience treating real clients.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    </div>
-                    <h3>Innovative Technology</h3>
-                    <p>Cutting-edge tools enhance clinical workflows while maintaining human-centered care.</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </div>
-                    <h3>Inclusive Design</h3>
-                    <p>All resources are created with diversity, accessibility, and affirming language at the forefront.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial">
-        <div class="testimonial-content">
-            <p class="testimonial-quote">"The therapeutic tools from Leaf2Root have transformed my practice. Body Wise and ZenSync save me hours of prep time while providing better experiences for my clients."</p>
-            <p class="testimonial-author">Dr. Sarah M., LCSW</p>
-            <p class="testimonial-role">Licensed Clinical Social Worker</p>
-        </div>
-    </section>
-
-    <!-- Newsletter CTA -->
-    <section class="cta">
-        <div class="cta-container">
-            <h2>Stay Connected</h2>
-            <p>Get updates on new apps, resources, and mental health tips delivered to your inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="philosophy-container">
+            <h2>Our Philosophy</h2>
+            <p>We believe in creating space for thoughtful reflection and sustainable growth. Our tools are designed to support mental health professionals in their important work, providing resources that honor the complexity of human experience.</p>
+            <p>Every resource is crafted with attention to evidence-based practices, clinical expertise, and a commitment to inclusive, affirming care.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3><span class="leaf">Leaf</span><span class="two">2</span><span class="root">Root</span></h3>
-                    <p>Professional mental health tools and resources designed to support growth, grounding, and healing.</p>
-                    <p class="parent-company">A division of <a href="https://familysolutionsutah.org" target="_blank">Family Solutions Counseling</a></p>
-                </div>
-                <div class="footer-column">
-                    <h4>Explore</h4>
-                    <ul>
-                        <li><a href="apps/">Premium Apps</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="resources.html">Free Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-                        <li style="margin-top: 20px;"><a href="product-hub-login.html" class="footer-team-link">Leaf2Root Team · Product Hub</a></li>
-                    </ul>
-                </div>
+            <div class="footer-logo">
+                <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Leaf2Root. All rights reserved. A division of Family Solutions Counseling.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                    </a>
-                    <a href="#" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
-                    </a>
-                </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#links">Links</a>
+                <a href="#contact">Contact</a>
             </div>
+            <p class="footer-text">By Family Solutions Counseling</p>
         </div>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const menu = document.getElementById('mobileMenu');
-            const btn = document.querySelector('.mobile-menu-btn');
-            if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                menu.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>
