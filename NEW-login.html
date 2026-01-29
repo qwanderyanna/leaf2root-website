@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Leaf2Root</title>
+    <meta name="description" content="Access your premium therapeutic tools and resources.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Soft Color Palette */
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
+
+            /* Text Colors */
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+
+            /* Form Colors */
+            --error: #D4A5A5;
+            --success: #A8BF9E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #FAF6EE 0%, #DDD6E8 50%, #E8C4C4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            max-width: 440px;
+            width: 100%;
+            padding: 3rem;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logo-text .green {
+            color: var(--sage-green);
+        }
+
+        .logo-text .two {
+            color: var(--soft-sage);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #E8DFD0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+            background: var(--cream);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--sage-green);
+            background: white;
+        }
+
+        input.error {
+            border-color: var(--error);
+            background: rgba(212, 165, 165, 0.05);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        input.error + .error-message {
+            display: block;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+
+        .forgot-password a {
+            color: var(--sage-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .forgot-password a:hover {
+            color: var(--soft-sage);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--sage-green);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(168, 191, 158, 0.2);
+        }
+
+        .login-button:hover {
+            background: var(--soft-sage);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 191, 158, 0.3);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #E8DFD0;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .demo-info {
+            background: linear-gradient(135deg, rgba(200, 213, 185, 0.15), rgba(232, 196, 196, 0.15));
+            padding: 1.25rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .demo-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-info code {
+            display: block;
+            background: white;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--sage-green);
+            margin-top: 0.5rem;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .signup-link a {
+            color: var(--sage-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .signup-link a:hover {
+            color: var(--soft-sage);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-section">
+            <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+            <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+        </div>
+
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Access your therapeutic tools</p>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+                <div class="error-message" id="passwordError">Incorrect email or password</div>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#forgot">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+
+        <div class="divider">or</div>
+
+        <div class="demo-info">
+            <p><strong>Try the demo:</strong></p>
+            <code>demo@leaf2root.org</code>
+            <code>demo2026</code>
+        </div>
+
+        <p class="signup-link">
+            New to Leaf2Root? <a href="#pricing">View Pricing</a>
+        </p>
+    </div>
+
+    <script>
+        // Demo authentication
+        const DEMO_CREDENTIALS = {
+            email: 'demo@leaf2root.org',
+            password: 'demo2026'
+        };
+
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset errors
+            emailInput.classList.remove('error');
+            passwordInput.classList.remove('error');
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailInput.classList.add('error');
+                return;
+            }
+
+            // Check credentials
+            if (email === DEMO_CREDENTIALS.email && password === DEMO_CREDENTIALS.password) {
+                // Successful login
+                alert('Login successful! Redirecting to apps...');
+                window.location.href = 'apps/';
+            } else {
+                // Failed login
+                passwordInput.classList.add('error');
+                passwordInput.value = '';
+            }
+        });
+
+        // Remove error state on input
+        emailInput.addEventListener('input', function() {
+            this.classList.remove('error');
+        });
+
+        passwordInput.addEventListener('input', function() {
+            this.classList.remove('error');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf2Root | A Calmer Path to Wellness</title>
+    <meta name="description" content="Discover a considered approach to mental health and personal growth. Premium therapeutic tools designed by clinicians for mental health professionals.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* New Soft Color Palette */
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
+
+            /* Text Colors */
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, #FAF6EE 0%, #C8D5B9 50%, #E8C4C4 100%);
+            --gradient-soft: linear-gradient(to bottom, rgba(250, 246, 238, 0.8), rgba(200, 213, 185, 0.3));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logo-text .green {
+            color: var(--sage-green);
+        }
+
+        .logo-text .two {
+            color: var(--soft-sage);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links .sign-in {
+            padding: 0.5rem 1.25rem;
+            background: var(--soft-sage);
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-links .sign-in:hover {
+            background: var(--sage-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--sage-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(168, 191, 158, 0.2);
+        }
+
+        .cta-button:hover {
+            background: var(--soft-sage);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 191, 158, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--sage-green);
+            stroke-width: 1.5;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 5rem 2rem;
+            background: var(--gradient-soft);
+        }
+
+        .philosophy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--warm-beige);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="sign-in">Log In</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>A Calmer Path<br>to Wellness.</h1>
+            <p>Discover a considered approach to mental health and personal growth.</p>
+            <a href="apps/" class="cta-button">Explore Resources</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Botanical leaf illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 20 Q30 40, 25 70 M50 20 Q50 45, 48 70 M50 20 Q70 40, 75 70" stroke="currentColor" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Mindful Practices</h3>
+                    <p>Evidence-based tools designed with care for sustainable mental health support.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Root illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 30 Q30 50, 20 80 M50 30 Q50 55, 50 80 M50 30 Q70 50, 80 80" stroke="currentColor" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Therapeutic Tools</h3>
+                    <p>Premium resources created by clinicians for engaged mental health professionals.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Seed/growth illustration -->
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="25" stroke="currentColor" fill="none"/>
+                            <path d="M50 25 L50 75 M35 40 Q50 35, 65 40" stroke="currentColor" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Join a thoughtful community committed to inclusive and affirming care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="philosophy-container">
+            <h2>Our Philosophy</h2>
+            <p>We believe in creating space for thoughtful reflection and sustainable growth. Our tools are designed to support mental health professionals in their important work, providing resources that honor the complexity of human experience.</p>
+            <p>Every resource is crafted with attention to evidence-based practices, clinical expertise, and a commitment to inclusive, affirming care.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#links">Links</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-text">By Family Solutions Counseling</p>
+        </div>
+    </footer>
+</body>
+</html>
