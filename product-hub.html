@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Hub | Leaf2Root Team</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <style>
+        :root { --leaf-green: #7CB342; --teal: #26A69A; --root-brown: #795548; --primary: #26A69A; --text-dark: #3E2723; --text-medium: #5D4037; --bg-cream: #FFFDF7; --white: #FFFFFF; --error: #D32F2F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-cream); min-height: 100vh; }
+        .access-denied { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-cream); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .access-denied-content { text-align: center; padding: 48px; background: var(--white); border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); max-width: 440px; }
+        .access-denied h2 { color: var(--error); margin-bottom: 16px; }
+        .access-denied p { color: var(--text-medium); margin-bottom: 24px; }
+        .access-denied a { display: inline-block; background: var(--primary); color: var(--white); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .hidden { display: none !important; }
+        .main-content { padding: 32px; max-width: 1200px; margin: 0 auto; }
+        h1 { color: var(--text-dark); margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <div class="access-denied" id="accessDenied">
+        <div class="access-denied-content">
+            <h2>Access Restricted</h2>
+            <p>This area is for Leaf2Root team members only. Please log in to continue.</p>
+            <a href="product-hub-login.html">Go to Login</a>
+        </div>
+    </div>
+    <div class="main-content hidden" id="mainContent">
+        <h1>Leaf2Root Product Hub</h1>
+        <p>Team-only product tracking dashboard. 46 products across card decks, workbooks, courses, and apps.</p>
+    </div>
+    <script>
+        function checkAuth() {
+            const auth = sessionStorage.getItem('leaf2root_auth') === 'true';
+            document.getElementById('accessDenied').classList.toggle('hidden', auth);
+            document.getElementById('mainContent').classList.toggle('hidden', !auth);
+        }
+        function logout() {
+            sessionStorage.removeItem('leaf2root_auth');
+            window.location.href = 'product-hub-login.html';
+        }
+        checkAuth();
+    </script>
+</body>
+</html>
