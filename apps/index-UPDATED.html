@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Apps | Leaf2Root</title>
+    <meta name="description" content="Explore our collection of premium therapeutic tools designed by clinicians for mental health professionals.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Authentication Check -->
+    <script>
+        // Check if user is authenticated
+        if (!sessionStorage.getItem('leaf2root_authenticated')) {
+            // Redirect to login page if not authenticated
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <style>
+        :root {
+            /* Soft Color Palette */
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
+
+            /* Text Colors */
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+
+            /* Gradients */
+            --gradient-sage: linear-gradient(135deg, #C8D5B9, #A8BF9E);
+            --gradient-rose: linear-gradient(135deg, #E8C4C4, #D4A5A5);
+            --gradient-lavender: linear-gradient(135deg, #DDD6E8, #C5B9D5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logo-text .green {
+            color: var(--sage-green);
+        }
+
+        .logo-text .two {
+            color: var(--soft-sage);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links .sign-in {
+            padding: 0.5rem 1.25rem;
+            background: var(--soft-sage);
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-links .sign-in:hover {
+            background: var(--sage-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #FAF6EE 0%, #C8D5B9 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Apps Grid */
+        .apps-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .app-card.sage::before {
+            background: var(--gradient-sage);
+        }
+
+        .app-card.rose::before {
+            background: var(--gradient-rose);
+        }
+
+        .app-card.lavender::before {
+            background: var(--gradient-lavender);
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+        }
+
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .app-card.sage .app-icon {
+            background: var(--gradient-sage);
+        }
+
+        .app-card.rose .app-icon {
+            background: var(--gradient-rose);
+        }
+
+        .app-card.lavender .app-icon {
+            background: var(--gradient-lavender);
+        }
+
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .app-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-card .learn-more {
+            color: var(--sage-green);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .app-card .learn-more:hover {
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--warm-beige);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo-container">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="../login.html" class="sign-in">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Premium Therapeutic Apps</h1>
+        <p>Thoughtfully designed tools to support your clinical practice and professional growth.</p>
+    </section>
+
+    <!-- Apps Grid -->
+    <section class="apps-section">
+        <div class="apps-grid">
+            <!-- Body Wise -->
+            <div class="app-card sage">
+                <div class="app-icon">🌿</div>
+                <h3>Body Wise</h3>
+                <p>Mindful somatic practices for body awareness and regulation. Gentle exercises designed for trauma-informed care.</p>
+                <a href="body-wise.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- Ether & Earth -->
+            <div class="app-card lavender">
+                <div class="app-icon">🌸</div>
+                <h3>Ether & Earth</h3>
+                <p>Grounding techniques and spiritual wellness practices. Connect mind, body, and spirit through evidence-based exercises.</p>
+                <a href="ether-earth.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- ZenSync -->
+            <div class="app-card rose">
+                <div class="app-icon">🧘</div>
+                <h3>ZenSync</h3>
+                <p>Mindfulness and meditation guidance for daily practice. Build sustainable habits for mental clarity and emotional balance.</p>
+                <a href="zensync.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- Just This -->
+            <div class="app-card sage">
+                <div class="app-icon">☀️</div>
+                <h3>Just This</h3>
+                <p>Present-moment awareness exercises. Cultivate acceptance and reduce overwhelm through gentle mindfulness practices.</p>
+                <a href="just-this.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- KAP Companion -->
+            <div class="app-card lavender">
+                <div class="app-icon">🌊</div>
+                <h3>KAP Companion</h3>
+                <p>Kundalini Activation Process support tools. Track sessions, integrate experiences, and deepen your practice.</p>
+                <a href="kap-companion.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- ERP Session Builder -->
+            <div class="app-card rose">
+                <div class="app-icon">🎯</div>
+                <h3>ERP Session Builder</h3>
+                <p>Exposure and Response Prevention planning tools. Create structured, evidence-based treatment plans for OCD therapy.</p>
+                <a href="erp-session-builder.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- NeuroFlow -->
+            <div class="app-card sage">
+                <div class="app-icon">🧠</div>
+                <h3>NeuroFlow</h3>
+                <p>Neurodivergent-affirming resources and strategies. Support ADHD, autism, and other neurological differences with compassion.</p>
+                <a href="neuroflow.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- Flash UI -->
+            <div class="app-card lavender">
+                <div class="app-icon">✨</div>
+                <h3>Flash UI</h3>
+                <p>Quick intervention tools for in-session use. Access grounding techniques, breathing exercises, and coping skills instantly.</p>
+                <a href="flash-ui.html" class="learn-more">Learn More →</a>
+            </div>
+
+            <!-- Gentle Pause -->
+            <div class="app-card rose">
+                <div class="app-icon">⏸️</div>
+                <h3>Gentle Pause</h3>
+                <p>Mindful timer with adaptive progression. Resist compulsions and expand attention span through gentle reminders, breathing guides, and calming ambient sounds.</p>
+                <a href="gentle-pause.html" class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="#links">Links</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-text">By Family Solutions Counseling</p>
+        </div>
+    </footer>
+</body>
+</html>
