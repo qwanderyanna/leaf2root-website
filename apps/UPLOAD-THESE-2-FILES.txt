@@ -1,0 +1,39 @@
+✅ I'VE DONE THE HARD WORK FOR YOU!
+====================================
+
+I created the complete files. Now just upload them to GitHub:
+
+📁 FILES TO UPLOAD (both in your Desktop/Leaf2Root/Leaf2Root-website/apps/ folder):
+
+1. gentle-pause.html
+2. index-UPDATED.html
+
+
+🚀 HOW TO UPLOAD:
+
+Option A - Upload via GitHub Web (EASIEST):
+-------------------------------------------
+1. Go to: https://github.com/qwanderyanna/leaf2root-website/tree/main/apps
+2. Click "Add file" → "Upload files"
+3. Drag both files from your Desktop folder:
+   - gentle-pause.html
+   - index-UPDATED.html
+4. Click "Commit changes"
+
+⚠️ IMPORTANT: GitHub will ask about "index-UPDATED.html" - that's because the real filename should be "index.html"
+   - Before committing, rename "index-UPDATED.html" to "index.html" in the upload
+   - It will replace the old index.html (that's what we want!)
+
+
+Option B - Use GitHub Desktop (if you have it):
+------------------------------------------------
+1. Open GitHub Desktop
+2. It should show the 2 changed files
+3. Write a commit message: "Add Gentle Pause app"
+4. Click "Commit to main"
+5. Click "Push origin"
+
+
+THAT'S IT! 🎉
+Your Gentle Pause app will be live at:
+https://leaf2root.org/apps/gentle-pause.html
