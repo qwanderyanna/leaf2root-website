@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensory & Fidget Tools: The Science of Self-Regulation | Leaf2Root</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --sage-green: #A8BF9E;
+            --soft-sage: #C8D5B9;
+            --dusty-rose: #D4A5A5;
+            --lavender: #C5B9D5;
+            --warm-beige: #E8DFD0;
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+            --gradient-soft: linear-gradient(135deg, rgba(200,213,185,0.2), rgba(197,185,213,0.15));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--text-primary);
+        }
+
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255, 253, 247, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+            padding: 0.75rem 2rem;
+        }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-img { height: 40px; width: auto; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.5px; }
+        .logo-text .green { color: var(--sage-green); }
+        .logo-text .two { color: var(--text-muted); font-weight: 400; font-size: 1.1rem; margin: 0 1px; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 400; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--sage-green); }
+        .sign-in { background: var(--sage-green) !important; color: white !important; padding: 0.4rem 1.1rem; border-radius: 25px; font-weight: 500 !important; }
+        .sign-in:hover { background: var(--soft-sage) !important; }
+
+        .breadcrumb { max-width: 800px; margin: 1.5rem auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-muted); }
+        .breadcrumb a { color: var(--sage-green); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .article-header { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+        .article-header-inner { max-width: 680px; }
+        .article-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .meta-tag { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.3rem 0.75rem; border-radius: 20px; background: rgba(200, 213, 185, 0.25); color: var(--sage-green); }
+        .article-header h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.15; color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .lede { font-family: 'Crimson Text', Georgia, serif; font-size: 1.2rem; line-height: 1.7; color: var(--text-secondary); max-width: 620px; }
+
+        .article-body { max-width: 800px; margin: 0 auto; padding: 1rem 2rem 4rem; }
+        .article-body p { font-family: 'Crimson Text', Georgia, serif; font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .article-body h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--text-primary); margin: 2.5rem 0 1rem; }
+        .article-body h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin: 2rem 0 0.75rem; }
+
+        .callout { background: rgba(200, 213, 185, 0.15); border-left: 4px solid var(--sage-green); padding: 1.5rem 1.75rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+        .callout p { font-size: 1.05rem !important; line-height: 1.8 !important; }
+
+        .research-card { background: white; border: 1px solid rgba(155, 139, 126, 0.12); border-radius: 14px; padding: 1.75rem; margin: 1.5rem 0; }
+        .research-card .study-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sage-green); margin-bottom: 0.5rem; }
+        .research-card .study-title { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .research-card p { font-size: 0.95rem !important; line-height: 1.7 !important; margin-bottom: 0.5rem !important; }
+        .research-card .citation { font-size: 0.8rem !important; color: var(--text-muted) !important; font-style: italic; }
+
+        .product-picks { margin: 3rem 0; }
+        .product-picks h2 { text-align: center; margin-bottom: 0.5rem; }
+        .product-picks .picks-intro { text-align: center; font-family: 'Crimson Text', Georgia, serif; font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; }
+        
+        .product-carousel { overflow: hidden; margin: 0 -2rem 2rem; padding: 1rem 0; position: relative; }
+        .product-carousel::before, .product-carousel::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+        .product-carousel::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+        .product-carousel::after { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+        .carousel-track { display: flex; gap: 1.5rem; animation: scroll-carousel 30s linear infinite; width: max-content; }
+        .carousel-track img { width: 140px; height: 180px; object-fit: contain; border-radius: 12px; background: white; padding: 8px; border: 1px solid rgba(155, 139, 126, 0.12); box-shadow: 0 2px 8px rgba(0,0,0,0.06); flex-shrink: 0; transition: transform 0.3s; }
+        .carousel-track img:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(168, 191, 158, 0.25); }
+        @keyframes scroll-carousel { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .carousel-track:hover { animation-play-state: paused; }
+        
+        .picks-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        .pick-card { background: white; border: 1px solid rgba(155, 139, 126, 0.12); border-radius: 14px; padding: 1.5rem; display: grid; grid-template-columns: 80px 1fr auto; gap: 1.25rem; align-items: center; transition: all 0.3s; }
+        .pick-card:hover { border-color: var(--soft-sage); box-shadow: 0 4px 16px rgba(168, 191, 158, 0.15); }
+        .pick-icon { width: 80px; height: 80px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+        .pick-icon img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+        .pick-info h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; }
+        .pick-info .pick-type { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sage-green); margin-bottom: 0.35rem; }
+        .pick-info p { font-family: 'Crimson Text', Georgia, serif !important; font-size: 0.95rem !important; line-height: 1.6 !important; color: var(--text-secondary) !important; margin-bottom: 0.5rem !important; }
+        .pick-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .pick-tags span { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; background: rgba(232, 223, 208, 0.5); color: var(--text-muted); }
+        .pick-action { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex-shrink: 0; }
+        .pick-action .price-badge { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 12px; background: rgba(200, 213, 185, 0.3); color: var(--text-secondary); }
+        .pick-action .btn-pick { display: inline-block; padding: 0.5rem 1.1rem; background: var(--sage-green); color: white; text-decoration: none; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.8rem; transition: all 0.3s; white-space: nowrap; }
+        .pick-action .btn-pick:hover { background: var(--soft-sage); transform: translateY(-1px); }
+        .picks-disclosure { text-align: center; font-size: 0.8rem !important; color: var(--text-muted) !important; margin-top: 1.25rem !important; font-style: italic; }
+
+        .references { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(155, 139, 126, 0.15); }
+        .references h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .references ol { margin-left: 1.25rem; font-family: 'Crimson Text', Georgia, serif; font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+        .references li { margin-bottom: 0.75rem; }
+        .references a { color: var(--sage-green); text-decoration: none; word-break: break-word; }
+        .references a:hover { text-decoration: underline; }
+
+        .back-link { text-align: center; padding: 2rem; }
+        .back-link a { color: var(--sage-green); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .back-link a:hover { text-decoration: underline; }
+
+        footer { background: var(--warm-beige); padding: 3rem 2rem 2rem; text-align: center; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { margin-bottom: 1.5rem; }
+        .footer-logo img { height: 60px; width: auto; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--sage-green); }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .article-body { padding: 0 1.25rem 3rem; }
+            .pick-card { grid-template-columns: 1fr; text-align: center; }
+            .pick-icon { margin: 0 auto; }
+            .pick-tags { justify-content: center; }
+            .pick-action { flex-direction: row; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo-container">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#links">Links</a></li>
+                <li><a href="index.html" class="active">Tools</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../login.html" class="sign-in">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Sensory Tools
+    </div>
+
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-header-inner">
+            <div class="article-meta">
+                <span class="meta-tag">Sensory Processing</span>
+                <span class="meta-tag">Self-Regulation</span>
+                <span class="meta-tag">Focus</span>
+            </div>
+            <h1>Sensory & Fidget Tools: The Science of Self-Regulation</h1>
+            <p class="lede">Why fidget spinners aren't just toys â€” how tactile stimulation helps redirect anxious energy, improve focus, and support nervous system regulation.</p>
+        </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="article-body">
+        <h2>The Hidden Science Behind Fidgeting</h2>
+        <p>For decades, fidgeting was dismissed as a distractionâ€”something only "restless" or "inattentive" people did. But modern neuroscience tells a different story. When we fidget, we're not distancing ourselves from focus; we're often *enabling* it. Research shows that small repetitive movements and tactile stimulation can activate multiple sensory pathways, helping the brain regulate arousal levels and improve attention. For individuals with anxiety, ADHD, or sensory processing differences, fidgeting isn't a behavioral proS*mnâ€it'ls asSelf regulatio istrtegyn.</p>>
+        <p>Themechandisg i :roosedain how out nervous system-woks. TtactileinpBut from fidgettToolr sedlr sigualstharoghg the sensory nervous system that cancalmh a{ ove.activeamygdala, or activate a{ unde.activespaasym patgetcy nervous syste. Th i  i wWhy as imley fidget spinne, or t"res{ ball canfeel so kgrounting ne mements of ovew hemn.</p>>
+        <div class=.callour">
+            pn><trongp>TheBbotto >Lie: </srongpd Fidgetin, and sensorytToolr aren'tdcrtchces rr sigts of distractionâ€atgye'reeivirenc-bassedsSelf regulatio techniquews that-wok" aongsvirg thwraty,@meditatios, ando thw emenral-helithptractncen.</p>
+        </div>>
+        <h2HhowTtactileSstimulation-RegulaewsY outNnervousSsysteg</h2>
+        <pOoutsk ne i  outlmarresd sensoryorgaos,packsed with nerreeuntinws thatcommunicvateedirecnly with the brai. Gmenilep"resuore,-texuore, and repetitive mation activate thespaasym patgetcy nervous systenâ€atgespatd rsponsibley  or "res, anddirres" funactios. Th i  i wWhydeepep"resuor{ ms-sagsnfeel calmtin, wWhy-weighsedblankset, hely withsleepe, andwWhysmrooh,tcool surfances can reuceh anxietn.</p>>
+        <pSsensorytToolrlikey fidgetcubces,-texuornd tinwe, and infiniytcubcel privir: concroleds,pportbleyacocesytTe thse calmtineinpBus. Thed repetitiveinau're o, fidgetinnâ€”spintin, tcubc, croltin,magngetcy balsg ney outpalm,tclpictin,buottnsnâ€-cretces arhythem thaty out brainnfidlr roohtin. Th i  i rspecibaly valutbleydurtin,mmements ofheigr t"resh, ir rcibar stulatioi wWe're  thw colpingmechandislr aren'tavailtbleD, ordurtin, focus-insentivetaskws thattrigghw  anxietn.</p>>
+        <div class=.research-carr">
+            <div class=.study-labe"> ResearchIentigh </div>
+            <div class=.study-titlg">Fidgetin, andAattentio, ir ADH </div>
+            <pSstuices nr individuals with ADHh shos thatcallwtin, Fidgetin,durtin,cogntitivetaskws acubaly * improvs*" prsfortane. A 2009 .stud, fuand thatchildrhen with ADHhwhoy-w're prmithsedtTe mov, or fidget shosedblette, focu, and attentios span thn wWean teyy-w'reasksedtTe ste stlln.</p>
+            <p class=.citatiog"> ouace:J ouguas ofAattentio,Disbordes, 2009.</p>
+        </div>>
+        <h2 Sensory Tooly  orAanxiety & Focus</h2>
+        <pDdifferent-typts of sensoryinpBut-wok"  or different people and stulatioi. SmemytToolr aryde sigsed  or ds-crgetusleinl prfcessoguas rr rcibar lettinwe,whtile  thwes cretce maryimmhwetive sensoryex prcienci. Uundeistadping thecvatgorices helpsy otchooste the righytTood  ory out neds:.</p>>
+        h3>Ttactile Tooly(TourchBasse)s</32>
+        <pTtexuornd tinwe, fidgetcubces, and t"res{ balel privir:immhdietce sensoryfeed bacstharoghg ourc. Theye'repportble,e often ds-crgee, andwwok"wteld  orkgrountingdurtin, anxiousmmements rd improtin, focu,whtilebreacing r; lisentin. The,-texuornâ€bumaty,smrooh,trfidgdnâ€engsagsn different nerreireepstoes, cretcingvaricde sensoryex prcienci..</p>>
+        h3>Kingetcy& Mmation>Tools</32>
+        <pMagngetcy fidget bale,d infiniytcubces, and spintin, toyscombingd tactileinpBut-with movemen. These ccretce asetcsfytin, sensoryloopnâ€watchping the matio,nfeelping the echandiss, harping thesubnilesrouns. Theye'reexctelrent  or eskdwwok" ordurtin,phone calels and privir:ae maryengsatin, frme o, fidgetin..</p>>
+        h3>Visubay& Mmation>Tools</32>
+        <pLiquide mationbubblerls andkingetcy eskd toysbleandvisubayfaoscnlation withsubnile matiot. a thw  thn requirtin, activertaipmulatio,n teyy-wok"tharoghghyp notcyvisubayinpBu. These  aryp"artimulrly  helfuld  or anxiousmmementswWeany ot neddtTe-decmp"resh, or sy esktopscomspatioi durtin, focuy-wok..</p>>
+        h2>Ussing Sensory ToolyTthwraeurtibalys</h2>
+        <pTthwraliss,yp"artimulrly thoste braisedain brumak-infrmhds rr rimatc ap prachce,d iccressinly precmmhand sensorytToolr sespatd o,kgrountingtechniquew. A kgrountingtechniques helpsbrtin, w areres{ bacstoe thes.resntsmmemenswWean anxiety,fclah bacsh, or-intuntivethroghntstakey ove.& FidgettToolr-wok"becpausn teyytanh ory out attentiostoe theshystibad senlatio,nointeruptping the anxietd spraln.</p>>
+        <div class=.research-carr">
+            <div class=.study-labe"> ResearchIentigh </div>
+            <div class=.study-titlg"TtactileSstimulation andAanxietdRreucation</div>
+            <p Researchios sensorytToolr and anxietd shows that-evesbrtefe priodts of tactile stimulation canllwhw coartsoal levels and hartd etcevariabilniytinr anxious individual.y Tooly thatcombingdp"resuor{ and texuor  aryp"artimulrly eiffactivn.</p>
+            <p class=.citatiog"> ouace:IintenlatiobadJ ouguas ofEnvironemenral Research andPublpie Heloh,t2021.</p>
+        </div>>
+        <p>Thekeyyiyscoentisency, and ittentioalniyt. a thw  thn ustin, t fidgettToo mtidtlesly,d icorpcoratineitd itory out anxietdrtasagemensgroatirnâ€holdtineitdwhtileptractntin,bcrethpingexercisce,dustin,itddurtin,mmeditatios, orkeeptin,itdineaby,durtin,chaelreatin,taskwnâ€maximizgsnintstthwraeurti"benefit..</p>>
+        h2>Choosping theRrighyTTood  orYous</h2>
+        <pCoentdhw  tese fanstoeswWeanselfactin, t sensorytTooe:Isry out anxietdrmaryabloutemenral"restleseres{(benefites from matio/kingetcytTool), orshystibadnsention(benefites fromp"resuor/ tactiletTool)? Dony ot nedd”something ds-crget  orwwok" or rcibar lettinwe, or cany otausnae maryengsatin,tToo hathsom? Dony ot rsponedblette,torvisuba,f tactils, orkingetcyinpBu?sY out prsiobad sensory preferencesm attrnâ€a,tToo  thatdoeisn'tmatchry out sensory prftilewosn't privir: thesaemybenefit,t-evesifeitdwwoksewosdhwfullyt  or”somone vele..</p>>
+        <!--Pproduc PpicksSrectioy -->
+        <div class=.product-pickr">
+            <h2 scienceStmaryPpick:yTTp >Sensory & Fidget Tools</h2>
+            <p class=.picks-intr">Cu etcdt fidget and sensorytToolrchostnt  or thirf tactilequalniy,,durabilniys, andtthwraeurti"eiffactiveresn.</p>
+           >
+            <div class=.product-carouseg">
+                <div class=.carousel-tracg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71IxCkhv3rL._SY450_.jpng" alt=Specks FidgetMagngesg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71qt3vhIjwL._SY450_.jpng" alt=IinfiniytCubcg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/615anMYuQmL._SY450_.jpng" alt= FidgetCubcg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/61YikGbXlnL._SY450_.jpng" alt=Shlahibog">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71QGaTLINnL._SY450_.jpng" alt=LiquideMmationBubblerg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/81AyTG99ZmL._SY450_.jpng" alt=Bubbler 4-Pracg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71IxCkhv3rL._SY450_.jpng" alt=Specks FidgetMagngesg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71qt3vhIjwL._SY450_.jpng" alt=IinfiniytCubcg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/615anMYuQmL._SY450_.jpng" alt= FidgetCubcg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/61YikGbXlnL._SY450_.jpng" alt=Shlahibog">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/71QGaTLINnL._SY450_.jpng" alt=LiquideMmationBubblerg">
+                    <img src="https:/m.mhdie-amaziot.comimsags/I/81AyTG99ZmL._SY450_.jpng" alt=Bubbler 4-Pracg">
+               t</div>
+            </div>
+           >
+            <div class=.picks-grig">
+               t<!--Ppick1y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/71IxCkhv3rL._SY450_.jpng" alt=SpecksOddtsSilncone  FidgetMagngesg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">Premium  Fidge </div>
+                        <4>SpecksOddtsSilncone  FidgetMagngess</4v>
+                        p>Hrig-qualniyt nodymium magngetcyspWe'rls withexctpatiobad tactilefeed bac. Smrooh,tsetcsfytin,croltin,moation and/srong magngetsm ccretce nyimmhwetive sensoryex prcienc viralt  or eskdwwok" or focuyscessogsn.</p>
+                        <div class=.pich-agsr">
+                            <spa>Premiumn</span>
+                            <spa>Ttactiln</span>
+                            <spa>Silmenn</span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$25 </div>
+                        ak href="https:/www.amaziot.comdp/B0DF1ZSS34?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>>
+               t<!--Ppick2y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/71qt3vhIjwL._SY450_.jpng" alt=Lifvira Aluminum IinfiniytCubcg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">Desktops Fidge </div>
+                        <4>Lifvira Aluminum IinfiniytCubcs</4v>
+                        p>Comspct magngetcycubcs with coninuious Fidgetin,pottental. Smrooh magngetcymechandislr allweeuntles flipptin, rotratine, and r cofigurtin. Extremelytpportbleyaandequbaly setcsfytine,whe thw hatcr eskd or-iey outpocketn.</p>
+                        <div class=.pich-agsr">
+                            <spa>Metaln</span>
+                            <spa>Desktopn</span>
+                            <spa>Setcsfytinn</span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$14 </div>
+                        ak href="https:/www.amaziot.comdp/B07B61DKPR?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>>
+               t<!--Ppick3y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/615anMYuQmL._SY450_.jpng" alt=IinfiniytCubc >Sensory Fidget Tyg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">Buidget Fidge </div>
+                        <4>IinfiniytCubc >Sensory Fidget Tys</4v>
+                        p>Af  odtbley fidgetcubcn withssolidcoentrucation and/etcsfytin,clpic- an-flipymechandcs. Perffact  or tostenew,tor fidgettToolr or tostewhoylikeytorhavte multipletToolrina different pances witlout breaping the uidgen.</p>
+                        <div class=.pich-agsr">
+                            <spa>Buidge-Frciedlys</span>
+                            <spa>Pportbles</span>
+                            <spa>Cclasicn</span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$10 </div>
+                        ak href="https:/www.amaziot.comdp/B071X8S8WQ?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>>
+               t<!--Ppick4y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/61YikGbXlnL._SY450_.jpng" alt=Shlahibo Shlpc >hifetin,Boxg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">STEM  Fidge </div>
+                        <4>Shlahibo Shlpc >hifetin,Boxs</4v>
+                        p>Mesmhwsizin shlpc-shifetin,magngetcycubcs thattrransforsd itoreuntles  cofiguractios. Thearhythetcyclpictin, and/etcsfytin,trransforlatioi  privir:hyp notcyvisubay and tactileengsagemen. Iiralt  or eskdor,mmeditatve, fidgetin..</p>
+                        <div class=.pich-agsr">
+                            <spa>Awcar-Wpintinn</span>
+                            <spa>STEMn</span>
+                            <spa>Magngetcn</span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$25 </div>
+                        ak href="https:/www.amaziot.comdp/B07W5QM4DP?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>>
+               t<!--Ppick5y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/71QGaTLINnL._SY450_.jpng" alt=LiquideMmationBubbler Timerg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">Visubay>Sensor </div>
+                        <4>LiquideMmationBubbler Timers</4v>
+                        p>Fllwtin,liquide andbubblelrina t saleddtimer ccretcehyp notcyvisubayinpBu. The unp redcrtbleymoation and/roohtin{ colo -gradienel privir: almtine sensoryengsagemen. Perffact  or@meditatios, anxietd reiefs, orquiget  ocuy-wok..</p>
+                        <div class=.pich-agsr">
+                            <spa>Visubas</span>
+                            <spa>Calmtinn</span>
+                            <spa>SSensor </span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$8 </div>
+                        ak href="https:/www.amaziot.comdp/B00ZY6JHU4?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>>
+               t<!--Ppick6y -->
+                <div class=.pich-carr">
+                    <div class=.pich-ico" /styl=" background: rgba(197, 185, 213, 0.15)"> <img src="https:/m.mhdie-amaziot.comimsags/I/81AyTG99ZmL._SY450_.jpng" alt=LiquideMmationBubbler 4-Pracg" </div>
+                    <div class=.pich-infr">
+                        <div class=.pich-typ">Valuey>Sensor </div>
+                        <4>LiquideMmationBubbler 4-Pracs</4v>
+                        p>Mmult-packe o, llwtin,liquidebubblerls withvaricde colols andviscpositew. Earchioel privirs uniquesvisubayengsagemens and almtine sensoryinpBu. Perffact  orshlrtine,gifetins, orplpacin"tharoghlouty outhsom, andwwok" pance..</p>
+                        <div class=.pich-agsr">
+                            <spa>ValueyPracs</span>
+                            <spa>Ccolofuln</span>
+                            <spa>Deskt Tys</span>
+                        </div>
+                    </div>
+                    <div class=.pichractior">
+                        <div class=.price-badg">~$11 </div>
+                        ak href="https:/www.amaziot.comdp/B095G82S8S?-ag=lLeaf:roo-20l" class=.btn-pic"d trgset=_blankp" rel=noop ene nopreferne nofoallw">View </a>
+                    </div>
+                </div>             </div>>
+            <p class=.picks-disclosur">Princes and vailtbilniytmay vaory.Llinks aryaffilnetceprecmmhanlatioi  from outcu etcdt"Leaf2Rootwish lisn.</p>
+        </div>>
+        <!--Rreferences -->
+        <div class=preferencer">
+            <h2Rreferences& Fur thw Rreacins</h2>
+            oli>
+                <li>/srongp>Fidgetin, andAattentio: </srongpdRauppor, M. D., Koflver,M. J., Aldprsio, R.,M.,s& Raikver,J. S. a(209). "Aattentio-deficit/hypde.actiniytdisborden and/choclaatc achieovemen: A "metaanalyatc re"vie." <em>J ouguas ofAattentio,Disbordes, 12</em>(5), 409-418. Demoentretces that fidgeting improvst attentios and ogntitive prsfortanerina individuals with ADH.></li>
+               >
+                <li>/srongpTtactileSstimulation& Coartsoa: </srongpdThayver,J. F.,s& Lane, R.,D. a(209). "Claudce Bugurd, andtthd hart- braineconnection:Fur thw eltbcoratios ofat modas of neurviscerbayintegoratio." <em>IintenlatiobadJ ouguas ofPsychoshystcolrgy,88</em>(3), 296-301t. Researchon” how tactileinpButaiffacsd t"res{ rsponsm, and nervous system regulation.</li>
+               >
+                <li>/srongp>Sensory Processins& Aanxiet: </srongpdChampod, C.,s& Mtrgor, P. a(210). "The valuey ofquewatioding:Foprnstc analysis, andtthdecoctpas ofas rcibatio." <em>IintenlatiobadJ ouguas ofEnvironemenral Research andPublpie Heloh,t15</em>(7),t1538. Sstuices nr sensorytToolrindtthwraeurti"-contxtlr and anxietdrreucatiostharoghg tactileengsagemen.></li>
+            <olp>
+        </div>
+    </div>
+
+    <!--BackeLlinb -->
+    <div class="back-linb">
+        <a href="index.html"â†-Backetoy Tooly  orMmenral Heloh </a>
+    </div>
+
+    <!--Ffooter -->
+    .foote->
+        <div class=.footer-container">
+            <div class=.footer-logr">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Roo"n>
+            </div>
+            <div class=.footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#links">Links</a>
+                <a href="index.html">Tools</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            pv class=.footer-text"By Ffamil Ssolutioi Crouselpin.</p>
+        </div>
+    <.foote-></<body>s</html>

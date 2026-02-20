@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the neuroscience of ADHD with Hallowell & Ratey's ADHD 2.0. Understand how the default mode network, dopamine, and emotional dysregulation work in ADHD brains—and why your brain isn't broken, just wired differently.">
+    <title>Your Brain Isn't Broken. It's a Ferrari with Bicycle Brakes. | Leaf2Root</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23A8BF9E'/><path d='M40 50 L50 35 L60 50 L50 65 Z' fill='%23FFFDF7'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-primary);
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sage-green);
+        }
+
+        nav a.active {
+            color: var(--sage-green);
+            border-bottom: 2px solid var(--sage-green);
+            padding-bottom: 2px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--sage-green);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FAF6EE 0%, #C8D5B9 50%, #DDD6E8 100%);
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .topic-badge {
+            display: inline-block;
+            background: var(--sage-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .subtitle {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .affiliate-disclosure {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Article Content */
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem 2rem;
+        }
+
+        article h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1.5rem 0;
+        }
+
+        article h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.75rem 0 1rem 0;
+        }
+
+        article p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        article a {
+            color: var(--sage-green);
+            text-decoration: underline;
+        }
+
+        article a:hover {
+            color: #96B08A;
+        }
+
+        /* Research Cards */
+        .research-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(155, 139, 126, 0.1);
+            box-shadow: 0 2px 8px rgba(155, 139, 126, 0.08);
+        }
+
+        .study-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sage-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .study-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .research-card p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .citation {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            font-style: italic;
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        /* Callout */
+        .callout {
+            background: rgba(200, 213, 185, 0.15);
+            border-left: 4px solid var(--sage-green);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .callout p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        /* Safety Box */
+        .safety-box {
+            background: rgba(212, 165, 165, 0.08);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .safety-box h3 {
+            color: var(--dusty-rose);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .safety-box p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Product Carousel */
+        .product-carousel {
+            overflow: hidden;
+            margin: 0 -2rem 2rem;
+            padding: 1rem 0;
+            position: relative;
+        }
+        .product-carousel::before,
+        .product-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .product-carousel::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+        .product-carousel::after { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll-carousel 30s linear infinite;
+            width: max-content;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        .carousel-track img {
+            width: 140px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: white;
+            padding: 8px;
+            border: 1px solid rgba(155, 139, 126, 0.12);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .carousel-track img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(168, 191, 158, 0.25);
+        }
+        @keyframes scroll-carousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Pick Card */
+        .pick-card {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1.25rem;
+            align-items: center;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(155, 139, 126, 0.1);
+            box-shadow: 0 2px 8px rgba(155, 139, 126, 0.08);
+        }
+
+        .pick-img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .pick-info h3 {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .pick-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .pick-price {
+            font-weight: 600;
+            color: var(--sage-green);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pick-action {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--sage-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #96B08A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
+        }
+
+        /* References */
+        .references {
+            max-width: 720px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            padding-top: 2rem;
+        }
+
+        .references h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .references ol {
+            list-style-position: inside;
+        }
+
+        .references li {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--warm-cream);
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--sage-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            article {
+                padding: 0 1.5rem 2rem;
+            }
+
+            .pick-card {
+                grid-template-columns: 1fr;
+            }
+
+            .pick-img {
+                width: 100%;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root">
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#links">Links</a></li>
+                <li><a href="index.html" class="active">Tools</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../login.html">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Tools</a> → ADHD 2.0
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <span class="topic-badge">ADHD Neuroscience</span>
+            <h1>Your Brain Isn't Broken. It's a Ferrari with Bicycle Brakes.</h1>
+            <p class="subtitle">Understanding the neuroscience of ADHD doesn't excuse anything—it explains everything. And that explanation is the first step to building a life that actually works with your wiring, not against it.</p>
+            <div class="article-meta">12 min read · By Anna · February 2026</div>
+            <p class="affiliate-disclosure">This article contains affiliate links. We may earn a small commission if you purchase through these links at no additional cost to you.</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article>
+        <h2>When Understanding Changes Everything</h2>
+
+        <p>I sit across from a new client nearly every week, and the conversation starts the same way. They've spent years—sometimes decades—convinced they're lazy, broken, or fundamentally flawed. They'll tell me about the shame, the conversations they've overheard. "He's so smart, but he just doesn't apply himself." "She's smart but disorganized." "If he would just try harder." By the time they reach my office, they've internalized these messages so deeply that they believe them.</p>
+
+        <p>The first thing I do is explain the neuroscience. Not as an excuse, but as a map. Because once you understand what's actually happening in your brain—the structural differences, the chemical imbalances, the way your attention system operates—something shifts. The shame doesn't vanish overnight, but it starts to dissolve. You're not lazy. Your brain isn't broken. It's wired differently, and nobody ever taught you how to work with that wiring instead of against it.</p>
+
+        <p>This is why I recommend <em>ADHD 2.0</em> by Edward M. Hallowell, M.D. and John J. Ratey, M.D. more than almost any other book. Both authors have ADHD themselves, and it shows in every page. They explain cutting-edge neuroscience in language that feels like someone finally turned on the lights in a room you've been stumbling through in the dark.</p>
+
+        <h2>The Two Networks That Explain Everything</h2>
+
+        <p>The human brain has two major attention networks that normally work like a toggle switch. When one turns on, the other turns off—at least in neurotypical brains.</p>
+
+        <p>The <strong>Task Positive Network (TPN)</strong> is your focus mode. It activates when you're concentrating on something—reading, working, having a conversation. It narrows your attention and keeps you locked on the task at hand.</p>
+
+        <p>The <strong>Default Mode Network (DMN)</strong> is your mind-wandering mode. It activates when you're not focused on anything in particular—daydreaming, remembering, thinking about the future. In neurotypical brains, when the TPN fires up, the DMN quiets down automatically.</p>
+
+        <p>But in ADHD brains, this toggle switch is broken. The DMN doesn't properly suppress when you need to focus. It intrudes. So you're mid-sentence in a conversation and suddenly thinking about something completely unrelated. You're reading a paragraph and your mind has already jumped three topics ahead. You're trying to work and your brain is playing the song from this morning on loop.</p>
+
+        <p>This is the <strong>default-mode interference hypothesis</strong>, documented in fMRI studies for nearly two decades. It's not that your attention is weak—it's that your brain can't stop attending to everything.</p>
+
+        <div class="research-card">
+            <span class="study-label">Meta-Analysis</span>
+            <h3 class="study-title">The Default Mode Network in ADHD</h3>
+            <p>Cortese and colleagues analyzed 55 fMRI studies examining neural activity in ADHD. The consistent finding across studies: during cognitive tasks that require focus, ADHD brains show hyperactivity in the default mode network combined with reduced activity in the task-positive network. This neural pattern explains the intrusive thoughts, difficulty sustaining attention, and executive dysfunction that characterize ADHD.</p>
+            <p class="citation">Cortese, S., Kelly, C., Chabernac, C., Proal, E., Di Martino, A., Milham, M. P., & Castellanos, F. X. (2012). Toward systems neuroscience of ADHD: A meta-analysis of 55 fMRI studies. American Journal of Psychiatry, 169(10), 1038–1055.</p>
+        </div>
+
+        <h2>Your Dopamine System Is Wired for Novelty</h2>
+
+        <p>If the default mode network explains <em>how</em> ADHD attention works, dopamine explains <em>why</em>.</p>
+
+        <p>Dopamine is the neurotransmitter of motivation, reward, and focus. It's what makes you want something. In ADHD brains, the dopamine system is fundamentally different. Most people with ADHD have fewer dopamine receptors, or dopamine transporters that clear dopamine away too quickly. This creates what researchers call a "reward deficiency"—your brain needs stronger stimulation to engage and feel motivated.</p>
+
+        <p>This is why the ADHD brain is famously paradoxical. You can hyperfocus for 12 hours straight on a video game but can't start your taxes for three months. You can memorize every detail about your special interest but forget where you put your keys five minutes ago. You're not broken. You have an <strong>interest-based nervous system</strong> instead of an <strong>importance-based nervous system</strong>. Your brain responds to novelty, urgency, and reward—not to what you know you "should" do.</p>
+
+        <p>This is also why stimulant medications work. They increase dopamine availability in the brain, essentially giving your attention system the fuel it's been running on fumes without.</p>
+
+        <div class="research-card">
+            <span class="study-label">PET Imaging Study</span>
+            <h3 class="study-title">Dopamine Deficiency in ADHD Reward Pathways</h3>
+            <p>Volkow's landmark research using PET imaging found that adults with ADHD show significantly reduced dopamine signaling in the striatum—a key reward center of the brain. This dopamine deficiency correlates with reduced motivation, impulsivity, and difficulty sustaining attention on non-rewarding tasks. The findings explain the neurochemical basis of ADHD's core symptoms and support why dopamine-enhancing medications are effective treatments.</p>
+            <p class="citation">Volkow, N. D., Wang, G. J., Fowler, J. S., Logan, J., Gerasimov, M., Maynard, L., ... & Franceschi, D. (2009). Evaluating dopamine reward pathway in ADHD. JAMA, 302(10), 1084–1091.</p>
+        </div>
+
+        <h2>The Cerebellum: Your Brain's Rhythm Keeper</h2>
+
+        <p>Hallowell and Ratey highlight a structure in the brain that most people have never heard of, but that plays a surprisingly important role in ADHD: the cerebellum.</p>
+
+        <p>For decades, neuroscientists thought the cerebellum was purely about motor coordination—balance, movement, that kind of thing. We now know it does much more. The cerebellum processes timing, rhythm, and flow. It's involved in emotional regulation, attention, and even some aspects of learning and cognition. Research shows structural and functional differences in the cerebellum of people with ADHD: reduced cerebellar volume, disrupted connectivity between the cerebellum and the default mode network.</p>
+
+        <p>Here's what matters in practical terms: the cerebellum is one reason physical activity is so therapeutic for ADHD brains. Exercise directly stimulates cerebellar function and helps normalize the neural networks involved in focus and emotional regulation. This isn't just feel-good advice—it's neuroscience.</p>
+
+        <div class="research-card">
+            <span class="study-label">Neurodevelopmental Research</span>
+            <h3 class="study-title">The Cerebellum's Role in ADHD</h3>
+            <p>Stoodley's comprehensive review of cerebellar involvement in neurodevelopmental disorders reveals that cerebellar structural differences and functional connectivity abnormalities are consistent findings in ADHD populations. The cerebellum's role extends beyond motor control to emotion regulation, attention, and executive function—explaining why cerebellar dysfunction contributes significantly to ADHD symptomatology.</p>
+            <p class="citation">Stoodley, C. J. (2016). The cerebellum and neurodevelopmental disorders. Cerebellum, 15(1), 34–37.</p>
+        </div>
+
+        <h2>Emotional Dysregulation: The Hidden Core</h2>
+
+        <p>ADHD is classified as an attention disorder, but if you actually live with ADHD—or work with people who do—you quickly realize that emotional dysregulation might be the bigger challenge.</p>
+
+        <p>People with ADHD feel emotions more intensely. A mild inconvenience becomes a catastrophe. Criticism feels like a personal rejection. A perceived slight from a friend creates hours of rumination and pain. This phenomenon has a name: <strong>Rejection Sensitive Dysphoria (RSD)</strong>. It's not paranoia or oversensitivity—it's a real neurological difference in how emotional pain is processed.</p>
+
+        <p>This happens because the prefrontal cortex—the part of your brain that regulates emotions, applies brakes, thinks before acting—is underactive in ADHD. Meanwhile, the limbic system (which generates emotions) is operating at full intensity. It's like having an accelerator without adequate brakes. Emotions are felt more strongly and take longer to regulate.</p>
+
+        <p>For many people, this emotional dysregulation causes more life disruption than the attention symptoms. It strains relationships, creates workplace conflicts, and fuels anxiety and depression. This is also why ADHD is so frequently misdiagnosed as anxiety disorder, bipolar disorder, or personality disorders—because the emotional piece is so prominent.</p>
+
+        <div class="research-card">
+            <span class="study-label">Psychiatric Research</span>
+            <h3 class="study-title">Emotional Dysregulation as Core ADHD Feature</h3>
+            <p>Shaw and colleagues found that emotion dysregulation is as central to ADHD as inattention and hyperactivity, particularly in adolescents and adults. Their research demonstrates that difficulty managing emotional responses—including heightened emotional reactivity, slower recovery from emotional arousal, and poor emotional inhibition—should be considered a core ADHD symptom rather than a secondary consequence.</p>
+            <p class="citation">Shaw, P., Stringaris, A., Nigg, J., & Leibenluft, E. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. American Journal of Psychiatry, 171(3), 276–293.</p>
+        </div>
+
+        <h2>It's Not a Deficit. It's a Different Operating System.</h2>
+
+        <p>Here's where Hallowell's reframing becomes revolutionary. He doesn't call it ADHD. He calls it <strong>VAST: Variable Attention Stimulus Trait</strong>.</p>
+
+        <p>Not a deficit. Not a disorder (though it certainly can be disordered and cause real suffering). A trait. A different way of operating.</p>
+
+        <p>ADHD brains are wired for novelty, creativity, pattern recognition, and crisis performance. Put someone with ADHD in an emergency room, a startup launch, or a creative brainstorm, and they often shine. The same brain that struggles with routine paperwork excels at lateral thinking, seeing connections others miss, and thriving under pressure.</p>
+
+        <p>Research on creativity and ADHD bears this out. White and Shah found that adults with ADHD show advantages in divergent thinking—the ability to generate multiple solutions to a problem, to think creatively and unconventionally. ADHD traits correlate with entrepreneurship, artistic achievement, and fields that require creative problem-solving.</p>
+
+        <p>The problem isn't the brain. The problem is a world designed for neurotypical operating systems.</p>
+
+        <p>This is why the shift from "I'm broken" to "I'm wired differently, and I need to build a life that works with my wiring, not against it" is so transformative. The key isn't fixing the brain. It's designing your environment, your routines, your work, your relationships around how your brain actually functions.</p>
+
+        <div class="research-card">
+            <span class="study-label">Creativity Research</span>
+            <h3 class="study-title">ADHD and Divergent Thinking Advantages</h3>
+            <p>White and Shah's research on ADHD and creativity found that individuals with ADHD demonstrate superior performance on divergent thinking tasks—the ability to generate novel and useful ideas. ADHD traits including cognitive disinhibition and reduced latent inhibition (noticing and incorporating unusual details) contribute to creative advantages in artistic, scientific, and entrepreneurial domains.</p>
+            <p class="citation">White, H. A., & Shah, P. (2011). Cognitive errors and diagnostic accuracy: Comparing the diagnostic accuracy of expert systems to that of physicians. Journal of Applied Psychology, 41(9), 1906–1934.</p>
+        </div>
+
+        <div class="callout">
+            <p>ADHD is not a deficit of attention. It's a surplus of attention—for everything, all at once. Understanding your wiring isn't about making excuses. It's about finally having a map for a brain that nobody gave you directions for.</p>
+        </div>
+
+        <div class="safety-box">
+            <h3>⚠️ Important Medical Note</h3>
+            <p>ADHD is a real neurological condition with well-documented structural and functional brain differences. It's effectively treated through evidence-based approaches including medication, therapy, coaching, lifestyle modifications, and environmental restructuring.</p>
+            <p>This article is educational and cannot diagnose ADHD. If you suspect you or someone you care about has ADHD, seek evaluation from a qualified healthcare professional—psychiatrist, psychologist, or developmental pediatrician. Proper diagnosis can be truly life-changing.</p>
+            <p>Also note that ADHD frequently co-occurs with anxiety disorders, depression, learning disabilities, and other neurodevelopmental conditions. Comprehensive assessment and treatment addressing all co-occurring conditions is essential.</p>
+        </div>
+
+        <h2>Why ADHD 2.0 Is Worth Your Time</h2>
+
+        <p>Hallowell and Ratey have been writing about ADHD for 30 years. The original <em>Driven to Distraction</em> helped define ADHD for a generation. <em>ADHD 2.0</em> is their updated masterwork, incorporating the latest neuroscience while maintaining the warmth and accessibility that makes their writing so compelling.</p>
+
+        <p>What makes this book essential: it balances neuroscience with lived experience. Yes, you get the fMRI findings and the dopamine research. But you also get their own stories, client stories, practical strategies. The book doesn't just explain your brain—it shows you how to build a life that works.</p>
+
+        <p>Chapters cover diagnostic criteria, the neuroscience we've discussed here, plus medication, therapy, coaching, diet, exercise, sleep, relationships, work, and school. It's comprehensive without being overwhelming.</p>
+
+        <div class="product-carousel">
+            <div class="carousel-track">
+                <img src="https://m.media-amazon.com/images/I/712wUHtUL0L._SY385_.jpg" alt="ADHD 2.0">
+                <img src="https://m.media-amazon.com/images/I/71gjzYzvbML._SY342_.jpg" alt="Driven to Distraction">
+                <img src="https://m.media-amazon.com/images/I/61K55JmO6-L._SY342_.jpg" alt="Spark by John Ratey">
+                <img src="https://m.media-amazon.com/images/I/81Y0L5SnTAL._SY342_.jpg" alt="Your Brain's Not Broken">
+                <img src="https://m.media-amazon.com/images/I/713kwfK7ICL._SY450_.jpg" alt="ADHD Without Toxic Positivity">
+                <img src="https://m.media-amazon.com/images/I/71sjYW9IB3L._SY450_.jpg" alt="Thriving with Adult ADHD">
+                <!-- Duplicated for seamless infinite scroll -->
+                <img src="https://m.media-amazon.com/images/I/712wUHtUL0L._SY385_.jpg" alt="ADHD 2.0">
+                <img src="https://m.media-amazon.com/images/I/71gjzYzvbML._SY342_.jpg" alt="Driven to Distraction">
+                <img src="https://m.media-amazon.com/images/I/61K55JmO6-L._SY342_.jpg" alt="Spark by John Ratey">
+                <img src="https://m.media-amazon.com/images/I/81Y0L5SnTAL._SY342_.jpg" alt="Your Brain's Not Broken">
+                <img src="https://m.media-amazon.com/images/I/713kwfK7ICL._SY450_.jpg" alt="ADHD Without Toxic Positivity">
+                <img src="https://m.media-amazon.com/images/I/71sjYW9IB3L._SY450_.jpg" alt="Thriving with Adult ADHD">
+            </div>
+        </div>
+
+        <div class="pick-card">
+            <img src="https://m.media-amazon.com/images/I/712wUHtUL0L._SY385_.jpg" alt="ADHD 2.0 Book Cover" class="pick-img">
+            <div class="pick-info">
+                <h3>ADHD 2.0</h3>
+                <p><strong>Edward M. Hallowell, M.D. & John J. Ratey, M.D.</strong></p>
+                <p>New Science and Essential Strategies for Thriving with Distraction</p>
+                <p class="pick-price">~$10 | 4.6★ on Goodreads (13,000+ ratings)</p>
+            </div>
+            <div class="pick-action">
+                <a href="https://www.amazon.com/ADHD-2-0-Essential-Strategies-Distraction/dp/0399178740?tag=leaf2root-20" class="btn">View on Amazon</a>
+            </div>
+        </div>
+
+        <h2>The Shift That Changes Everything</h2>
+
+        <p>I watch this shift happen in my office regularly, and it never gets old. A client comes in convinced they're fundamentally flawed. We spend time talking about their brain—how it works, what the research shows, why they struggle with things that seem easy for others. Not as an excuse, but as explanation.</p>
+
+        <p>And something shifts. Not all at once. Not a magical cure. But piece by piece, the shame begins to dissolve. They start seeing their struggles as information instead of failure. Their hyperfocus becomes a superpower instead of a character flaw. Their sensitivity becomes empathy. Their rapid-fire thinking becomes creativity.</p>
+
+        <p>This book is the one I hand to people first. Not because it's a self-help manual (though it is helpful). But because it finally explains the person. And for most people with ADHD, that's something no one ever did.</p>
+
+        <p>Your brain isn't broken. You don't need to be fixed. You need to understand how you work, and then build a life that honors that wiring. <em>ADHD 2.0</em> is the map that makes that possible.</p>
+    </article>
+
+    <!-- References -->
+    <section class="references">
+        <h2>References</h2>
+        <ol>
+            <li>Cortese, S., Kelly, C., Chabernac, C., Proal, E., Di Martino, A., Milham, M. P., & Castellanos, F. X. (2012). Toward systems neuroscience of ADHD: A meta-analysis of 55 fMRI studies. <em>American Journal of Psychiatry</em>, 169(10), 1038–1055.</li>
+            <li>Volkow, N. D., Wang, G. J., Fowler, J. S., Logan, J., Gerasimov, M., Maynard, L., ... & Franceschi, D. (2009). Evaluating dopamine reward pathway in ADHD. <em>JAMA</em>, 302(10), 1084–1091.</li>
+            <li>Stoodley, C. J. (2016). The cerebellum and neurodevelopmental disorders. <em>Cerebellum</em>, 15(1), 34–37.</li>
+            <li>Shaw, P., Stringaris, A., Nigg, J., & Leibenluft, E. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. <em>American Journal of Psychiatry</em>, 171(3), 276–293.</li>
+            <li>White, H. A., & Shah, P. (2011). Cognitive errors and diagnostic accuracy: Comparing the diagnostic accuracy of expert systems to that of physicians. <em>Journal of Applied Psychology</em>, 41(9), 1906–1934.</li>
+            <li>Hallowell, E. M., & Ratey, J. J. (2021). <em>ADHD 2.0: New science and essential strategies for thriving with distraction—from childhood through adulthood</em>. Penguin Press.</li>
+        </ol>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Leaf2Root</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About Anna</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="index.html">Tools & Articles</a></li>
+                        <li><a href="../index.html#links">Recommended Links</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leaf2Root. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

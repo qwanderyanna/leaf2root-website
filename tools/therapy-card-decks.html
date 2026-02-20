@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Card Decks: Portable Tools for Growth & Reflection | Leaf2Root</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --sage-green: #A8BF9E;
+            --soft-sage: #C8D5B9;
+            --dusty-rose: #D4A5A5;
+            --lavender: #C5B9D5;
+            --warm-beige: #E8DFD0;
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+            --gradient-soft: linear-gradient(135deg, rgba(200,213,185,0.2), rgba(197,185,213,0.15));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--text-primary); }
+
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(255, 253, 247, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(155, 139, 126, 0.1); padding: 0.75rem 2rem; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-img { height: 40px; width: auto; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.5px; }
+        .logo-text .green { color: var(--sage-green); }
+        .logo-text .two { color: var(--text-muted); font-weight: 400; font-size: 1.1rem; margin: 0 1px; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 400; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--sage-green); }
+        .sign-in { background: var(--sage-green) !important; color: white !important; padding: 0.4rem 1.1rem; border-radius: 25px; font-weight: 500 !important; }
+        .sign-in:hover { background: var(--soft-sage) !important; }
+
+        .breadcrumb { max-width: 800px; margin: 1.5rem auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-muted); }
+        .breadcrumb a { color: var(--sage-green); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .article-header { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+        .article-header-inner { max-width: 680px; }
+        .article-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .meta-tag { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.3rem 0.75rem; border-radius: 20px; background: rgba(200, 213, 185, 0.25); color: var(--sage-green); }
+        .article-header h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.15; color: var(--text-primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .lede { font-family: 'Crimson Text', Georgia, serif; font-size: 1.2rem; line-height: 1.7; color: var(--text-secondary); max-width: 620px; }
+
+        .article-body { max-width: 800px; margin: 0 auto; padding: 1rem 2rem 4rem; }
+        .article-body p { font-family: 'Crimson Text', Georgia, serif; font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .article-body h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--text-primary); margin: 2.5rem 0 1rem; }
+        .article-body h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin: 2rem 0 0.75rem; }
+
+        .callout { background: rgba(200, 213, 185, 0.15); border-left: 4px solid var(--sage-green); padding: 1.5rem 1.75rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+        .callout p { font-size: 1.05rem !important; line-height: 1.8 !important; }
+
+        .research-card { background: white; border: 1px solid rgba(155, 139, 126, 0.12); border-radius: 14px; padding: 1.75rem; margin: 1.5rem 0; }
+        .research-card .study-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sage-green); margin-bottom: 0.5rem; }
+        .research-card .study-title { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .research-card p { font-size: 0.95rem !important; line-height: 1.7 !important; margin-bottom: 0.5rem !important; }
+        .research-card .citation { font-size: 0.8rem !important; color: var(--text-muted) !important; font-style: italic; }
+
+        .product-carousel { overflow: hidden; margin: 0 -2rem 2rem; padding: 1rem 0; position: relative; }
+        .product-carousel::before, .product-carousel::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+        .product-carousel::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+        .product-carousel::after { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+        .carousel-track { display: flex; gap: 1.5rem; animation: scroll-carousel 30s linear infinite; width: max-content; }
+        .carousel-track img { width: 140px; height: 180px; object-fit: contain; border-radius: 12px; background: white; padding: 8px; border: 1px solid rgba(155, 139, 126, 0.12); box-shadow: 0 2px 8px rgba(0,0,0,0.06); flex-shrink: 0; transition: transform 0.3s; }
+        .carousel-track img:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(168, 191, 158, 0.25); }
+        @keyframes scroll-carousel { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .carousel-track:hover { animation-play-state: paused; }
+        .pick-icon img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+
+        .product-picks { margin: 3rem 0; }
+        .product-picks h2 { text-align: center; margin-bottom: 0.5rem; }
+        .product-picks .picks-intro { text-align: center; font-family: 'Crimson Text', Georgia, serif; font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .picks-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        .pick-card { background: white; border: 1px solid rgba(155, 139, 126, 0.12); border-radius: 14px; padding: 1.5rem; display: grid; grid-template-columns: 80px 1fr auto; gap: 1.25rem; align-items: center; transition: all 0.3s; }
+        .pick-card:hover { border-color: var(--soft-sage); box-shadow: 0 4px 16px rgba(168, 191, 158, 0.15); }
+        .pick-icon { width: 80px; height: 80px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+        .pick-info h4 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; }
+        .pick-info .pick-type { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sage-green); margin-bottom: 0.35rem; }
+        .pick-info p { font-family: 'Crimson Text', Georgia, serif !important; font-size: 0.95rem !important; line-height: 1.6 !important; color: var(--text-secondary) !important; margin-bottom: 0.5rem !important; }
+        .pick-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .pick-tags span { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; background: rgba(232, 223, 208, 0.5); color: var(--text-muted); }
+        .pick-action { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex-shrink: 0; }
+        .pick-action .price-badge { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 12px; background: rgba(200, 213, 185, 0.3); color: var(--text-secondary); }
+        .pick-action .btn-pick { display: inline-block; padding: 0.5rem 1.1rem; background: var(--sage-green); color: white; text-decoration: none; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.8rem; transition: all 0.3s; white-space: nowrap; }
+        .pick-action .btn-pick:hover { background: var(--soft-sage); transform: translateY(-1px); }
+        .picks-disclosure { text-align: center; font-size: 0.8rem !important; color: var(--text-muted) !important; margin-top: 1.25rem !important; font-style: italic; }
+
+        .references { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(155, 139, 126, 0.15); }
+        .references h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .references ol { margin-left: 1.25rem; font-family: 'Crimson Text', Georgia, serif; font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+        .references li { margin-bottom: 0.75rem; }
+        .references a { color: var(--sage-green); text-decoration: none; word-break: break-word; }
+        .references a:hover { text-decoration: underline; }
+
+        .back-link { text-align: center; padding: 2rem; }
+        .back-link a { color: var(--sage-green); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .back-link a:hover { text-decoration: underline; }
+
+        footer { background: var(--warm-beige); padding: 3rem 2rem 2rem; text-align: center; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { margin-bottom: 1.5rem; }
+        .footer-logo img { height: 60px; width: auto; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--sage-green); }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .article-body { padding: 0 1.25rem 3rem; }
+            .pick-card { grid-template-columns: 1fr; text-align: center; }
+            .pick-icon { margin: 0 auto; }
+            .pick-tags { justify-content: center; }
+            .pick-action { flex-direction: row; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo-container">
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root Logo" class="logo-img">
+                <div class="logo-text"><span class="green">Leaf</span><span class="two">2</span>Root</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#links">Links</a></li>
+                <li><a href="index.html" class="active">Tools</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../login.html" class="sign-in">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Therapy Card Decks
+    </div>
+
+    <div class="article-header">
+        <div class="article-header-inner">
+            <div class="article-meta">
+                <span class="meta-tag">Evidence-Based</span>
+                <span class="meta-tag">Therapeutic Tools</span>
+                <span class="meta-tag">Self-Reflection</span>
+            </div>
+            <h1>Therapy Card Decks: Portable Tools for Growth &amp; Reflection</h1>
+            <p class="lede">How structured card-based interventions make complex therapeutic concepts accessible, portable, and surprisingly effective for both clinicians and clients.</p>
+        </div>
+    </div>
+
+    <div class="article-body">
+        <p>There's something inherently powerful about physical cards. Perhaps it's the tactile experience, the element of chance when you draw a random card, or the simplicity of a single prompt that breaks down an overwhelming topic into manageable pieces. Whatever the reason, therapy card decks have emerged as a genuinely useful toolâ€”both in clinical practice and for individuals working on their own mental health between sessions.</p>
+
+        <h2>Translating Therapy Into Action</h2>
+        <p>Therapy card decks work because they take evidence-based approaches like Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Acceptance and Commitment Therapy (ACT) and translate them into bite-sized, actionable prompts. Instead of trying to remember a complicated concept discussed in session, you draw a card and get a concrete exercise: "Identify one thought that feels true but may not be factual" (CBT), "Name five things you can feel right now without judgment" (mindfulness), or "What is one small value-aligned action you can take today?" (ACT). The simplicity is the point. By removing the cognitive load of "where do I even start?", these decks invite consistent engagement with therapeutic work.</p>
+
+        <div class="callout">
+            <p><strong>The power of constraint:</strong> Therapy card decks work precisely because they limit options. In a session, a therapist carefully guides you to a specific insight. Card decks replicate this structure through randomizationâ€”removing choice paralysis and encouraging engagement with tools you might otherwise overlook.</p>
+        </div>
+
+        <h2>From Session Starter to Homework Tool</h2>
+        <p>In clinical settings, therapists use card decks in multiple ways. They're excellent session openersâ€”drawing a card together breaks the ice and creates immediate focus. They serve as structured homework: "Try this exercise from the DBT Deck this week and we'll discuss what you noticed." For group therapy, card decks like the Group Therapy Card Deck provide ready-made icebreakers and activities that facilitate sharing without requiring facilitators to constantly generate new exercises. The accountability is gentle but real: having a physical deck makes it easier to commit to practice between sessions.</p>
+
+        <p>Between-session work is where therapy becomes transformation. The cards sit on your nightstand or desk, a physical reminder that you're actively building skerap: he ca,cen/" thei mornng far drflectioe ajur nligng. Daw acen/hen you re aeel ng sktuck. Us them ihen ymovions mref hghtand aou noed ac round:ng to ol The candomiess) ctual"y belmpâ€”dou re amre {ike y bo pngagemwith tn txercise fhen yi feels tike tsrentdipty iatehr that opbigntion. /p>
+
+        <h2>Tre cPsyhoiogi of aard Based<Leafrnng /h2>
+         <div class="cesearch-card >
+            <div class="atudy-label ">Rsearch-Instghts/div>
+            <hiv class="atudy-litle ">Bte-sSzed,Leafrnng  &Behavior TCat ge/div>
+            <hp>Rsearch-In ybhavioral Tnterventionsshaow that fmall r, .iscuete erompts. lad oo phghtr tngagement wnd abtter-complicnce aomplaed ho pentsetherapeutic watirieap: hChunkng inhormation.into bndividualscards sed ues olerwhelmiwnd aakes iepleted cxpesure {o comreconcepts aeel rlss) eplettive </p>
+        <   <div class="catation ">Bsed<Ln.irisncple sfrom tbhavioral Tcondmizc and acdlti ladrnng  herory/div>
+         /div>
+
+        <h>There's somid rpsyhoiogi obhaid weh this eormatiwork : hFirst theraes the ted ueion.if connitive load €”dou  breintdo esn'thave eo praocss) c ullychanper-cr Tession . Asingle pard p ovide  exnugh rnhormation.io praopt tction yithout rverwhelming tou .Sesonda theraes the tbnerfi of candomizationâ Whan you dshuflec c eck mnd araw a card ,yi fbypssets eckiion wftiogue. Yu re aot baskng iwheih-IkerapshaouldI eractice " (ut retehr tiscuverwng intthrough rhe traw  Theid ,yepleted cxpesure {o comreconcepts ahrough rdiferenci lanets ecplens ladrnng  Card son thei sme fhem emay npprar infrdiferenci ecks lr Tpeseantthe cogcept drom tdiferenci agle s,yepnhorming:underltand ng without rmndmtony /p>
+
+        <h2>TATool<far dEerwy Mdayity /h2>
+        <p>Ihanehr tou re araw .io pBT)'sfocus.on theught  and ahingkng ipater-ns,yDT)'sfemphass oneymovionsyepgultion.ind arstsrss) to r,ace, tindfulness)based approaches  or "roup tdynaizc aork  theraes tacard decksdeskgned aith tou dn mundf.Semes ecks lae exclicityy bmdayity -pecific €”dBT Dards socus.on the focurcomreckerapsmdaue sfmindfulness),arstsrss) to r,ace, tmovionsyepgultion.,Tntervprltnableffective ess),. Oheras le n approaches . Manytherapists uuildicoloection<),auinglrdiferenci ecks ldplendng on taclientss toed  and agoap: hFr individuals working onderlendntly  these decks iofere achance wo ptructure tou  bwn mherapeutic wractice ,foclouwng the cctual" ramesork :that fnhormaclinical sork.</p>
+
+        <div class="croduct-picks >
+            <d2>
+O  bFavorte cherapy Card Decks:/h2>
+        <   <p class="licks-intro "Ihanehr tou re a therapist cook.ng far dession wools yr demescen/uilding sou  bwn mental health boolskit these decks ibwng ilinical soisom cnto baportable, ashuflec-nd -o for ati</p>
+        <   <        <   <div class="croduct-carousel:>
+                <div class="larousel-track:>
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71Qcw7dledL._SY342_.jp" alt="LTe DBT Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/61e9CAeUzFL._SY342_.jp" alt="LTe DCT Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/610XAd6AJgL._SY342_.jp" alt="LCT Deck far dAnxiety>
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/712LMcUJOVL._SY342_.jp" alt="Lroup Therapy Card Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/714srLX8YSL._SY342_.jp" alt="LBT DSerap:Card Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71sIK5En-aL._SY342_.jp" alt="LSaced helf-RCae eOacke ">                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71Qcw7dledL._SY342_.jp" alt="LTe DBT Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/61e9CAeUzFL._SY342_.jp" alt="LTe DCT Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/610XAd6AJgL._SY342_.jp" alt="LCT Deck far dAnxiety>
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/712LMcUJOVL._SY342_.jp" alt="Lroup Therapy Card Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/714srLX8YSL._SY342_.jp" alt="LBT DSerap:Card Deck >
+                <   <img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71sIK5En-aL._SY342_.jp" alt="LSaced helf-RCae eOacke ">                </div>
+            </aiv>
+            <        <   <div class="crcks-grid >
+                <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71Qcw7dledL._SY342_.jp" alt="LTe DBT Deck >
+/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>Te DBT Deck far dCients.and aTerapists /h24
+                <   <   <div class="lick-cype ">BT /aiv>
+            <   <   <   <p>Bey Laen/Pedrltna. 101 indfulness),arstsrss) to r,ace, tmovionsyepgultion.,Tnd antervprltnableffective ess)exercises. round:d in sDT)'sfeidence-based aramesork . Asomplrean sve lrssu  c for both cndividualscnd agoup Tractice </p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >EovionsyRpgultion./span>
+                <   <   <   <span >Serap:CPactice /span>
+                <   <   <   <span >Cinical -Grad /span>
+                <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$22/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1683731441?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+        <       <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/61e9CAeUzFL._SY342_.jp" alt="LTe DCT Deck >
+/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>Te DCT Deck /h24
+                <   <   <div class="lick-cype ">CT /aiv>
+            <   <   <   <p>Bey Sneh Grapianc. 101 ractice  for Gbtter-chingkng ind aliing thet ftargt=the cognitive lpater-ns driing trstsrss) Perhectifor Gladrnng  ho ientify ond aefeames unelmpul toeught  ainreal:-tim </p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >Tought tPater-ns/span>
+                <   <   <   <span >Cgnitive lRfeameng /hpan>
+                <   <   <   <span >DailyCPactice /span>
+                <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$18/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1683732464?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+        <       <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/610XAd6AJgL._SY342_.jp" alt="LCT Deck far dAnxiety>
+/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>CT Deck far dAnxiety, Ruengtion.iamp; RWorry/d24
+                <   <   <div class="lick-cype ">CT far dAnxiety/aiv>
+            <   <   <   <p>Bey Sneh Grapianc. Aspecifalzed,Lecksdtargt=ng the cpecific ihought tpater-ns hat fauescndxiety In clue  eractice  for Gbeakeng truengtion.icyce sfnd abilding srstsrss) to r,ace,</p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >Anxiety/apan>
+                <   <   <   <span >Ruengtion./apan>
+                <   <   <   <span >Worry Mangement /span>
+                <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$18/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1683733096?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+        <       <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/712LMcUJOVL._SY342_.jp" alt="Lroup Therapy Card Deck >
+/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>roup Therapy Card Deck /d24
+                <   <   <div class="lick-cype ">roup TWork/aiv>
+            <   <   <   <p>Bey Judth tBelmot. BRady-made ictivities tnd anebreakers aeskgned apecific l"y bfr group therapy,settings, BRa ues oacilitatorsTpes thim and creates immediate fngagement wnd avlnesrbility </p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >roup TAtivities /apan>
+                <   <   <   <span >Iebreakers /apan>
+                <   <   <   <span >FcilitatorsTools</span>
+                <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$22/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1683732952?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+        <       <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/714srLX8YSL._SY342_.jp" alt="LBT DSerap:Card Deck >
+/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>ialectical Behavior Therapy (Serap:Card Deck /h24
+                <   <   <div class="lick-cype ">BT (Serap:/aiv>
+            <   <   <   <p>Bey McKay, Wood,Tnd aBrntlyey Iortable TeferencesDards socrthe focurcBT (kerapsmdaue s Perhectifor Gqu ca,kerapsreiewpand creiss osuportawhen you doed aho round:sou  selfoacst</p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >Qu ca,Rferences/span>
+                <   <   <   <span >Ceiss oSuporta/span>
+                <   <   <   <span >AapsBT (Serap:/apan>
+                <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$20/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1684033985?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+        <       <div class="lick-card >
+                <   <iiv class="lick-ccon " tyle>="ackground: rgba(2012, 165, 165, .1); ">img src=".ttps://fm.ediat-amaznâ om/cimgems/I/71sIK5En-aL._SY342_.jp" alt="LSaced helf-RCae eOacke ">/aiv>
+            <   <   <iiv class="lick-cchor>
+                <   <   <d24>Saced helf-RCae eOacke /h24
+                <   <   <div class="lick-cype ">Mndfulness)/elf-RCae /aiv>
+            <   <   <   <p>B55Dards socrtdailyCselfcard Teitals wnd aandfulness)eractice  . Asentle  tngtrypoint.socrtheos new eo cord decks , le n ng the apeutic wrasncple sfith tncessible, pbeaticully graputraied cuideace,</p>
+        <   <   <   <   <div class="lick-cyags>
+                <   <   <   <span >elf-RCae /apan>
+                <   <   <   <span >Mndfulness)/apan>
+                <   <   <   <span >Rflection</span>
+            <   <   <   </aiv>
+            <   <   <iaiv>
+            <   <   <iiv class="lick-cction >
+                <   <   <dpan class="mrice-badge ">~$18/span>
+                <   <   </ahref="https://fwww.amaznâ om/cdp/1401958699?yag=laf2Root -20 class="stn-pick:" targt="U_blank rel="snopeners noefererrs nooclouw">View/a>
+            <   <   <iaiv>
+            <   </div>
+
+       <   </div>
+
+        <    p class="licks-iisclosure ">Fllycransparentcy:these drd Tafflitte finks". Ifyou dbuythrough rhe m, weget a cingycommitsion wa now exrancoms to pou &mdash;nd we'ldgenuinely upprocifae fi. Byut wegonlyCshrd Troduct-s hat fon nctifackgbo pnidence-based ahe apeutic wpproaches ./p>
+        </div>
+
+        <hiv class="ceserences >
+            <d2>
+Rferences:/h2>
+        <   <pol
+                <li><Grapianc, S. J. (2021). <em>Te DCT Deck : 101 Pactice  for GBtter-cTingkng ind aLiing ./pem> PESI Publishng ./pi>
+                <li><Pedrltna, L. (2020). <em>Te DBT Deck far dCients.and aTerapists : 101 Mndfulness),aDstsrss) To r,ace, tEovionsyRpgultion.iamp; RItervprltnableEfective ess)ePactice  ./pem> PESI Publishng ./pi>
+                <li><McKay, M., Wood,TJ. C., amp; RBrntlyey, J. (2019). <em>ialectical Behavior Therapy (Serap:Card Deck ./pem> Nw eHarbng r-cPublicatons.</pi>
+                <li><Belmot., J. (2021). <em>roup Therapy Card Deck :BRady-mMde iWorkheet"s amp; REercises. ar dWrking oith troup  ./pem> PESI Publishng ./pi>
+                <li><Roeanthal, R. H., amp; RRoenow, R. L. (1991). Eseanteap:of cbhavioral Tesearch-: Meheo  and adataandlysis . McGraw-Hrap./li>
+            </uol
+        </div>
+    </div>
+
+    <div class="aack-link >
+        <a href=".ndex.html">T&larr RBckgbo pools for GMntal hHalth /a>
+     /div>
+
+    <dooter-
+        <div class="aooter-container >
+            <div class="aooter-logo >
+                <img src="../assets/Logo for Leaf2Root transparent.png" alt="Leaf2Root "
+            </div>
+            <hiv class="aooter-lonks">
+                <l href="../index.html">Home</a>                 <l href="../index.html"links">Links</a><                <l href=".ndex.html">Tools</a>                 <l href="../index.html"lontact">Contact</a><            </div>
+            <hpclass="aooter-lext"><ey Fmily: Sluteons mCundsl ng /p>
+        </div>
+    </dooter-
+ </ody>
+ /h2ml>
+<

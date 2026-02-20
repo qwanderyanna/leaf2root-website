@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grief Is Your Brain Still Loving Someone It Can't Find | Leaf2Root</title>
+    <meta name="description" content="Explore the neuroscience of grief with Mary-Frances O'Connor's research. Understand why your brain grieves, why grief fog happens, and why understanding the science doesn't erase the pain—it just stops you from blaming yourself.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🌿</text></svg>">
+    <style>
+        :root {
+            --cream: #FFFDF7;
+            --warm-cream: #FAF6EE;
+            --soft-sage: #C8D5B9;
+            --sage-green: #A8BF9E;
+            --dusty-rose: #D4A5A5;
+            --soft-rose: #E8C4C4;
+            --lavender: #C5B9D5;
+            --soft-lavender: #DDD6E8;
+            --warm-beige: #E8DFD0;
+            --earth-brown: #9B8B7E;
+            --text-primary: #4A4543;
+            --text-secondary: #6B625C;
+            --text-muted: #9B8B7E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            color: var(--text-primary);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 253, 247, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(155, 139, 126, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sage-green);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 2rem auto 1rem;
+            padding: 0 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--sage-green);
+            text-decoration: none;
+            margin-right: 0.5rem;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ARTICLE HEADER */
+        .article-header {
+            background: linear-gradient(135deg, #FAF6EE 0%, #DDD6E8 50%, #E8C4C4 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .article-header .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .topic-badge {
+            display: inline-block;
+            background: var(--dusty-rose);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-subtitle {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .affiliate-note {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* ARTICLE BODY */
+        .article-body {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-body h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* RESEARCH CARDS */
+        .research-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(155, 139, 126, 0.1);
+            box-shadow: 0 2px 8px rgba(155, 139, 126, 0.08);
+        }
+
+        .study-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sage-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .study-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .research-card p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .citation {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: rgba(200, 213, 185, 0.15);
+            border-left: 4px solid var(--sage-green);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .callout p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* SAFETY BOX */
+        .safety-box {
+            background: rgba(212, 165, 165, 0.08);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .safety-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dusty-rose);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .safety-box p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .safety-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Product Carousel */
+        .product-carousel {
+            overflow: hidden;
+            margin: 0 -2rem 2rem;
+            padding: 1rem 0;
+            position: relative;
+        }
+        .product-carousel::before,
+        .product-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .product-carousel::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+        .product-carousel::after { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll-carousel 30s linear infinite;
+            width: max-content;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        .carousel-track img {
+            width: 140px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: white;
+            padding: 8px;
+            border: 1px solid rgba(155, 139, 126, 0.12);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .carousel-track img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(168, 191, 158, 0.25);
+        }
+        @keyframes scroll-carousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* PICK CARD */
+        .pick-card {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1.25rem;
+            align-items: center;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(155, 139, 126, 0.1);
+            box-shadow: 0 2px 8px rgba(155, 139, 126, 0.08);
+        }
+
+        .pick-img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .pick-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .pick-info p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .pick-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--sage-green);
+            font-size: 0.95rem;
+        }
+
+        .pick-action .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--sage-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pick-action .btn:hover {
+            background: #96B08A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 191, 158, 0.3);
+        }
+
+        /* RESEARCH CARDS GRID */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        /* CLOSING SECTION */
+        .closing {
+            background: rgba(200, 213, 185, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .closing p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* REFERENCES */
+        .references {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(155, 139, 126, 0.2);
+        }
+
+        .references h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+
+        .references p {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            margin-left: 1.5rem;
+            text-indent: -1.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--warm-cream);
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--sage-green);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(155, 139, 126, 0.1);
+            text-align: center;
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-header {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .article-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.4rem;
+            }
+
+            .pick-card {
+                grid-template-columns: 70px 1fr;
+            }
+
+            .pick-action {
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="container">
+        <a href="/" class="logo">🌿 Leaf2Root</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/links">Links</a></li>
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/login">Log In</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <a href="/tools">Tools</a> → The Grieving Brain
+</div>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+    <div class="container">
+        <div class="topic-badge">Neuroscience of Grief</div>
+        <h1>Grief Is Your Brain Still Loving Someone It Can't Find</h1>
+        <p class="article-subtitle">Understanding grief neuroscience doesn't erase the pain. But it stops you from blaming yourself for not being able to function.</p>
+        <div class="article-meta">12 min read · By Anna · February 2026</div>
+        <p class="affiliate-note">This article contains affiliate links. We earn a small commission if you purchase through these links at no extra cost to you.</p>
+    </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+
+    <!-- PERSONAL OPENING -->
+    <p>I couldn't think. I couldn't remember things. I kept walking into rooms and forgetting why. I thought something was wrong with me on top of everything else. The grief was devastating enough—the physical ache, the weight in my chest, the silence where someone's voice used to be. But this fog, this inability to do basic things I'd done my whole life without thinking, felt like another loss entirely. Like my brain was breaking under the weight of heartbreak.</p>
+
+    <p>Then I read Mary-Frances O'Connor's <em>The Grieving Brain</em>, and something shifted. Not the pain—nothing takes that away. But the shame dissolved. Because O'Connor explains, with the precision of a neuroscientist and the compassion of someone who understands loss, that my brain wasn't breaking. It was doing exactly what a brain does when it loses someone it was wired to love.</p>
+
+    <p>It's not just emotion. It's not just sadness. Grief changes your cognition, your immune system, your reward network, your sense of where someone is in space and time. Your entire brain reorganizes around the absence of a person. And understanding that—really understanding that—gave me permission to stop fighting myself and start tending to what was actually happening.</p>
+
+    <!-- SECTION 1: Brain Maps -->
+    <h2>Your Brain Maps the People You Love</h2>
+
+    <p>Before we can understand grief, we have to understand attachment. Your brain doesn't just know that you love someone. Your brain has created an intricate neural map of that person.</p>
+
+    <p>This map includes where they are in physical space. When your mother walks through the door, your brain knows. When your spouse is late coming home, your brain notices. When your child doesn't answer their phone, your brain tracks the deviation from the expected pattern. These aren't conscious calculations—they're encoded deeply in the brain's predictive systems, especially in the reward network centered on the nucleus accumbens.</p>
+
+    <p>Your brain constantly predicts where a beloved person should be. It creates a persistent, background prediction: <em>They exist. They are somewhere. I can reach them if I need them.</em> That prediction is woven into how you move through the world, how you sleep, how you schedule your days, how you imagine your future.</p>
+
+    <p>When someone dies, that prediction becomes wrong. Catastrophically, permanently wrong. And grief, at its root, is what happens when your brain encounters a prediction error it cannot resolve.</p>
+
+    <!-- SECTION 2: Withdrawal -->
+    <h2>Why Grief Feels Like Withdrawal</h2>
+
+    <p>In 2008, O'Connor and her colleagues conducted a landmark neuroimaging study that illuminates something profound about grief: <strong>it activates the same brain systems as addiction withdrawal.</strong></p>
+
+    <p>They used fMRI to scan the brains of 23 bereaved women—11 with complicated grief (persistent, intense yearning) and 12 with non-complicated grief. When the women were shown photographs of their deceased loved ones, something remarkable happened in both groups: their brains lit up with pain-related neural activity, specifically in the dorsal anterior cingulate cortex and the anterior insula. This is the brain's pain network firing in response to emotional distress.</p>
+
+    <p>But here's what separated the two groups: <strong>only the women with complicated grief showed significant activation in the nucleus accumbens—the brain's reward center.</strong> Their brains were still desperately craving the reward of the person's presence. The yearning intensity directly correlated with this reward activation.</p>
+
+    <p>This is why grief can feel so much like addiction. Your brain has been receiving the reward of this person's presence—literally, dopamine and opioid signaling—for years, decades, a lifetime. And now, suddenly, that reward is gone. Your brain, wired for craving and connection, keeps reaching for something that isn't there. It's not weakness or dysfunction. It's exactly what brains do when they lose the object of their attachment.</p>
+
+    <div class="research-card">
+        <div class="study-label">fMRI Study • 2008</div>
+        <div class="study-title">Craving Love: Enduring Grief and Brain Reward</div>
+        <p>When bereaved women viewed photos of deceased loved ones, brain scans revealed heightened activity in the nucleus accumbens—the brain's reward center—specifically in those experiencing complicated grief. This activation correlated directly with yearning intensity, suggesting grief engages the same brain systems as addiction and withdrawal.</p>
+        <div class="citation">O'Connor, M.F., Wellisch, D.K., Stanton, A.L., Eisenberger, N.I., Irwin, M.R., & Lieberman, M.D. (2008). Craving love? Enduring grief activates brain's reward center. <em>NeuroImage</em>, 42(2), 969-972.</div>
+    </div>
+
+    <!-- SECTION 3: Grief Brain -->
+    <h2>Grief Brain Is Real—Your Cognition Changes</h2>
+
+    <p>If you can't concentrate after a loss, if you keep forgetting why you walked into a room, if you feel like you're moving through fog and can't make simple decisions—this isn't a personal failing. This is grief brain, and it's a recognized neurological phenomenon.</p>
+
+    <p>Grief reduces activity in the prefrontal cortex, the brain region responsible for executive function, attention, working memory, and processing speed. At the same time, your brain is allocating enormous computational resources to emotional processing—trying to reconcile the loss, searching for where the person should be, managing the pain of their absence. This creates a kind of neural bottleneck. Your brain has a finite amount of processing power, and grief is using it all.</p>
+
+    <p>Studies show that bereaved individuals consistently perform worse on attention tasks, visuospatial tasks, and processing speed tests compared to non-bereaved controls. Some research points to a "competitive neurocognitive model"—different neural networks (the basal ganglia and medial temporal lobe circuitry) are competing for resources, leaving less capacity for other cognitive functions. The result is the brain fog that feels so disorienting and isolating: you can't think clearly, you can't remember, you can't decide, and you feel trapped inside your own head.</p>
+
+    <p>This typically improves as you move through grief, but it doesn't follow a timeline. Everyone's brain reorganizes at its own pace.</p>
+
+    <div class="research-card">
+        <div class="study-label">Cognitive Function Study • 2014</div>
+        <div class="study-title">Cognitive Functioning in Complicated Grief</div>
+        <p>Researchers assessed 61 bereaved individuals and found that those with complicated grief showed significant impairments in attention, processing speed, and visual-spatial abilities. The cognitive deficits were greatest in the first months after loss and improved gradually, though some areas persisted longer than others.</p>
+        <div class="citation">Hall, C.A., et al. (2014). Cognitive functioning in complicated grief. <em>Journal of Psychiatric Research</em>, 58, 20-25.</div>
+    </div>
+
+    <!-- SECTION 4: Body -->
+    <h2>Your Body Grieves Too</h2>
+
+    <p>Grief isn't confined to the brain. It radiates through your entire physiology. Your body is responding to a threat (the loss), and it mobilizes accordingly.</p>
+
+    <p>The HPA axis—your hypothalamic-pituitary-adrenal axis, the system that regulates stress—becomes hyperactive after a significant loss. Cortisol levels rise and stay elevated for months or even longer. Your immune system, which is partly regulated by stress hormones, suppresses its functioning. Natural killer cell activity drops. Your body's antibody response weakens. You become more vulnerable to infection.</p>
+
+    <p>At the same time, inflammatory markers rise. Pro-inflammatory cytokines like IL-6, TNF-α, and INF-γ circulate at higher levels in bereaved individuals. Chronic inflammation is linked to cardiovascular disease, autoimmune conditions, and a host of other health problems. This is why grief isn't just metaphorically a "broken heart"—there's a real physiological basis for increased cardiovascular risk after major loss. Some people develop takotsubo cardiomyopathy, a real cardiac condition triggered by severe emotional stress, sometimes called "broken heart syndrome."</p>
+
+    <p>Your body is literally falling apart because the person you loved is gone. And that's not weakness. That's what happens when you're profoundly attached to another human being.</p>
+
+    <div class="research-card">
+        <div class="study-label">Physiological Study • 2012</div>
+        <div class="study-title">Physiological Correlates of Bereavement</div>
+        <p>Research on bereaved individuals reveals prolonged activation of the HPA axis with elevated cortisol, immune suppression (reduced natural killer cell activity, impaired antibody response), and elevated pro-inflammatory cytokines. These changes persist for 6+ months after loss and explain increased vulnerability to illness and cardiovascular events.</p>
+        <div class="citation">Buckley, T., et al. (2012). Physiological correlates of bereavement and the impact of bereavement interventions. <em>Dialogues in Clinical Neuroscience</em>, 14(2), 129-139.</div>
+    </div>
+
+    <!-- SECTION 5: Learning -->
+    <h2>Grieving Is Learning—And Learning Takes Time</h2>
+
+    <p>Here's the insight that changed everything for me: O'Connor argues that grief is not primarily an emotion to process. Grief is a form of learning.</p>
+
+    <p>Your brain has spent years—maybe your entire life—learning and predicting a world in which this person exists. Your brain has learned where they sleep, when they wake, their patterns, their voice, the way they smell. That learning is encoded in neural pathways so deeply that it's invisible to you. It's just how reality is.</p>
+
+    <p>When someone dies, your brain has to learn an entirely new world. A world where this person is absent. And unlike other forms of learning—like learning to drive or learning a language—this learning is profoundly painful. Your brain keeps bumping against the old predictions, the old patterns. You reach for your phone to call them. You hear a song they loved and your body tenses for the moment you'd turn to share it. You cook their favorite dinner and set a place for them. Each time is a small collision between what your brain learned and what is actually true.</p>
+
+    <p>The brain learns through repeated experience. So what teaches your brain that the person is truly gone? <strong>New experiences.</strong> Going to the beach alone. Celebrating a holiday differently. Cooking that meal alone. Falling asleep without their presence. But here's the trap: we avoid new experiences because they hurt. We avoid the places they'd love, the activities they enjoyed, the moments that used to be shared. And so the learning slows. The brain keeps reaching for the old world because we're not giving it new data about the new one.</p>
+
+    <p>This is why grief doesn't follow stages. There's no timeline. Different people need different amounts of new experience, in different domains, at different paces, to learn their new world. For some people it's months. For others it's years. For some people certain parts heal faster than others. Your grief trajectory depends on how much you actively engage with building a new life, not on how long you've been grieving.</p>
+
+    <div class="callout">
+        <p>Grief is not a sign that something is wrong with you. It's a sign that your brain knew how to love—deeply, completely—and now it has to learn a world that doesn't match what it predicted.</p>
+    </div>
+
+    <!-- RESEARCH CARDS GRID -->
+    <h2>Key Research Findings</h2>
+    <div class="research-grid">
+        <div class="research-card">
+            <div class="study-label">Grief Resilience • 2004</div>
+            <div class="study-title">Grief Trajectories & Natural Resilience</div>
+            <p>Longitudinal research shows that approximately 66% of bereaved individuals show a resilience trajectory—high functioning shortly after the loss with minimal long-term disruption. However, the remaining third experience more persistent grief, and the paths are highly individual. There are no universal stages or timelines.</p>
+            <div class="citation">Bonanno, G.A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? <em>American Psychologist</em>, 59(1), 20-28.</div>
+        </div>
+    </div>
+
+    <!-- SAFETY BOX -->
+    <div class="safety-box">
+        <h3>⚠️ A Word on Support & Prolonged Grief</h3>
+        <p>Everyone's grief is different. There are no normal timelines, and there are no correct ways to grieve. If your grief feels manageable (even if painful), that's valid. If it feels overwhelming or unchanged after a year, that's also valid—and professional support can help.</p>
+        <p>Since 2022, Prolonged Grief Disorder has been recognized as a clinical diagnosis in the DSM-5-TR. This is <strong>not</strong> something to self-diagnose from a blog article, but it's worth knowing that if grief becomes functionally impairing and doesn't respond to time and natural support, there are evidence-based treatments (particularly grief-focused cognitive behavioral therapy) that can help. Grief counselors, therapists trained in grief work, and support groups like GriefShare or The Dinner Party are real resources.</p>
+        <p>Your grief is real. And you deserve support, professional or otherwise, if you need it.</p>
+    </div>
+
+    <!-- PRODUCT CAROUSEL -->
+    <div class="product-carousel">
+        <div class="carousel-track">
+            <img src="https://m.media-amazon.com/images/I/81eTtJgDsKL._SY342_.jpg" alt="The Grieving Brain">
+            <img src="https://m.media-amazon.com/images/I/61iVdfDG2NL._SY450_.jpg" alt="Navigating Intense Grief">
+            <img src="https://m.media-amazon.com/images/I/71fyaOR3WvL._SY450_.jpg" alt="Art Therapy for Grief and Loss">
+            <img src="https://m.media-amazon.com/images/I/711TfkAgCoL._SY450_.jpg" alt="The Grieving Body">
+            <img src="https://m.media-amazon.com/images/I/918esM7zH4S._SY450_.jpg" alt="Generations Deep">
+            <img src="https://m.media-amazon.com/images/I/61f1kkyK6TL._SY450_.jpg" alt="Grief Recovery Journal">
+            <!-- Duplicated for seamless infinite scroll -->
+            <img src="https://m.media-amazon.com/images/I/81eTtJgDsKL._SY342_.jpg" alt="The Grieving Brain">
+            <img src="https://m.media-amazon.com/images/I/61iVdfDG2NL._SY450_.jpg" alt="Navigating Intense Grief">
+            <img src="https://m.media-amazon.com/images/I/71fyaOR3WvL._SY450_.jpg" alt="Art Therapy for Grief and Loss">
+            <img src="https://m.media-amazon.com/images/I/711TfkAgCoL._SY450_.jpg" alt="The Grieving Body">
+            <img src="https://m.media-amazon.com/images/I/918esM7zH4S._SY450_.jpg" alt="Generations Deep">
+            <img src="https://m.media-amazon.com/images/I/61f1kkyK6TL._SY450_.jpg" alt="Grief Recovery Journal">
+        </div>
+    </div>
+
+    <!-- PRODUCT PICK -->
+    <h2>Our Pick</h2>
+    <div class="pick-card">
+        <img src="https://m.media-amazon.com/images/I/81eTtJgDsKL._SY342_.jpg" alt="The Grieving Brain book cover" class="pick-img">
+        <div class="pick-info">
+            <h3>The Grieving Brain</h3>
+            <p><strong>By Mary-Frances O'Connor, PhD</strong></p>
+            <p>The Surprising Science of How We Learn from Love and Loss</p>
+            <p class="pick-price">~$13–$20 (Hardcover, Paperback, Audiobook available)</p>
+            <p><em>NPR SciFri Book Club Pick • Behavioral Scientist Notable Books 2022</em></p>
+        </div>
+        <div class="pick-action">
+            <a href="https://www.amazon.com/Grieving-Brain-Surprising-Science-Learn/dp/0062946242?tag=leaf2root-20" class="btn">View on Amazon</a>
+        </div>
+    </div>
+
+    <p>O'Connor writes with the clarity of a researcher and the humanity of someone who understands loss. This book isn't self-help fluff. It's real neuroscience, grounded in her own research and the broader literature on bereavement. But it's also deeply compassionate. Reading it, you don't feel like a subject of study. You feel seen.</p>
+
+    <!-- CLOSING -->
+    <div class="closing">
+        <h2>Grief as Evidence of Love</h2>
+        <p>This book didn't take my pain away. Nothing does, and I wouldn't want it to—that pain is the last thread connecting me to someone I loved. But it gave me permission to stop fighting my own brain. The fog, the yearning, the way my body still reaches for them—these aren't symptoms of depression or dysfunction. They're symptoms of love. They're proof that my brain knew how to attach deeply, completely, in a way that rewired my entire nervous system.</p>
+        <p>And understanding that changed everything. It didn't make grief easier. But it made it survivable. It made me gentler with myself. It transformed the story from "something is wrong with me" to "I loved someone so much that losing them reorganized my entire brain—and my brain is learning how to live in a world without them."</p>
+        <p>If you're grieving, read this book. Not to fix yourself. But to understand what's actually happening inside you. To stop blaming yourself for the fog, the pain, the way love is still reaching for someone who isn't there anymore. Your brain is doing what it's supposed to do. And you're braver than you know.</p>
+    </div>
+
+    <!-- REFERENCES -->
+    <section class="references">
+        <h2>References</h2>
+        <p>Bonanno, G.A. (2004). Loss, trauma, and human resilience: Have we underestimated the human capacity to thrive after extremely aversive events? <em>American Psychologist</em>, 59(1), 20–28.</p>
+        <p>Buckley, T., Sunari, D., Marshall, A., Bartrop, R., Nandy, B., & Tofler, G. (2012). Physiological correlates of bereavement and the impact of bereavement interventions. <em>Dialogues in Clinical Neuroscience</em>, 14(2), 129–139.</p>
+        <p>Hall, C.A., Reynolds III, C.F., Monk, T.H., Begley, A.E., & Buysse, D.J. (2014). Cognitive functioning in complicated grief. <em>Journal of Psychiatric Research</em>, 58, 20–25.</p>
+        <p>O'Connor, M.F., Wellisch, D.K., Stanton, A.L., Eisenberger, N.I., Irwin, M.R., & Lieberman, M.D. (2008). Craving love? Enduring grief activates brain's reward center. <em>NeuroImage</em>, 42(2), 969–972.</p>
+        <p>Shear, M.K., Simon, N., Wall, M., Zisook, S., Neimeyer, R., Duan, N., Skritskaya, N., Ghesquiere, A., Gorscak, B., Clayton, P., Beginning, P., & HEAL Investigators. (2011). Complicated grief and related bereavement issues: DSM-5 proposals. <em>Depression and Anxiety</em>, 28(2), 103–117.</p>
+        <p>World Health Organization. (2019). ICD-11: International Classification of Diseases (11th Revision). Prolonged Grief Disorder (6B41) in Section QD80–QD89 (Factors influencing health status or contact with health services).</p>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Leaf2Root</h3>
+            <p>Leaf2Root is a digital space for understanding the science of grief, healing, and growth. We translate cutting-edge neuroscience and psychology into actionable insight for real people navigating loss.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Resources</h3>
+            <a href="/tools">Tools & Articles</a>
+            <a href="/links">Recommended Reading</a>
+            <a href="/research">Research Library</a>
+            <a href="/community">Community</a>
+        </div>
+        <div class="footer-section">
+            <h3>Support</h3>
+            <a href="/contact">Contact Us</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/accessibility">Accessibility</a>
+        </div>
+        <div class="footer-section">
+            <h3>Follow</h3>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Substack</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Leaf2Root. All rights reserved. This site does not provide medical advice. Please consult a healthcare provider for professional guidance.</p>
+    </div>
+</footer>
+
+</body>
+</html>
