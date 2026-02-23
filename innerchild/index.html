@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healing The Child Within | Inner Child Card Deck | Leaf2Root</title>
+  <meta name="description" content="A 60-card therapeutic deck of gentle invitations to reconnect with your inner child. Available as a digital download. Designed by a licensed therapist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage: #7a9e7e;
+      --sage-light: #a8c5a0;
+      --sage-pale: #e8f0e8;
+      --blush: #d4a5a0;
+      --blush-light: #f0e0dd;
+      --cream: #faf7f4;
+      --teal: #4a8c8c;
+      --teal-light: #6baaaa;
+      --gold: #b8965a;
+      --text-dark: #2c2c2c;
+      --text-mid: #555;
+      --text-light: #888;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    /* ââ NAV ââ */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,247,244,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(122,158,126,0.2);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--sage); font-weight: 600; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-btn {
+      background: var(--sage-light); color: white; border: none; border-radius: 50px;
+      padding: 0.5rem 1.3rem; font-size: 0.85rem; font-weight: 500;
+      cursor: pointer; text-decoration: none; transition: background 0.2s;
+    }
+    .nav-btn:hover { background: var(--sage); }
+
+    /* ââ HERO ââ */
+    .hero {
+      background: linear-gradient(135deg, #e8f0e6 0%, #f5ebe6 50%, #ede4f0 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,165,160,0.3) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(122,158,126,0.2) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero-eyebrow {
+      font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal); font-weight: 500; margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .hero-title em { color: var(--sage); font-style: italic; }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--text-mid);
+      font-style: italic; margin-bottom: 1.8rem;
+    }
+    .hero-desc {
+      font-size: 1rem; color: var(--text-mid);
+      max-width: 560px; margin: 0 auto 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--sage);
+      color: white;
+      border: none; border-radius: 50px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.25s; display: inline-block;
+      box-shadow: 0 4px 15px rgba(122,158,126,0.3);
+    }
+    .btn-primary:hover { background: #6a8e6e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(122,158,126,0.4); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--teal);
+      border: 1.5px solid var(--teal);
+      border-radius: 50px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.25s; display: inline-block;
+    }
+    .btn-secondary:hover { background: var(--teal); color: white; }
+    .hero-tag {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.8rem; color: var(--text-light);
+    }
+    .hero-tag span { color: var(--sage); font-weight: 500; }
+
+    /* ââ COVER IMAGE ââ */
+    .cover-section {
+      display: flex; justify-content: center;
+      padding: 3rem 2rem;
+      background: var(--cream);
+    }
+    .cover-wrap {
+      position: relative;
+      width: 240px;
+    }
+    .cover-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+    }
+    .cover-badge {
+      position: absolute; top: -12px; right: -12px;
+      background: var(--gold); color: white;
+      border-radius: 50%; width: 64px; height: 64px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 600; text-align: center;
+      line-height: 1.2; text-transform: uppercase; letter-spacing: 0.05em;
+      box-shadow: 0 4px 12px rgba(184,150,90,0.4);
+    }
+
+    /* ââ SECTION WRAPPER ââ */
+    .section { padding: 4rem 2rem; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; color: var(--text-dark);
+      margin-bottom: 0.5rem; text-align: center;
+    }
+    .section-title em { color: var(--sage); }
+    .section-line {
+      width: 50px; height: 2px;
+      background: linear-gradient(to right, var(--sage-light), var(--blush));
+      margin: 0.8rem auto 2rem;
+    }
+
+    /* ââ ABOUT ââ */
+    .about-section { background: white; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    @media(max-width:680px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { color: var(--text-mid); margin-bottom: 1.1rem; font-size: 0.97rem; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .stat-card {
+      background: var(--cream);
+      border-radius: 12px; padding: 1.2rem;
+      text-align: center;
+      border: 1px solid rgba(122,158,126,0.15);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--sage); font-weight: 600;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
+
+    /* ââ SECTIONS LIST ââ */
+    .sections-bg { background: var(--sage-pale); }
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .section-card {
+      background: white; border-radius: 14px; padding: 1.5rem 1.6rem;
+      border-left: 4px solid var(--sage-light);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .section-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.09); }
+    .section-card:nth-child(2) { border-color: var(--teal-light); }
+    .section-card:nth-child(3) { border-color: var(--blush); }
+    .section-card:nth-child(4) { border-color: #b8a0d4; }
+    .section-card:nth-child(5) { border-color: var(--gold); }
+    .section-card:nth-child(6) { border-color: #a0c4b8; }
+    .section-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .section-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem;
+    }
+    .section-card-desc { font-size: 0.88rem; color: var(--text-mid); }
+
+    /* ââ SAMPLE CARDS ââ */
+    .sample-section { background: white; }
+    .cards-grid {
+      display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    }
+    .sample-card {
+      width: 220px; flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .sample-card:hover { transform: translateY(-6px) rotate(1deg); }
+    .sample-card img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.14);
+      display: block;
+    }
+    .sample-card-label {
+      text-align: center; margin-top: 0.8rem;
+      font-size: 0.85rem; color: var(--text-mid);
+      font-style: italic;
+    }
+    .sample-note {
+      text-align: center; margin-top: 2.5rem;
+      font-size: 0.88rem; color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* ââ PURCHASE ââ */
+    .purchase-section {
+      background: linear-gradient(135deg, #f5ebe6 0%, #e8f0e6 100%);
+    }
+    .purchase-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    }
+    @media(max-width:680px) { .purchase-grid { grid-template-columns: 1fr; } }
+    .purchase-card {
+      background: white; border-radius: 16px; padding: 2.2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border: 1px solid rgba(122,158,126,0.15);
+      position: relative;
+    }
+    .purchase-card.featured { border-color: var(--sage); }
+    .featured-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--sage); color: white;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 50px;
+    }
+    .purchase-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .purchase-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; color: var(--text-dark); margin-bottom: 0.4rem;
+    }
+    .purchase-price {
+      font-size: 2rem; font-weight: 600; color: var(--sage); margin: 0.6rem 0;
+    }
+    .purchase-price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
+    .purchase-includes {
+      list-style: none; margin: 1rem 0 1.5rem;
+      text-align: left;
+    }
+    .purchase-includes li {
+      font-size: 0.88rem; color: var(--text-mid);
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .purchase-includes li::before { content: 'â'; position: absolute; left: 0; color: var(--sage); }
+    .coming-soon-label {
+      display: inline-block;
+      background: var(--blush-light); color: var(--blush);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.3rem 0.9rem; border-radius: 50px;
+      margin-bottom: 0.8rem; letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-disabled {
+      background: #e0e0e0; color: #aaa;
+      border: none; border-radius: 50px;
+      padding: 0.9rem 2rem;
+      font-size: 0.95rem; font-weight: 500;
+      width: 100%; cursor: not-allowed;
+    }
+
+    /* ââ OWNER ACCESS ââ */
+    .owner-section {
+      background: linear-gradient(135deg, #2c4a3e 0%, #1e3a4a 100%);
+      color: white; text-align: center;
+      padding: 4.5rem 2rem;
+    }
+    .owner-section .section-title { color: white; }
+    .owner-section .section-line { background: linear-gradient(to right, var(--sage-light), var(--teal-light)); }
+    .owner-desc { color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 2rem; font-size: 0.97rem; }
+    .owner-features {
+      display: flex; gap: 1.5rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .owner-feature {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 0.9rem 1.3rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.85);
+    }
+    .owner-feature strong { display: block; color: var(--sage-light); margin-bottom: 0.2rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .btn-owner {
+      background: var(--sage-light); color: white;
+      border: none; border-radius: 50px;
+      padding: 1rem 2.5rem;
+      font-size: 1rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      display: inline-block;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-owner:hover { background: var(--sage); transform: translateY(-2px); }
+    .owner-note { margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-style: italic; }
+
+    /* ââ DISCLAIMER ââ */
+    .disclaimer-section { background: var(--cream); }
+    .disclaimer-box {
+      background: var(--blush-light);
+      border-left: 4px solid var(--blush);
+      border-radius: 12px; padding: 1.5rem 2rem;
+      max-width: 680px; margin: 0 auto;
+    }
+    .disclaimer-box p { font-size: 0.9rem; color: var(--text-mid); }
+    .disclaimer-box strong { color: var(--text-dark); }
+
+    /* ââ FOOTER ââ */
+    footer {
+      background: #2c2c2c; color: rgba(255,255,255,0.6);
+      text-align: center; padding: 2rem;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--sage-light); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ââ RESPONSIVE ââ */
+    @media(max-width:480px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .sample-card { width: 160px; }
+      .cover-wrap { width: 190px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://leaf2root.org" class="nav-logo">
+    <span class="nav-logo-text">Leaf<span style="color:#2c2c2c">2</span>Root</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://leaf2root.org">Home</a>
+    <a href="https://leaf2root.org/tools">Tools</a>
+    <a href="https://leaf2root.org/shop.html">Shop</a>
+    <a href="#purchase" class="nav-btn">Get the Deck</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Leaf2Root Therapeutic Tools</p>
+    <h1 class="hero-title">Healing The<br><em>Child Within</em></h1>
+    <p class="hero-subtitle">A Card Deck of Gentle Invitations to Reconnect with Your Inner Child</p>
+    <p class="hero-desc">60 beautifully illustrated cards for self-exploration, emotional healing, and inner child work â designed by a licensed therapist with trauma-informed care at the center.</p>
+    <div class="hero-actions">
+      <a href="#purchase" class="btn-primary">Get the Digital Deck</a>
+      <a href="#sample-cards" class="btn-secondary">See Sample Cards</a>
+    </div>
+    <p class="hero-tag">60 cards Â· 6 healing sections Â· <span>Therapist-designed</span></p>
+  </div>
+</section>
+
+<!-- COVER IMAGE -->
+<div class="cover-section">
+  <div class="cover-wrap">
+    <img src="images/cover.jpg" alt="Healing The Child Within card deck cover" />
+    <div class="cover-badge">60<br>Cards</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about-section">
+  <div class="section-inner">
+    <h2 class="section-title">What Is This Deck?</h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Most of us were never taught to tend to the younger parts of ourselves â the parts that learned to be small, to be quiet, to survive. <em>Healing the Child Within</em> creates a structured, compassionate path back to those parts.</p>
+        <p>This isn't a simple affirmation deck. It's a <strong>structured self-therapy system</strong> organized into six healing sections â from nervous system safety, through boundary repair, into joy and expansion. Each card is a gentle prompt, not a prescription.</p>
+        <p>Designed for use on your own, with a therapist, or in group settings. Equally powerful as a personal practice tool or a clinical intervention.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">60</div>
+          <div class="stat-label">Therapeutic Cards</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Healing Sections</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Self-Therapy Flows</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">â</div>
+          <div class="stat-label">Ways to Use It</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SECTIONS -->
+<section class="section sections-bg">
+  <div class="section-inner">
+    <h2 class="section-title">Six Healing <em>Sections</em></h2>
+    <div class="section-line"></div>
+    <div class="sections-grid">
+
+      <div class="section-card">
+        <div class="section-tag">Section 1</div>
+        <div class="section-card-title">Safety & Regulation</div>
+        <div class="section-card-desc">Start here when you feel anxious, overwhelmed, or emotionally flooded. These cards offer grounding and containment before any deeper reflection.</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-tag">Section 2</div>
+        <div class="section-card-title">Awareness & Witnessing</div>
+        <div class="section-card-desc">For when you feel numb or disconnected from yourself. These cards help you identify feelings and witness them with compassion, rather than judgment.</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-tag">Section 3</div>
+        <div class="section-card-title">Protection & Boundaries</div>
+        <div class="section-card-desc">Use when you feel resentful, stretched thin, or responsible for everyone else. These cards support you in reclaiming your energetic and emotional space.</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-tag">Section 4</div>
+        <div class="section-card-title">Repair & Compassion</div>
+        <div class="section-card-desc">For moments of self-criticism, shame, or harshness toward yourself. These cards turn the nurturance you've given others inward.</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-tag">Section 5</div>
+        <div class="section-card-title">Expression & Reclaiming</div>
+        <div class="section-card-desc">When you feel silenced, suppressed, or shaped by others' expectations â these cards help you find and honor your authentic voice and anger.</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-tag">Section 6</div>
+        <div class="section-card-title">Expansion & Joy</div>
+        <div class="section-card-desc">Ready to grow beyond survival? These cards invite wonder, freedom, and the kind of joy that was interrupted in childhood but never fully gone.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE CARDS -->
+<section class="section sample-section" id="sample-cards">
+  <div class="section-inner">
+    <h2 class="section-title">A Glimpse Inside the Deck</h2>
+    <div class="section-line"></div>
+    <div class="cards-grid">
+      <div class="sample-card">
+        <img src="images/grounding.jpg" alt="Grounding card from Healing The Child Within" />
+        <p class="sample-card-label">Grounding</p>
+      </div>
+      <div class="sample-card">
+        <img src="images/safety.jpg" alt="Safety card from Healing The Child Within" />
+        <p class="sample-card-label">Safety</p>
+      </div>
+      <div class="sample-card">
+        <img src="images/stability.jpg" alt="Stability card from Healing The Child Within" />
+        <p class="sample-card-label">Stability</p>
+      </div>
+    </div>
+    <p class="sample-note">Three of 60 cards â all from the Safety &amp; Regulation section.</p>
+  </div>
+</section>
+
+<!-- PURCHASE -->
+<section class="section purchase-section" id="purchase">
+  <div class="section-inner">
+    <h2 class="section-title">Get the Deck</h2>
+    <div class="section-line"></div>
+    <div class="purchase-grid">
+
+      <!-- Digital Download -->
+      <div class="purchase-card featured">
+        <div class="featured-badge">Available Now</div>
+        <div class="purchase-icon">ð¥</div>
+        <div class="purchase-title">Digital Download</div>
+        <div class="purchase-price">$XX <span>USD</span></div>
+        <ul class="purchase-includes">
+          <li>All 60 cards as high-resolution printable PDFs</li>
+          <li>Print at home or at a local print shop</li>
+          <li>Instant download â access immediately</li>
+          <li>Access to exclusive owner resources at Leaf2Root</li>
+          <li>Single-user personal &amp; clinical use license</li>
+        </ul>
+        <a href="#" class="btn-primary" style="width:100%; text-align:center;" onclick="alert('Purchase link coming soon! Check back shortly.'); return false;">Download Now â</a>
+      </div>
+
+      <!-- Print on Demand -->
+      <div class="purchase-card">
+        <div class="coming-soon-label">Coming Soon</div>
+        <div class="purchase-icon">ð</div>
+        <div class="purchase-title">Print-on-Demand Deck</div>
+        <div class="purchase-price" style="color:var(--text-light); font-size:1.3rem;">Ships to you</div>
+        <ul class="purchase-includes">
+          <li>Professional-quality printed &amp; packaged deck</li>
+          <li>Premium card stock with soft matte finish</li>
+          <li>Shipped directly to your door</li>
+          <li>Access to exclusive owner resources at Leaf2Root</li>
+          <li>Ideal gift for clients or loved ones</li>
+        </ul>
+        <button class="btn-disabled">Notify Me When Available</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OWNER ACCESS -->
+<section class="owner-section" id="owner-access">
+  <div class="section-inner">
+    <h2 class="section-title">Already Own the Deck?</h2>
+    <div class="section-line"></div>
+    <p class="owner-desc">Unlock the full companion experience â structured self-therapy flows, guided healing arcs, section-by-section guidance, and a 6-week healing program designed to go with every card.</p>
+    <div class="owner-features">
+      <div class="owner-feature">
+        <strong>Guided Flows</strong>
+        6 self-therapy experiences
+      </div>
+      <div class="owner-feature">
+        <strong>6-Week Arc</strong>
+        A structured healing journey
+      </div>
+      <div class="owner-feature">
+        <strong>How-to Guidance</strong>
+        Section-by-section pairings
+      </div>
+      <div class="owner-feature">
+        <strong>Therapist Tips</strong>
+        Clinical use guidance
+      </div>
+    </div>
+    <a href="/innerchild-owner/" class="btn-owner">Access Owner Resources â</a>
+    <p class="owner-note">This area contains guidance and exercises only â no card content is revealed.</p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="section disclaimer-section">
+  <div class="section-inner">
+    <div class="disclaimer-box">
+      <p><strong>A note on safe use:</strong> If a card brings up intense distress, pause and return to a Safety &amp; Regulation card. This deck is a reflective tool, not a replacement for therapy. If you are experiencing active trauma symptoms, suicidal thoughts, or emotional instability, please seek professional support. This deck is designed to accompany â not replace â the work of a licensed mental health professional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Â© 2026 Leaf2Root Â· <a href="https://leaf2root.org">leaf2root.org</a> Â· <a href="https://leaf2root.org/privacy.html">Privacy</a> Â· <a href="https://leaf2root.org/terms.html">Terms</a></p>
+  <p style="margin-top:0.5rem; font-size:0.78rem;">Designed by a licensed therapist. For educational and reflective use.</p>
+</footer>
+
+</body>
+</html>
