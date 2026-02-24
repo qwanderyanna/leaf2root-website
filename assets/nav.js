@@ -461,7 +461,7 @@
 
         <!-- TRAININGS -->
         <li>
-          <a href="/pages/about.html">Trainings</a>
+          <a href="/trainings/">Trainings</a>
         </li>
 
         <!-- About -->
