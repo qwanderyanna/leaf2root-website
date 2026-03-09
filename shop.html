@@ -1,10 +1,10 @@
-<!DOCTYPE html>Page_DownPage_DownPage_Down
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Therapeutic Resources | Leaf2Root</title>
-    <meta name="description" content="Browse our collection of therapeutic workbooks, card decks, and professional development resources. More coming soon.">
+    <meta name="description" content="Browse our collection of therapeutic workbooks, card decks, and professional development resources. FSC Merchandise available now.">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qwanderyanna.github.io/leaf2root-website/shop.html">
@@ -181,11 +181,177 @@
             margin: 0 auto;
         }
 
-        /* Categories Section */
+        /* ─── FSC Merchandise Section (NEW) ─── */
+        .merch-section {
+            background: var(--white);
+            padding: 80px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .merch-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .merch-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .merch-header .section-label {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .merch-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .merch-header p {
+            font-size: 17px;
+            color: var(--text-medium);
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .merch-card {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .merch-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .merch-card-image {
+            height: 260px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .merch-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .merch-card:hover .merch-card-image img {
+            transform: scale(1.04);
+        }
+
+        .merch-card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .merch-card-content .available-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .merch-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .merch-card-content .product-type {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .merch-card-content .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: auto;
+        }
+
+        .merch-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .merch-cta p {
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        .merch-cta a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .merch-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* ─── Coming Soon Categories ─── */
         .categories-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 24px;
+        }
+
+        .categories-heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .categories-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .categories-heading p {
+            font-size: 17px;
+            color: var(--text-medium);
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .categories-grid {
@@ -382,6 +548,10 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .merch-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .categories-grid {
                 grid-template-columns: 1fr;
             }
@@ -396,6 +566,10 @@
             .nav-cta { display: none; }
             .mobile-menu-btn { display: block; }
 
+            .merch-grid {
+                grid-template-columns: 1fr;
+            }
+
             .newsletter-form {
                 flex-direction: column;
             }
@@ -407,7 +581,7 @@
     </style>
 </head>
 <body>
-        <!-- Navigation (shared component) -->
+    <!-- Navigation (shared component) -->
     <div id="site-nav"></div>
     <script src="/assets/nav.js"></script>
 
@@ -423,11 +597,64 @@
     <!-- Page Header -->
     <header class="page-header">
         <h1>Shop Therapeutic Resources</h1>
-        <p>We're developing workbooks, card decks, and professional development materials to complement our tools. Sign up to be notified when they launch.</p>
+        <p>FSC Merchandise is available now. Workbooks, card decks, and professional development materials are coming soon — sign up to be notified when they launch.</p>
     </header>
+
+    <!-- ─── FSC Merchandise — Available Now ─── -->
+    <section class="merch-section">
+        <div class="merch-container">
+            <div class="merch-header">
+                <span class="section-label">Available Now</span>
+                <h2>FSC Merchandise</h2>
+                <p>Wear the message. Share the mission. Everything Is A Lot — We Get It, from the therapists at Family Solutions Counseling.</p>
+            </div>
+            <div class="merch-grid">
+                <a href="products/fsc-hoodie.html" class="merch-card">
+                    <div class="merch-card-image">
+                        <img src="https://static.wixstatic.com/media/1997d8_fb2b5c60d31342e19ceee1be265b4f97~mv2.jpg" alt="Everything Is A Lot Hoodie">
+                    </div>
+                    <div class="merch-card-content">
+                        <span class="available-badge">Available Now</span>
+                        <h3>Everything Is A Lot — We Get It</h3>
+                        <p class="product-type">Unisex Hoodie · Sizes S – 3XL</p>
+                        <p class="price">From $50.00</p>
+                    </div>
+                </a>
+                <a href="products/fsc-mug.html" class="merch-card">
+                    <div class="merch-card-image">
+                        <img src="https://static.wixstatic.com/media/1997d8_bd2c06e1e08f43ed853217ac121cf70a~mv2.jpg" alt="Everything Is A Lot Mug">
+                    </div>
+                    <div class="merch-card-content">
+                        <span class="available-badge">Available Now</span>
+                        <h3>Everything Is A Lot — We Get It</h3>
+                        <p class="product-type">Ceramic Mug · 11oz / 15oz / 20oz</p>
+                        <p class="price">From $13.95</p>
+                    </div>
+                </a>
+                <a href="products/fsc-tote-bag.html" class="merch-card">
+                    <div class="merch-card-image">
+                        <img src="https://static.wixstatic.com/media/1997d8_e85026a04c2d4ed19a5c7525822276ff~mv2.jpg" alt="Everything Is A Lot Tote Bag">
+                    </div>
+                    <div class="merch-card-content">
+                        <span class="available-badge">Available Now</span>
+                        <h3>Everything Is A Lot — We Get It</h3>
+                        <p class="product-type">Canvas Tote Bag · One size</p>
+                        <p class="price">$25.56</p>
+                    </div>
+                </a>
+            </div>
+            <div class="merch-cta">
+                <p>Orders are fulfilled securely through <a href="https://www.familysolutionsutah.org" target="_blank">familysolutionsutah.org</a></p>
+            </div>
+        </div>
+    </section>
 
     <!-- Coming Soon Categories -->
     <section class="categories-section">
+        <div class="categories-heading">
+            <h2>More Coming Soon</h2>
+            <p>We're developing therapeutic resources to complement our tools and support clinicians and clients alike.</p>
+        </div>
         <div class="categories-grid">
             <div class="category-card">
                 <span class="coming-soon-badge">Coming Soon</span>
